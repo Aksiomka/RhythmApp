@@ -1,0 +1,874 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		07755947CD1D2B0F2D1A910E /* Pods_RhythmAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19AA3D2B3764B0A948C6354A /* Pods_RhythmAppTests.framework */; };
+		8E33F98161FBD1002C4B0DB5 /* Pods_RhythmApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3DE5353F627F68A6CE01860 /* Pods_RhythmApp.framework */; };
+		DA024A1823145907004CDA04 /* EditWorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA024A1723145907004CDA04 /* EditWorkoutViewController.swift */; };
+		DA024A1A23145CF7004CDA04 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA024A1923145CF7004CDA04 /* Colors.xcassets */; };
+		DA024A1C23145F6A004CDA04 /* EditWorkoutPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA024A1B23145F6A004CDA04 /* EditWorkoutPresenter.swift */; };
+		DA024A1E23145F7C004CDA04 /* EditWorkoutInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA024A1D23145F7C004CDA04 /* EditWorkoutInteractor.swift */; };
+		DA024A2023145F88004CDA04 /* EditWorkoutRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA024A1F23145F88004CDA04 /* EditWorkoutRouter.swift */; };
+		DA024A2223145F98004CDA04 /* EditWorkoutProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA024A2123145F98004CDA04 /* EditWorkoutProtocols.swift */; };
+		DA024A2B23146BA3004CDA04 /* EditWorkoutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA024A2A23146BA3004CDA04 /* EditWorkoutViewController.xib */; };
+		DA024A59231B046B004CDA04 /* IconPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA024A58231B046B004CDA04 /* IconPicker.swift */; };
+		DA024A61231B129C004CDA04 /* IconPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA024A5F231B129C004CDA04 /* IconPickerCell.swift */; };
+		DA024A62231B129C004CDA04 /* IconPickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA024A60231B129C004CDA04 /* IconPickerCell.xib */; };
+		DA024A64231B1A02004CDA04 /* WorkoutIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA024A63231B1A02004CDA04 /* WorkoutIcon.swift */; };
+		DA024A66231B1BD6004CDA04 /* WorkoutIconUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA024A65231B1BD6004CDA04 /* WorkoutIconUtil.swift */; };
+		DA024A6A231C39FE004CDA04 /* TextViewWithPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA024A69231C39FE004CDA04 /* TextViewWithPlaceholder.swift */; };
+		DA024A6E231C56F1004CDA04 /* InfiniteHorizontalCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA024A6D231C56F1004CDA04 /* InfiniteHorizontalCollectionView.swift */; };
+		DA024A72231C6398004CDA04 /* ColorPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA024A70231C6398004CDA04 /* ColorPickerCell.swift */; };
+		DA024A73231C6398004CDA04 /* ColorPickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA024A71231C6398004CDA04 /* ColorPickerCell.xib */; };
+		DA268E552338D3AF00811567 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA268E542338D3AF00811567 /* Exercise.swift */; };
+		DA268E572338D40200811567 /* ExerciseDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA268E562338D40200811567 /* ExerciseDao.swift */; };
+		DA268E592338D6F200811567 /* ExerciseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA268E582338D6F200811567 /* ExerciseModel.swift */; };
+		DA268E5D2338DB6700811567 /* EditExerciseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA268E5C2338DB6700811567 /* EditExerciseViewController.xib */; };
+		DA2F0256230C899C00A9CFA3 /* WorkoutColorUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2F0255230C899C00A9CFA3 /* WorkoutColorUtil.swift */; };
+		DA4903312307FEAA008E50AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4903302307FEAA008E50AB /* AppDelegate.swift */; };
+		DA4903382307FEAB008E50AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA4903372307FEAB008E50AB /* Assets.xcassets */; };
+		DA49033B2307FEAB008E50AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA4903392307FEAB008E50AB /* LaunchScreen.storyboard */; };
+		DA4903462307FEAB008E50AB /* RhythmAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4903452307FEAB008E50AB /* RhythmAppTests.swift */; };
+		DA4903522307FF76008E50AB /* WorkoutListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4903512307FF76008E50AB /* WorkoutListViewController.swift */; };
+		DA4903542307FF86008E50AB /* WorkoutListProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4903532307FF86008E50AB /* WorkoutListProtocols.swift */; };
+		DA4903562307FF9A008E50AB /* WorkoutListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4903552307FF9A008E50AB /* WorkoutListPresenter.swift */; };
+		DA4903582307FFAB008E50AB /* WorkoutListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4903572307FFAB008E50AB /* WorkoutListInteractor.swift */; };
+		DA49035A2307FFC2008E50AB /* WorkoutListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4903592307FFC2008E50AB /* WorkoutListRouter.swift */; };
+		DA49035C230800A7008E50AB /* WorkoutListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA49035B230800A7008E50AB /* WorkoutListViewController.xib */; };
+		DA49035F23080DBB008E50AB /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA49035E23080DBB008E50AB /* Workout.swift */; };
+		DA49036223080EE4008E50AB /* WorkoutDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA49036123080EE4008E50AB /* WorkoutDao.swift */; };
+		DA4903642308103E008E50AB /* DB.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4903632308103E008E50AB /* DB.swift */; };
+		DA490367230815A0008E50AB /* WorkoutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA490366230815A0008E50AB /* WorkoutModel.swift */; };
+		DA49036B23081D29008E50AB /* WorkoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA49036923081D29008E50AB /* WorkoutCell.swift */; };
+		DA49036C23081D29008E50AB /* WorkoutCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA49036A23081D29008E50AB /* WorkoutCell.xib */; };
+		DA49036F230839A4008E50AB /* AddWorkoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA49036D230839A4008E50AB /* AddWorkoutCell.swift */; };
+		DA490370230839A4008E50AB /* AddWorkoutCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA49036E230839A4008E50AB /* AddWorkoutCell.xib */; };
+		DA49037223087034008E50AB /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA49037123087034008E50AB /* Settings.swift */; };
+		DA490374230871D6008E50AB /* UpgradeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA490373230871D6008E50AB /* UpgradeModel.swift */; };
+		DA4903782309E909008E50AB /* WorkoutColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4903772309E909008E50AB /* WorkoutColor.swift */; };
+		DA49037A2309EC3D008E50AB /* ColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4903792309EC3D008E50AB /* ColorPicker.swift */; };
+		DA6704AD2338DFC300F1CB0B /* EditExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6704AC2338DFC300F1CB0B /* EditExerciseViewController.swift */; };
+		DA6704AF2338E4C900F1CB0B /* EditExercisePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6704AE2338E4C900F1CB0B /* EditExercisePresenter.swift */; };
+		DA6704B12338E4DD00F1CB0B /* EditExerciseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6704B02338E4DD00F1CB0B /* EditExerciseInteractor.swift */; };
+		DA6704B32338E4EB00F1CB0B /* EditExerciseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6704B22338E4EB00F1CB0B /* EditExerciseRouter.swift */; };
+		DA6704B52338E4FF00F1CB0B /* EditExerciseProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6704B42338E4FF00F1CB0B /* EditExerciseProtocols.swift */; };
+		DA7DB601233F73BD0082D499 /* ExercisesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7DB5FF233F73BD0082D499 /* ExercisesCell.swift */; };
+		DA7DB602233F73BD0082D499 /* ExercisesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA7DB600233F73BD0082D499 /* ExercisesCell.xib */; };
+		DA7DB605233FA9610082D499 /* ExerciseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7DB603233FA9610082D499 /* ExerciseCell.swift */; };
+		DA7DB606233FA9610082D499 /* ExerciseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA7DB604233FA9610082D499 /* ExerciseCell.xib */; };
+		DA7DB608233FB27C0082D499 /* WorkoutWithExercises.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7DB607233FB27C0082D499 /* WorkoutWithExercises.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DA4903422307FEAB008E50AB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DA4903252307FEA9008E50AB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DA49032C2307FEA9008E50AB;
+			remoteInfo = RhythmApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		19AA3D2B3764B0A948C6354A /* Pods_RhythmAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RhythmAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2ACBC32B095C7078E884EA41 /* Pods-RhythmApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RhythmApp.debug.xcconfig"; path = "Target Support Files/Pods-RhythmApp/Pods-RhythmApp.debug.xcconfig"; sourceTree = "<group>"; };
+		A243419C7EE66D46B9C83B2C /* Pods-RhythmApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RhythmApp.release.xcconfig"; path = "Target Support Files/Pods-RhythmApp/Pods-RhythmApp.release.xcconfig"; sourceTree = "<group>"; };
+		DA024A1723145907004CDA04 /* EditWorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditWorkoutViewController.swift; sourceTree = "<group>"; };
+		DA024A1923145CF7004CDA04 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		DA024A1B23145F6A004CDA04 /* EditWorkoutPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditWorkoutPresenter.swift; sourceTree = "<group>"; };
+		DA024A1D23145F7C004CDA04 /* EditWorkoutInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditWorkoutInteractor.swift; sourceTree = "<group>"; };
+		DA024A1F23145F88004CDA04 /* EditWorkoutRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditWorkoutRouter.swift; sourceTree = "<group>"; };
+		DA024A2123145F98004CDA04 /* EditWorkoutProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditWorkoutProtocols.swift; sourceTree = "<group>"; };
+		DA024A2A23146BA3004CDA04 /* EditWorkoutViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditWorkoutViewController.xib; sourceTree = "<group>"; };
+		DA024A58231B046B004CDA04 /* IconPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconPicker.swift; sourceTree = "<group>"; };
+		DA024A5F231B129C004CDA04 /* IconPickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconPickerCell.swift; sourceTree = "<group>"; };
+		DA024A60231B129C004CDA04 /* IconPickerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IconPickerCell.xib; sourceTree = "<group>"; };
+		DA024A63231B1A02004CDA04 /* WorkoutIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutIcon.swift; sourceTree = "<group>"; };
+		DA024A65231B1BD6004CDA04 /* WorkoutIconUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutIconUtil.swift; sourceTree = "<group>"; };
+		DA024A69231C39FE004CDA04 /* TextViewWithPlaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewWithPlaceholder.swift; sourceTree = "<group>"; };
+		DA024A6D231C56F1004CDA04 /* InfiniteHorizontalCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfiniteHorizontalCollectionView.swift; sourceTree = "<group>"; };
+		DA024A70231C6398004CDA04 /* ColorPickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerCell.swift; sourceTree = "<group>"; };
+		DA024A71231C6398004CDA04 /* ColorPickerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorPickerCell.xib; sourceTree = "<group>"; };
+		DA268E542338D3AF00811567 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
+		DA268E562338D40200811567 /* ExerciseDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDao.swift; sourceTree = "<group>"; };
+		DA268E582338D6F200811567 /* ExerciseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseModel.swift; sourceTree = "<group>"; };
+		DA268E5C2338DB6700811567 /* EditExerciseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditExerciseViewController.xib; sourceTree = "<group>"; };
+		DA2F0255230C899C00A9CFA3 /* WorkoutColorUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutColorUtil.swift; sourceTree = "<group>"; };
+		DA49032D2307FEAA008E50AB /* RhythmApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RhythmApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA4903302307FEAA008E50AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DA4903372307FEAB008E50AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DA49033A2307FEAB008E50AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DA49033C2307FEAB008E50AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA4903412307FEAB008E50AB /* RhythmAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RhythmAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA4903452307FEAB008E50AB /* RhythmAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RhythmAppTests.swift; sourceTree = "<group>"; };
+		DA4903472307FEAB008E50AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA4903512307FF76008E50AB /* WorkoutListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutListViewController.swift; sourceTree = "<group>"; };
+		DA4903532307FF86008E50AB /* WorkoutListProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutListProtocols.swift; sourceTree = "<group>"; };
+		DA4903552307FF9A008E50AB /* WorkoutListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutListPresenter.swift; sourceTree = "<group>"; };
+		DA4903572307FFAB008E50AB /* WorkoutListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutListInteractor.swift; sourceTree = "<group>"; };
+		DA4903592307FFC2008E50AB /* WorkoutListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutListRouter.swift; sourceTree = "<group>"; };
+		DA49035B230800A7008E50AB /* WorkoutListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorkoutListViewController.xib; sourceTree = "<group>"; };
+		DA49035E23080DBB008E50AB /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
+		DA49036123080EE4008E50AB /* WorkoutDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutDao.swift; sourceTree = "<group>"; };
+		DA4903632308103E008E50AB /* DB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DB.swift; sourceTree = "<group>"; };
+		DA490366230815A0008E50AB /* WorkoutModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutModel.swift; sourceTree = "<group>"; };
+		DA49036923081D29008E50AB /* WorkoutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCell.swift; sourceTree = "<group>"; };
+		DA49036A23081D29008E50AB /* WorkoutCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorkoutCell.xib; sourceTree = "<group>"; };
+		DA49036D230839A4008E50AB /* AddWorkoutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWorkoutCell.swift; sourceTree = "<group>"; };
+		DA49036E230839A4008E50AB /* AddWorkoutCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddWorkoutCell.xib; sourceTree = "<group>"; };
+		DA49037123087034008E50AB /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		DA490373230871D6008E50AB /* UpgradeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpgradeModel.swift; sourceTree = "<group>"; };
+		DA4903772309E909008E50AB /* WorkoutColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutColor.swift; sourceTree = "<group>"; };
+		DA4903792309EC3D008E50AB /* ColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPicker.swift; sourceTree = "<group>"; };
+		DA6704AC2338DFC300F1CB0B /* EditExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditExerciseViewController.swift; sourceTree = "<group>"; };
+		DA6704AE2338E4C900F1CB0B /* EditExercisePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditExercisePresenter.swift; sourceTree = "<group>"; };
+		DA6704B02338E4DD00F1CB0B /* EditExerciseInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditExerciseInteractor.swift; sourceTree = "<group>"; };
+		DA6704B22338E4EB00F1CB0B /* EditExerciseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditExerciseRouter.swift; sourceTree = "<group>"; };
+		DA6704B42338E4FF00F1CB0B /* EditExerciseProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditExerciseProtocols.swift; sourceTree = "<group>"; };
+		DA7DB5FF233F73BD0082D499 /* ExercisesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesCell.swift; sourceTree = "<group>"; };
+		DA7DB600233F73BD0082D499 /* ExercisesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExercisesCell.xib; sourceTree = "<group>"; };
+		DA7DB603233FA9610082D499 /* ExerciseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCell.swift; sourceTree = "<group>"; };
+		DA7DB604233FA9610082D499 /* ExerciseCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExerciseCell.xib; sourceTree = "<group>"; };
+		DA7DB607233FB27C0082D499 /* WorkoutWithExercises.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutWithExercises.swift; sourceTree = "<group>"; };
+		F203870D818BCDCBB97F7E20 /* Pods-RhythmAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RhythmAppTests.release.xcconfig"; path = "Target Support Files/Pods-RhythmAppTests/Pods-RhythmAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		F3DE5353F627F68A6CE01860 /* Pods_RhythmApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RhythmApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FDEF7A2C466C5928F7EA2E29 /* Pods-RhythmAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RhythmAppTests.debug.xcconfig"; path = "Target Support Files/Pods-RhythmAppTests/Pods-RhythmAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DA49032A2307FEA9008E50AB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E33F98161FBD1002C4B0DB5 /* Pods_RhythmApp.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA49033E2307FEAB008E50AB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07755947CD1D2B0F2D1A910E /* Pods_RhythmAppTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2D2FF24C3D5D63ADDF791465 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2ACBC32B095C7078E884EA41 /* Pods-RhythmApp.debug.xcconfig */,
+				A243419C7EE66D46B9C83B2C /* Pods-RhythmApp.release.xcconfig */,
+				FDEF7A2C466C5928F7EA2E29 /* Pods-RhythmAppTests.debug.xcconfig */,
+				F203870D818BCDCBB97F7E20 /* Pods-RhythmAppTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		874439B8687BFEF6A4DC1BCB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F3DE5353F627F68A6CE01860 /* Pods_RhythmApp.framework */,
+				19AA3D2B3764B0A948C6354A /* Pods_RhythmAppTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DA024A2423146A4D004CDA04 /* editWorkout */ = {
+			isa = PBXGroup;
+			children = (
+				DA024A2523146A57004CDA04 /* xib */,
+				DA024A1723145907004CDA04 /* EditWorkoutViewController.swift */,
+				DA024A1B23145F6A004CDA04 /* EditWorkoutPresenter.swift */,
+				DA024A1D23145F7C004CDA04 /* EditWorkoutInteractor.swift */,
+				DA024A1F23145F88004CDA04 /* EditWorkoutRouter.swift */,
+				DA024A2123145F98004CDA04 /* EditWorkoutProtocols.swift */,
+			);
+			path = editWorkout;
+			sourceTree = "<group>";
+		};
+		DA024A2523146A57004CDA04 /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				DA024A2A23146BA3004CDA04 /* EditWorkoutViewController.xib */,
+			);
+			path = xib;
+			sourceTree = "<group>";
+		};
+		DA024A2623146A84004CDA04 /* db */ = {
+			isa = PBXGroup;
+			children = (
+				DA49036123080EE4008E50AB /* WorkoutDao.swift */,
+				DA268E562338D40200811567 /* ExerciseDao.swift */,
+				DA4903632308103E008E50AB /* DB.swift */,
+			);
+			path = db;
+			sourceTree = "<group>";
+		};
+		DA024A2723146ABC004CDA04 /* workoutList */ = {
+			isa = PBXGroup;
+			children = (
+				DA024A2823146AC8004CDA04 /* xib */,
+				DA4903512307FF76008E50AB /* WorkoutListViewController.swift */,
+				DA4903552307FF9A008E50AB /* WorkoutListPresenter.swift */,
+				DA4903572307FFAB008E50AB /* WorkoutListInteractor.swift */,
+				DA4903592307FFC2008E50AB /* WorkoutListRouter.swift */,
+				DA4903532307FF86008E50AB /* WorkoutListProtocols.swift */,
+				DA49036923081D29008E50AB /* WorkoutCell.swift */,
+				DA49036D230839A4008E50AB /* AddWorkoutCell.swift */,
+				DA7DB5FF233F73BD0082D499 /* ExercisesCell.swift */,
+				DA7DB603233FA9610082D499 /* ExerciseCell.swift */,
+				DA7DB607233FB27C0082D499 /* WorkoutWithExercises.swift */,
+			);
+			path = workoutList;
+			sourceTree = "<group>";
+		};
+		DA024A2823146AC8004CDA04 /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				DA49035B230800A7008E50AB /* WorkoutListViewController.xib */,
+				DA49036A23081D29008E50AB /* WorkoutCell.xib */,
+				DA49036E230839A4008E50AB /* AddWorkoutCell.xib */,
+				DA7DB600233F73BD0082D499 /* ExercisesCell.xib */,
+				DA7DB604233FA9610082D499 /* ExerciseCell.xib */,
+			);
+			path = xib;
+			sourceTree = "<group>";
+		};
+		DA024A2923146B01004CDA04 /* common */ = {
+			isa = PBXGroup;
+			children = (
+				DA6704B62339174E00F1CB0B /* durationPicker */,
+				DA024A6F231C637A004CDA04 /* colorPicker */,
+				DA024A5A231B10D0004CDA04 /* iconPicker */,
+				DA2F0255230C899C00A9CFA3 /* WorkoutColorUtil.swift */,
+				DA024A65231B1BD6004CDA04 /* WorkoutIconUtil.swift */,
+				DA024A69231C39FE004CDA04 /* TextViewWithPlaceholder.swift */,
+				DA024A6D231C56F1004CDA04 /* InfiniteHorizontalCollectionView.swift */,
+			);
+			path = common;
+			sourceTree = "<group>";
+		};
+		DA024A5A231B10D0004CDA04 /* iconPicker */ = {
+			isa = PBXGroup;
+			children = (
+				DA024A60231B129C004CDA04 /* IconPickerCell.xib */,
+				DA024A5F231B129C004CDA04 /* IconPickerCell.swift */,
+				DA024A58231B046B004CDA04 /* IconPicker.swift */,
+			);
+			name = iconPicker;
+			sourceTree = "<group>";
+		};
+		DA024A6F231C637A004CDA04 /* colorPicker */ = {
+			isa = PBXGroup;
+			children = (
+				DA024A71231C6398004CDA04 /* ColorPickerCell.xib */,
+				DA024A70231C6398004CDA04 /* ColorPickerCell.swift */,
+				DA4903792309EC3D008E50AB /* ColorPicker.swift */,
+			);
+			path = colorPicker;
+			sourceTree = "<group>";
+		};
+		DA268E5A2338DB2600811567 /* editExercise */ = {
+			isa = PBXGroup;
+			children = (
+				DA268E5B2338DB4900811567 /* xib */,
+				DA6704AC2338DFC300F1CB0B /* EditExerciseViewController.swift */,
+				DA6704AE2338E4C900F1CB0B /* EditExercisePresenter.swift */,
+				DA6704B02338E4DD00F1CB0B /* EditExerciseInteractor.swift */,
+				DA6704B22338E4EB00F1CB0B /* EditExerciseRouter.swift */,
+				DA6704B42338E4FF00F1CB0B /* EditExerciseProtocols.swift */,
+			);
+			path = editExercise;
+			sourceTree = "<group>";
+		};
+		DA268E5B2338DB4900811567 /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				DA268E5C2338DB6700811567 /* EditExerciseViewController.xib */,
+			);
+			path = xib;
+			sourceTree = "<group>";
+		};
+		DA4903242307FEA9008E50AB = {
+			isa = PBXGroup;
+			children = (
+				DA49032F2307FEAA008E50AB /* RhythmApp */,
+				DA4903442307FEAB008E50AB /* RhythmAppTests */,
+				DA49032E2307FEAA008E50AB /* Products */,
+				2D2FF24C3D5D63ADDF791465 /* Pods */,
+				874439B8687BFEF6A4DC1BCB /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		DA49032E2307FEAA008E50AB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DA49032D2307FEAA008E50AB /* RhythmApp.app */,
+				DA4903412307FEAB008E50AB /* RhythmAppTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DA49032F2307FEAA008E50AB /* RhythmApp */ = {
+			isa = PBXGroup;
+			children = (
+				DA024A2623146A84004CDA04 /* db */,
+				DA49035D23080D9E008E50AB /* entity */,
+				DA4903652308158C008E50AB /* model */,
+				DA024A2923146B01004CDA04 /* common */,
+				DA024A2423146A4D004CDA04 /* editWorkout */,
+				DA024A2723146ABC004CDA04 /* workoutList */,
+				DA268E5A2338DB2600811567 /* editExercise */,
+				DA4903302307FEAA008E50AB /* AppDelegate.swift */,
+				DA4903372307FEAB008E50AB /* Assets.xcassets */,
+				DA024A1923145CF7004CDA04 /* Colors.xcassets */,
+				DA4903392307FEAB008E50AB /* LaunchScreen.storyboard */,
+				DA49033C2307FEAB008E50AB /* Info.plist */,
+			);
+			path = RhythmApp;
+			sourceTree = "<group>";
+		};
+		DA4903442307FEAB008E50AB /* RhythmAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				DA4903452307FEAB008E50AB /* RhythmAppTests.swift */,
+				DA4903472307FEAB008E50AB /* Info.plist */,
+			);
+			path = RhythmAppTests;
+			sourceTree = "<group>";
+		};
+		DA49035D23080D9E008E50AB /* entity */ = {
+			isa = PBXGroup;
+			children = (
+				DA49035E23080DBB008E50AB /* Workout.swift */,
+				DA4903772309E909008E50AB /* WorkoutColor.swift */,
+				DA024A63231B1A02004CDA04 /* WorkoutIcon.swift */,
+				DA268E542338D3AF00811567 /* Exercise.swift */,
+			);
+			path = entity;
+			sourceTree = "<group>";
+		};
+		DA4903652308158C008E50AB /* model */ = {
+			isa = PBXGroup;
+			children = (
+				DA490366230815A0008E50AB /* WorkoutModel.swift */,
+				DA268E582338D6F200811567 /* ExerciseModel.swift */,
+				DA49037123087034008E50AB /* Settings.swift */,
+				DA490373230871D6008E50AB /* UpgradeModel.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		DA6704B62339174E00F1CB0B /* durationPicker */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = durationPicker;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DA49032C2307FEA9008E50AB /* RhythmApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DA49034A2307FEAB008E50AB /* Build configuration list for PBXNativeTarget "RhythmApp" */;
+			buildPhases = (
+				E5E02E419585C82FFE2247DB /* [CP] Check Pods Manifest.lock */,
+				DA4903292307FEA9008E50AB /* Sources */,
+				DA49032A2307FEA9008E50AB /* Frameworks */,
+				DA49032B2307FEA9008E50AB /* Resources */,
+				EFE483D0A10B062BA8528AB0 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RhythmApp;
+			productName = RhythmApp;
+			productReference = DA49032D2307FEAA008E50AB /* RhythmApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DA4903402307FEAB008E50AB /* RhythmAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DA49034D2307FEAB008E50AB /* Build configuration list for PBXNativeTarget "RhythmAppTests" */;
+			buildPhases = (
+				B35626CFEA20462798BD564D /* [CP] Check Pods Manifest.lock */,
+				DA49033D2307FEAB008E50AB /* Sources */,
+				DA49033E2307FEAB008E50AB /* Frameworks */,
+				DA49033F2307FEAB008E50AB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DA4903432307FEAB008E50AB /* PBXTargetDependency */,
+			);
+			name = RhythmAppTests;
+			productName = RhythmAppTests;
+			productReference = DA4903412307FEAB008E50AB /* RhythmAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DA4903252307FEA9008E50AB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1030;
+				LastUpgradeCheck = 1030;
+				ORGANIZATIONNAME = "Svetlana Gladysheva";
+				TargetAttributes = {
+					DA49032C2307FEA9008E50AB = {
+						CreatedOnToolsVersion = 10.3;
+					};
+					DA4903402307FEAB008E50AB = {
+						CreatedOnToolsVersion = 10.3;
+						TestTargetID = DA49032C2307FEA9008E50AB;
+					};
+				};
+			};
+			buildConfigurationList = DA4903282307FEA9008E50AB /* Build configuration list for PBXProject "RhythmApp" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DA4903242307FEA9008E50AB;
+			productRefGroup = DA49032E2307FEAA008E50AB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DA49032C2307FEA9008E50AB /* RhythmApp */,
+				DA4903402307FEAB008E50AB /* RhythmAppTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DA49032B2307FEA9008E50AB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA024A2B23146BA3004CDA04 /* EditWorkoutViewController.xib in Resources */,
+				DA7DB606233FA9610082D499 /* ExerciseCell.xib in Resources */,
+				DA49035C230800A7008E50AB /* WorkoutListViewController.xib in Resources */,
+				DA268E5D2338DB6700811567 /* EditExerciseViewController.xib in Resources */,
+				DA49033B2307FEAB008E50AB /* LaunchScreen.storyboard in Resources */,
+				DA4903382307FEAB008E50AB /* Assets.xcassets in Resources */,
+				DA024A1A23145CF7004CDA04 /* Colors.xcassets in Resources */,
+				DA49036C23081D29008E50AB /* WorkoutCell.xib in Resources */,
+				DA024A62231B129C004CDA04 /* IconPickerCell.xib in Resources */,
+				DA490370230839A4008E50AB /* AddWorkoutCell.xib in Resources */,
+				DA024A73231C6398004CDA04 /* ColorPickerCell.xib in Resources */,
+				DA7DB602233F73BD0082D499 /* ExercisesCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA49033F2307FEAB008E50AB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B35626CFEA20462798BD564D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RhythmAppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E5E02E419585C82FFE2247DB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RhythmApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EFE483D0A10B062BA8528AB0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RhythmApp/Pods-RhythmApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
+				"${BUILT_PRODUCTS_DIR}/RxRealm/RxRealm.framework",
+				"${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRealm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRelay.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RhythmApp/Pods-RhythmApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DA4903292307FEA9008E50AB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA024A66231B1BD6004CDA04 /* WorkoutIconUtil.swift in Sources */,
+				DA2F0256230C899C00A9CFA3 /* WorkoutColorUtil.swift in Sources */,
+				DA024A1C23145F6A004CDA04 /* EditWorkoutPresenter.swift in Sources */,
+				DA024A59231B046B004CDA04 /* IconPicker.swift in Sources */,
+				DA024A72231C6398004CDA04 /* ColorPickerCell.swift in Sources */,
+				DA268E552338D3AF00811567 /* Exercise.swift in Sources */,
+				DA024A2223145F98004CDA04 /* EditWorkoutProtocols.swift in Sources */,
+				DA7DB608233FB27C0082D499 /* WorkoutWithExercises.swift in Sources */,
+				DA4903782309E909008E50AB /* WorkoutColor.swift in Sources */,
+				DA4903542307FF86008E50AB /* WorkoutListProtocols.swift in Sources */,
+				DA024A6E231C56F1004CDA04 /* InfiniteHorizontalCollectionView.swift in Sources */,
+				DA6704B12338E4DD00F1CB0B /* EditExerciseInteractor.swift in Sources */,
+				DA4903562307FF9A008E50AB /* WorkoutListPresenter.swift in Sources */,
+				DA49037A2309EC3D008E50AB /* ColorPicker.swift in Sources */,
+				DA268E572338D40200811567 /* ExerciseDao.swift in Sources */,
+				DA024A1E23145F7C004CDA04 /* EditWorkoutInteractor.swift in Sources */,
+				DA6704AF2338E4C900F1CB0B /* EditExercisePresenter.swift in Sources */,
+				DA6704AD2338DFC300F1CB0B /* EditExerciseViewController.swift in Sources */,
+				DA49036B23081D29008E50AB /* WorkoutCell.swift in Sources */,
+				DA490374230871D6008E50AB /* UpgradeModel.swift in Sources */,
+				DA7DB601233F73BD0082D499 /* ExercisesCell.swift in Sources */,
+				DA49037223087034008E50AB /* Settings.swift in Sources */,
+				DA4903642308103E008E50AB /* DB.swift in Sources */,
+				DA024A61231B129C004CDA04 /* IconPickerCell.swift in Sources */,
+				DA024A2023145F88004CDA04 /* EditWorkoutRouter.swift in Sources */,
+				DA49035F23080DBB008E50AB /* Workout.swift in Sources */,
+				DA49035A2307FFC2008E50AB /* WorkoutListRouter.swift in Sources */,
+				DA024A6A231C39FE004CDA04 /* TextViewWithPlaceholder.swift in Sources */,
+				DA6704B52338E4FF00F1CB0B /* EditExerciseProtocols.swift in Sources */,
+				DA268E592338D6F200811567 /* ExerciseModel.swift in Sources */,
+				DA7DB605233FA9610082D499 /* ExerciseCell.swift in Sources */,
+				DA490367230815A0008E50AB /* WorkoutModel.swift in Sources */,
+				DA49036F230839A4008E50AB /* AddWorkoutCell.swift in Sources */,
+				DA49036223080EE4008E50AB /* WorkoutDao.swift in Sources */,
+				DA024A64231B1A02004CDA04 /* WorkoutIcon.swift in Sources */,
+				DA4903312307FEAA008E50AB /* AppDelegate.swift in Sources */,
+				DA4903582307FFAB008E50AB /* WorkoutListInteractor.swift in Sources */,
+				DA024A1823145907004CDA04 /* EditWorkoutViewController.swift in Sources */,
+				DA6704B32338E4EB00F1CB0B /* EditExerciseRouter.swift in Sources */,
+				DA4903522307FF76008E50AB /* WorkoutListViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA49033D2307FEAB008E50AB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA4903462307FEAB008E50AB /* RhythmAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DA4903432307FEAB008E50AB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DA49032C2307FEA9008E50AB /* RhythmApp */;
+			targetProxy = DA4903422307FEAB008E50AB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DA4903392307FEAB008E50AB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DA49033A2307FEAB008E50AB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DA4903482307FEAB008E50AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DA4903492307FEAB008E50AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DA49034B2307FEAB008E50AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2ACBC32B095C7078E884EA41 /* Pods-RhythmApp.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = RhythmApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gladyshevasm.RhythmApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		DA49034C2307FEAB008E50AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A243419C7EE66D46B9C83B2C /* Pods-RhythmApp.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = RhythmApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gladyshevasm.RhythmApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		DA49034E2307FEAB008E50AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FDEF7A2C466C5928F7EA2E29 /* Pods-RhythmAppTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = RhythmAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gladyshevasm.RhythmAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RhythmApp.app/RhythmApp";
+			};
+			name = Debug;
+		};
+		DA49034F2307FEAB008E50AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F203870D818BCDCBB97F7E20 /* Pods-RhythmAppTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = RhythmAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gladyshevasm.RhythmAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RhythmApp.app/RhythmApp";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DA4903282307FEA9008E50AB /* Build configuration list for PBXProject "RhythmApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA4903482307FEAB008E50AB /* Debug */,
+				DA4903492307FEAB008E50AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DA49034A2307FEAB008E50AB /* Build configuration list for PBXNativeTarget "RhythmApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA49034B2307FEAB008E50AB /* Debug */,
+				DA49034C2307FEAB008E50AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DA49034D2307FEAB008E50AB /* Build configuration list for PBXNativeTarget "RhythmAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA49034E2307FEAB008E50AB /* Debug */,
+				DA49034F2307FEAB008E50AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DA4903252307FEA9008E50AB /* Project object */;
+}
