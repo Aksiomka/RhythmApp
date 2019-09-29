@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ExercisesCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+class ExercisesCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDragDelegate, UICollectionViewDropDelegate {
 
     static let CELL_HEIGHT: CGFloat = 110
     
@@ -17,6 +17,7 @@ class ExercisesCell: UITableViewCell, UICollectionViewDataSource, UICollectionVi
     private var exercises: [Exercise] = []
     
     var addExerciseCellClickCallback: () -> Void = {}
+    var exerciseMovedCallback: (_ oldPosition: Int, _ newPosition: Int) -> Void = { _, _ in }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,6 +28,10 @@ class ExercisesCell: UITableViewCell, UICollectionViewDataSource, UICollectionVi
         collectionView.dataSource = self
         
         addSubview(collectionView)
+        
+        collectionView.dragDelegate = self
+        collectionView.dropDelegate = self
+        collectionView.dragInteractionEnabled = true
     }
     
     func setData(exercises: [Exercise]) {
@@ -68,6 +73,53 @@ class ExercisesCell: UITableViewCell, UICollectionViewDataSource, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.row == exercises.count {
             addExerciseCellClickCallback()
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
+        if indexPath.row == exercises.count {
+            return []
+        }
+        let exercise = exercises[indexPath.row]
+        let itemProvider = NSItemProvider(object: NSString(string: exercise.id.description))
+        let dragItem = UIDragItem(itemProvider: itemProvider)
+        dragItem.localObject = exercise
+        return [dragItem]
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, dropSessionDidUpdate session: UIDropSession, withDestinationIndexPath destinationIndexPath: IndexPath?) -> UICollectionViewDropProposal {
+        if collectionView.hasActiveDrag {
+            return UICollectionViewDropProposal(operation: .move, intent: .insertAtDestinationIndexPath)
+        }
+        return UICollectionViewDropProposal(operation: .forbidden)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, performDropWith coordinator: UICollectionViewDropCoordinator) {
+        guard let destinationIndexPath = coordinator.destinationIndexPath else { return }
+        collectionView.performBatchUpdates({
+            for item in coordinator.items {
+                if let localObject = item.dragItem.localObject as? Exercise {
+                    if let sourceIndexPath = item.sourceIndexPath, sourceIndexPath.row != exercises.count && destinationIndexPath.row != exercises.count {
+                        
+                        exercises.remove(at: sourceIndexPath.item)
+                        collectionView.deleteItems(at: [sourceIndexPath])
+                    
+                        exercises.insert(localObject, at: destinationIndexPath.item)
+                        coordinator.drop(item.dragItem, toItemAt: destinationIndexPath)
+                        collectionView.insertItems(at: [destinationIndexPath])
+                        
+                        exerciseMovedCallback(sourceIndexPath.item, destinationIndexPath.item)
+                    }
+                }
+            }
+        })
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, targetIndexPathForMoveFromItemAt originalIndexPath: IndexPath, toProposedIndexPath proposedIndexPath: IndexPath) -> IndexPath {
+        if proposedIndexPath.row == exercises.count {
+            return originalIndexPath
+        } else {
+            return proposedIndexPath
         }
     }
     

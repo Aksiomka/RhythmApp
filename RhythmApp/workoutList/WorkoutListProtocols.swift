@@ -22,6 +22,7 @@ protocol WorkoutListPresenterProtocol: class {
     func onWorkoutSelected(workoutId: Int)
     func onWorkoutDeleteButtonClick(workoutId: Int)
     func onAddExerciseCellClick(workoutId: Int)
+    func onExerciseMoved(workoutId: Int, oldPosition: Int, newPosition: Int)
 }
 
 protocol WorkoutListInteractorProtocol: class {

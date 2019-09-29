@@ -27,4 +27,12 @@ class ExerciseCell: UICollectionViewCell {
         nameLabel.text = exercise.name
         durationLabel.text = exercise.durationInSeconds.description
     }
+    
+    override func dragStateDidChange(_ dragState: UICollectionViewCell.DragState) {
+        if dragState == .none {
+            contentView.backgroundColor = UIColor.clear
+        } else {
+            contentView.backgroundColor = UIColor.gray
+        }
+    }
 }

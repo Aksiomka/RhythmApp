@@ -46,6 +46,10 @@ class WorkoutListPresenter: WorkoutListPresenterProtocol, WorkoutListInteractorO
         router.openCreateNewExercise(workoutId: workoutId)
     }
     
+    func onExerciseMoved(workoutId: Int, oldPosition: Int, newPosition: Int) {
+        
+    }
+    
     func processWorkouts(workouts: [Workout], exercises: [Exercise]) {
         let workoutsWithExercises: [WorkoutWithExercises] = workouts.map { workout in
             let workoutExercises = exercises.filter { $0.workoutId == workout.id }

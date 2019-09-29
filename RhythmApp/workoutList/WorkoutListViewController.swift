@@ -50,6 +50,9 @@ class WorkoutListViewController: UIViewController, WorkoutListViewProtocol, UITa
                 cell.addExerciseCellClickCallback = { [unowned self] in
                     self.presenter.onAddExerciseCellClick(workoutId: workout.id)
                 }
+                cell.exerciseMovedCallback = { [unowned self] oldPosition, newPosition in
+                    self.presenter.onExerciseMoved(workoutId: workout.id, oldPosition: oldPosition, newPosition: newPosition)
+                }
                 return cell
             case .AddWorkoutItem:
                 let cell: AddWorkoutCell = table.dequeueReusableCell(withIdentifier: "addWorkout", for: idxPath) as! AddWorkoutCell
