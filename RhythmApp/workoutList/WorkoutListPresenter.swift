@@ -30,12 +30,20 @@ class WorkoutListPresenter: WorkoutListPresenterProtocol, WorkoutListInteractorO
         router.openCreateNewWorkout()
     }
     
-    func onWorkoutSelected(workoutId: Int) {
+    func onEditWorkoutButtonClick(workoutId: Int) {
         router.openWorkout(workoutId: workoutId)
+    }
+    
+    func onWorkoutSelected(workoutId: Int) {
+        
     }
     
     func onWorkoutDeleteButtonClick(workoutId: Int) {
         interactor.deleteWorkout(workoutId: workoutId)
+    }
+    
+    func onAddExerciseCellClick(workoutId: Int) {
+        router.openCreateNewExercise(workoutId: workoutId)
     }
     
     func processWorkouts(workouts: [Workout], exercises: [Exercise]) {

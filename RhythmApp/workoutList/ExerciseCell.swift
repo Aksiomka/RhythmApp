@@ -16,6 +16,13 @@ class ExerciseCell: UICollectionViewCell {
     @IBOutlet private weak var nameLabel: UILabel!
     
 
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        bgView.layer.cornerRadius = bgView.frame.height / 2
+        bgView.layer.borderColor = UIColor.white.cgColor
+        bgView.layer.borderWidth = 3.0
+    }
+    
     func setData(exercise: Exercise) {
         nameLabel.text = exercise.name
         durationLabel.text = exercise.durationInSeconds.description

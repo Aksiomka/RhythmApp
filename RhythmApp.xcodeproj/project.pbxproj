@@ -62,6 +62,8 @@
 		DA7DB605233FA9610082D499 /* ExerciseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7DB603233FA9610082D499 /* ExerciseCell.swift */; };
 		DA7DB606233FA9610082D499 /* ExerciseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA7DB604233FA9610082D499 /* ExerciseCell.xib */; };
 		DA7DB608233FB27C0082D499 /* WorkoutWithExercises.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7DB607233FB27C0082D499 /* WorkoutWithExercises.swift */; };
+		DA7DB60B2340D1BF0082D499 /* AddExerciseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7DB6092340D1BF0082D499 /* AddExerciseCell.swift */; };
+		DA7DB60C2340D1BF0082D499 /* AddExerciseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA7DB60A2340D1BF0082D499 /* AddExerciseCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -135,6 +137,8 @@
 		DA7DB603233FA9610082D499 /* ExerciseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCell.swift; sourceTree = "<group>"; };
 		DA7DB604233FA9610082D499 /* ExerciseCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExerciseCell.xib; sourceTree = "<group>"; };
 		DA7DB607233FB27C0082D499 /* WorkoutWithExercises.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutWithExercises.swift; sourceTree = "<group>"; };
+		DA7DB6092340D1BF0082D499 /* AddExerciseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExerciseCell.swift; sourceTree = "<group>"; };
+		DA7DB60A2340D1BF0082D499 /* AddExerciseCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddExerciseCell.xib; sourceTree = "<group>"; };
 		F203870D818BCDCBB97F7E20 /* Pods-RhythmAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RhythmAppTests.release.xcconfig"; path = "Target Support Files/Pods-RhythmAppTests/Pods-RhythmAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		F3DE5353F627F68A6CE01860 /* Pods_RhythmApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RhythmApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDEF7A2C466C5928F7EA2E29 /* Pods-RhythmAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RhythmAppTests.debug.xcconfig"; path = "Target Support Files/Pods-RhythmAppTests/Pods-RhythmAppTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -224,6 +228,7 @@
 				DA49036D230839A4008E50AB /* AddWorkoutCell.swift */,
 				DA7DB5FF233F73BD0082D499 /* ExercisesCell.swift */,
 				DA7DB603233FA9610082D499 /* ExerciseCell.swift */,
+				DA7DB6092340D1BF0082D499 /* AddExerciseCell.swift */,
 				DA7DB607233FB27C0082D499 /* WorkoutWithExercises.swift */,
 			);
 			path = workoutList;
@@ -237,6 +242,7 @@
 				DA49036E230839A4008E50AB /* AddWorkoutCell.xib */,
 				DA7DB600233F73BD0082D499 /* ExercisesCell.xib */,
 				DA7DB604233FA9610082D499 /* ExerciseCell.xib */,
+				DA7DB60A2340D1BF0082D499 /* AddExerciseCell.xib */,
 			);
 			path = xib;
 			sourceTree = "<group>";
@@ -461,6 +467,7 @@
 				DA7DB606233FA9610082D499 /* ExerciseCell.xib in Resources */,
 				DA49035C230800A7008E50AB /* WorkoutListViewController.xib in Resources */,
 				DA268E5D2338DB6700811567 /* EditExerciseViewController.xib in Resources */,
+				DA7DB60C2340D1BF0082D499 /* AddExerciseCell.xib in Resources */,
 				DA49033B2307FEAB008E50AB /* LaunchScreen.storyboard in Resources */,
 				DA4903382307FEAB008E50AB /* Assets.xcassets in Resources */,
 				DA024A1A23145CF7004CDA04 /* Colors.xcassets in Resources */,
@@ -569,6 +576,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA7DB60B2340D1BF0082D499 /* AddExerciseCell.swift in Sources */,
 				DA024A66231B1BD6004CDA04 /* WorkoutIconUtil.swift in Sources */,
 				DA2F0256230C899C00A9CFA3 /* WorkoutColorUtil.swift in Sources */,
 				DA024A1C23145F6A004CDA04 /* EditWorkoutPresenter.swift in Sources */,

@@ -19,6 +19,7 @@ class WorkoutListViewController: UIViewController, WorkoutListViewProtocol, UITa
     @IBOutlet private weak var tableView: UITableView!
     
     private let disposeBag = DisposeBag()
+    private var dataSource: RxTableViewSectionedReloadDataSource<MultipleSectionModel>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,8 +30,8 @@ class WorkoutListViewController: UIViewController, WorkoutListViewProtocol, UITa
         tableView.register(UINib(nibName: "WorkoutCell", bundle: nil), forCellReuseIdentifier: "workout")
         tableView.register(UINib(nibName: "ExercisesCell", bundle: nil), forCellReuseIdentifier: "exercises")
         tableView.register(UINib(nibName: "AddWorkoutCell", bundle: nil), forCellReuseIdentifier: "addWorkout")
-        tableView.estimatedRowHeight = UITableView.automaticDimension
-        tableView.rowHeight = UITableView.automaticDimension
+        
+        tableView.delegate = self
     }
     
     func setWorkoutsDriver(workoutsDriver: Driver<[WorkoutWithExercises]>) {
@@ -39,10 +40,16 @@ class WorkoutListViewController: UIViewController, WorkoutListViewProtocol, UITa
             case let .WorkoutItem(workout):
                 let cell: WorkoutCell = table.dequeueReusableCell(withIdentifier: "workout", for: idxPath) as! WorkoutCell
                 cell.setWorkout(workout)
+                cell.editWorkoutButtonClickCallback = { [unowned self] in
+                    self.presenter.onEditWorkoutButtonClick(workoutId: workout.id)
+                }
                 return cell
-            case let .ExercisesItem(exercises):
+            case let .ExercisesItem(workout, exercises):
                 let cell: ExercisesCell = table.dequeueReusableCell(withIdentifier: "exercises", for: idxPath) as! ExercisesCell
                 cell.setData(exercises: exercises)
+                cell.addExerciseCellClickCallback = { [unowned self] in
+                    self.presenter.onAddExerciseCellClick(workoutId: workout.id)
+                }
                 return cell
             case .AddWorkoutItem:
                 let cell: AddWorkoutCell = table.dequeueReusableCell(withIdentifier: "addWorkout", for: idxPath) as! AddWorkoutCell
@@ -56,19 +63,21 @@ class WorkoutListViewController: UIViewController, WorkoutListViewProtocol, UITa
             switch dataSource[indexPath] {
             case .WorkoutItem(_):
                 return true
-            case .ExercisesItem(_):
+            case .ExercisesItem(_, _):
                 return false
             case .AddWorkoutItem:
                 return false
             }
         }
+        self.dataSource = dataSource
         
         workoutsDriver
             .map { workoutsWithExercises in
                 var items: [SectionItem] = []
                 for workoutWithExercises in workoutsWithExercises {
                     items.append(SectionItem.WorkoutItem(workout: workoutWithExercises.workout))
-                    items.append(SectionItem.ExercisesItem(exercises: workoutWithExercises.exercises))
+                    items.append(SectionItem.ExercisesItem(workout: workoutWithExercises.workout,
+                                                           exercises: workoutWithExercises.exercises))
                 }
                 items.append(SectionItem.AddWorkoutItem)
                 return [MultipleSectionModel(items: items)]
@@ -85,7 +94,7 @@ class WorkoutListViewController: UIViewController, WorkoutListViewProtocol, UITa
                 switch pair.1 {
                 case let .WorkoutItem(workout):
                     self?.presenter?.onWorkoutSelected(workoutId: workout.id)
-                case .ExercisesItem(_):
+                case .ExercisesItem(_, _):
                     // do nothing
                     break
                 case .AddWorkoutItem:
@@ -103,7 +112,7 @@ class WorkoutListViewController: UIViewController, WorkoutListViewProtocol, UITa
                 switch pair.1 {
                 case let .WorkoutItem(workout):
                     self?.presenter?.onWorkoutDeleteButtonClick(workoutId: workout.id)
-                case .ExercisesItem(_):
+                case .ExercisesItem(_, _):
                     // do nothing
                     break
                 case .AddWorkoutItem:
@@ -114,11 +123,22 @@ class WorkoutListViewController: UIViewController, WorkoutListViewProtocol, UITa
             .disposed(by: disposeBag)
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch dataSource[indexPath] {
+        case .WorkoutItem(_):
+            return UITableView.automaticDimension
+        case let .ExercisesItem(_, exercises):
+            return ExercisesCell.getHeightForExercises(exercises: exercises)
+        case .AddWorkoutItem:
+            return UITableView.automaticDimension
+        }
+    }
+    
 }
 
 enum SectionItem {
     case WorkoutItem(workout: Workout)
-    case ExercisesItem(exercises: [Exercise])
+    case ExercisesItem(workout: Workout, exercises: [Exercise])
     case AddWorkoutItem
 }
 

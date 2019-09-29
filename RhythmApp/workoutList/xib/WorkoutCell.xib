@@ -63,7 +63,11 @@
                             <constraint firstAttribute="width" constant="30" id="211-Lm-yZl"/>
                             <constraint firstAttribute="height" constant="30" id="WfM-hc-0qV"/>
                         </constraints>
-                        <state key="normal" title="Button" image="pencil.circle" catalog="system"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <state key="normal" image="pencil.circle" catalog="system"/>
+                        <connections>
+                            <action selector="onEditWorkoutButtonClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Rsh-V6-E78"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>

@@ -16,6 +16,8 @@ class WorkoutCell: UITableViewCell {
     @IBOutlet private weak var bgView: UIView!
     @IBOutlet private weak var editButton: UIButton!
     
+    var editWorkoutButtonClickCallback: () -> Void = {}
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         bgView.layer.cornerRadius = 10
@@ -33,6 +35,10 @@ class WorkoutCell: UITableViewCell {
         descriptionLabel.text = workout.descr
         iconView.image = WorkoutIconUtil.getUIImageForWorkoutIcon(workout.icon)
         bgView.backgroundColor = WorkoutColorUtil.getUIColorForWorkoutColor(workout.color)
+    }
+    
+    @IBAction func onEditWorkoutButtonClick(_ sender: UIButton) {
+        editWorkoutButtonClickCallback()
     }
     
     override func setHighlighted(_ highlighted: Bool, animated: Bool) {

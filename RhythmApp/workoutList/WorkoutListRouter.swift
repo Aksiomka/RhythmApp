@@ -38,8 +38,13 @@ class WorkoutListRouter: WorkoutListRouterProtocol {
     }
     
     func openWorkout(workoutId: Int) {
-        let editExerciseViewController = EditExerciseRouter.assembleModule(exerciseId: nil, workoutId: workoutId)
-        viewController?.navigationController?.pushViewController(editExerciseViewController, animated: true)
+        let editWorkoutViewController = EditWorkoutRouter.assembleModule(workoutId: workoutId)
+        viewController?.navigationController?.pushViewController(editWorkoutViewController, animated: true)
+    }
+    
+    func openCreateNewExercise(workoutId: Int) {
+        let createExerciseViewController = EditExerciseRouter.assembleModule(exerciseId: nil, workoutId: workoutId)
+        viewController?.navigationController?.pushViewController(createExerciseViewController, animated: true)
     }
     
 }
