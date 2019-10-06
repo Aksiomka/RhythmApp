@@ -21,6 +21,8 @@ class WorkoutListPresenter: WorkoutListPresenterProtocol, WorkoutListInteractorO
     
     private let disposeBag = DisposeBag()
     
+    private var openedWorkoutId: Int? = nil
+    
     func onViewDidLoad() {
         view?.setWorkoutsDriver(workoutsDriver: workoutsSubject.asDriver(onErrorJustReturn: []))
         updateData()
@@ -35,7 +37,12 @@ class WorkoutListPresenter: WorkoutListPresenterProtocol, WorkoutListInteractorO
     }
     
     func onWorkoutSelected(workoutId: Int) {
-        
+        if openedWorkoutId == workoutId {
+            openedWorkoutId = nil
+        } else {
+            openedWorkoutId = workoutId
+        }
+        updateData()
     }
     
     func onWorkoutDeleteButtonClick(workoutId: Int) {
@@ -47,18 +54,22 @@ class WorkoutListPresenter: WorkoutListPresenterProtocol, WorkoutListInteractorO
     }
     
     func onExerciseMoved(workoutId: Int, oldPosition: Int, newPosition: Int) {
-        
+        interactor.moveExercise(workoutId: workoutId, oldPosition: oldPosition, newPosition: newPosition)
     }
     
     func processWorkouts(workouts: [Workout], exercises: [Exercise]) {
         let workoutsWithExercises: [WorkoutWithExercises] = workouts.map { workout in
             let workoutExercises = exercises.filter { $0.workoutId == workout.id }
-            return WorkoutWithExercises(workout: workout, exercises: workoutExercises)
+            return WorkoutWithExercises(workout: workout, exercises: workoutExercises, opened: workout.id == openedWorkoutId)
         }
         workoutsSubject.onNext(workoutsWithExercises)
     }
     
     func workoutDeleted() {
+        updateData()
+    }
+    
+    func exerciseMoved() {
         updateData()
     }
     

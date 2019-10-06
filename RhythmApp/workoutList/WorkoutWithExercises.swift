@@ -12,4 +12,5 @@ import Foundation
 struct WorkoutWithExercises {
     var workout: Workout
     var exercises: [Exercise]
+    var opened: Bool
 }

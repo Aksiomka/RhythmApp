@@ -18,7 +18,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gvH-io-YRn" userLabel="Background View">
-                        <rect key="frame" x="8" y="8" width="304" height="27.5"/>
+                        <rect key="frame" x="0.0" y="8" width="320" height="27.5"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zqL-Pu-rhz">
@@ -76,15 +76,15 @@
                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="zqL-Pu-rhz" secondAttribute="bottom" constant="16" id="8ja-xe-dZF"/>
                     <constraint firstAttribute="trailing" secondItem="Rtf-bG-o8n" secondAttribute="trailing" constant="16" id="9Vd-1p-Epf"/>
                     <constraint firstItem="Rtf-bG-o8n" firstAttribute="top" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="Q5M-9O-Prj"/>
-                    <constraint firstItem="gvH-io-YRn" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="RUi-qM-OzK"/>
+                    <constraint firstItem="gvH-io-YRn" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="RUi-qM-OzK"/>
                     <constraint firstItem="zqL-Pu-rhz" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="TMH-7v-1gQ"/>
                     <constraint firstItem="zqL-Pu-rhz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="Ubi-p3-pdD"/>
-                    <constraint firstItem="gvH-io-YRn" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="Wy3-po-Pmt"/>
+                    <constraint firstItem="gvH-io-YRn" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Wy3-po-Pmt"/>
                     <constraint firstItem="Rtf-bG-o8n" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="XnC-er-VfV"/>
                     <constraint firstAttribute="trailing" secondItem="Gff-SS-ChD" secondAttribute="trailing" constant="16" id="gxI-zm-Knf"/>
                     <constraint firstItem="Rtf-bG-o8n" firstAttribute="leading" secondItem="zqL-Pu-rhz" secondAttribute="trailing" constant="8" id="msF-bt-fzh"/>
-                    <constraint firstAttribute="bottom" secondItem="gvH-io-YRn" secondAttribute="bottom" constant="8" id="oRB-5j-MBO"/>
-                    <constraint firstAttribute="trailing" secondItem="gvH-io-YRn" secondAttribute="trailing" constant="8" id="ub4-Dw-loh"/>
+                    <constraint firstAttribute="bottom" secondItem="gvH-io-YRn" secondAttribute="bottom" id="oRB-5j-MBO"/>
+                    <constraint firstAttribute="trailing" secondItem="gvH-io-YRn" secondAttribute="trailing" id="ub4-Dw-loh"/>
                     <constraint firstItem="zqL-Pu-rhz" firstAttribute="top" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="ywa-RV-kz6"/>
                 </constraints>
             </tableViewCellContentView>

@@ -24,8 +24,8 @@ class ExerciseCell: UICollectionViewCell {
     }
     
     func setData(exercise: Exercise) {
-        nameLabel.text = exercise.name
-        durationLabel.text = exercise.durationInSeconds.description
+        nameLabel.text = exercise.name + " " + exercise.position.description
+        durationLabel.text = formatSeconds(seconds: exercise.durationInSeconds)
     }
     
     override func dragStateDidChange(_ dragState: UICollectionViewCell.DragState) {
@@ -34,5 +34,12 @@ class ExerciseCell: UICollectionViewCell {
         } else {
             contentView.backgroundColor = UIColor.gray
         }
+    }
+    
+    private func formatSeconds(seconds: Int) -> String {
+        let min = seconds / 60
+        let sec = seconds % 60
+        let formattedSec = sec < 10 ? "0\(sec)" : "\(sec)"
+        return "\(min):\(formattedSec)"
     }
 }

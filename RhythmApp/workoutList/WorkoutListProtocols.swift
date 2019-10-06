@@ -28,11 +28,13 @@ protocol WorkoutListPresenterProtocol: class {
 protocol WorkoutListInteractorProtocol: class {
     func loadWorkouts()
     func deleteWorkout(workoutId: Int)
+    func moveExercise(workoutId: Int, oldPosition: Int, newPosition: Int)
 }
 
 protocol WorkoutListInteractorOutputProtocol: class {
     func processWorkouts(workouts: [Workout], exercises: [Exercise])
     func workoutDeleted()
+    func exerciseMoved()
 }
 
 protocol WorkoutListRouterProtocol: class {

@@ -19,7 +19,7 @@ class ExerciseDao {
     
     func getExercisesByWorkoutId(_ id: Int) -> Results<Exercise> {
         let realm = getRealm()
-        return realm.objects(Exercise.self).filter("wirkoutId == %d", id)
+        return realm.objects(Exercise.self).filter("workoutId == %d", id)
     }
     
     func getExerciseById(id: Int) -> Exercise? {
@@ -33,7 +33,7 @@ class ExerciseDao {
         try! realm.write {
             let maxId = realm.objects(Exercise.self).max(ofProperty: "id") as Int? ?? 0
             exercise.id = maxId + 1
-            let maxPosition = realm.objects(Exercise.self).max(ofProperty: "position") as Int? ?? 0
+            let maxPosition = realm.objects(Exercise.self).filter("workoutId == %d", exercise.workoutId).max(ofProperty: "position") as Int? ?? 0
             exercise.position = maxPosition + 1
             realm.add(exercise, update: false)
         }

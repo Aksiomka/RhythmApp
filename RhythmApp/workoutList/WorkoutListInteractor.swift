@@ -34,4 +34,12 @@ class WorkoutListInteractor: WorkoutListInteractorProtocol {
                 }, onError: { _ in })
             .disposed(by: disposeBag)
     }
+    
+    func moveExercise(workoutId: Int, oldPosition: Int, newPosition: Int) {
+        ExerciseModel.moveExercise(workoutId: workoutId, oldPosition: oldPosition, newPosition: newPosition)
+            .subscribe(onCompleted: { [weak self] in
+                self?.output?.exerciseMoved()
+                }, onError: { _ in })
+            .disposed(by: disposeBag)
+    }
 }

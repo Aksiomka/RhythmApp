@@ -31,7 +31,7 @@ class WorkoutListViewController: UIViewController, WorkoutListViewProtocol, UITa
         tableView.register(UINib(nibName: "ExercisesCell", bundle: nil), forCellReuseIdentifier: "exercises")
         tableView.register(UINib(nibName: "AddWorkoutCell", bundle: nil), forCellReuseIdentifier: "addWorkout")
         
-        tableView.delegate = self
+        tableView.rx.setDelegate(self)
     }
     
     func setWorkoutsDriver(workoutsDriver: Driver<[WorkoutWithExercises]>) {
@@ -79,8 +79,10 @@ class WorkoutListViewController: UIViewController, WorkoutListViewProtocol, UITa
                 var items: [SectionItem] = []
                 for workoutWithExercises in workoutsWithExercises {
                     items.append(SectionItem.WorkoutItem(workout: workoutWithExercises.workout))
-                    items.append(SectionItem.ExercisesItem(workout: workoutWithExercises.workout,
+                    if workoutWithExercises.opened {
+                        items.append(SectionItem.ExercisesItem(workout: workoutWithExercises.workout,
                                                            exercises: workoutWithExercises.exercises))
+                    }
                 }
                 items.append(SectionItem.AddWorkoutItem)
                 return [MultipleSectionModel(items: items)]

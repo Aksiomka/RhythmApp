@@ -20,8 +20,6 @@ class WorkoutCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        bgView.layer.cornerRadius = 10
-        bgView.layer.masksToBounds = true
         
         iconView.layer.cornerRadius = iconView.frame.width / 2
         iconView.layer.borderWidth = 2.0

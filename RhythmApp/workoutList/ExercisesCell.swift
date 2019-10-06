@@ -11,6 +11,7 @@ import UIKit
 class ExercisesCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDragDelegate, UICollectionViewDropDelegate {
 
     static let CELL_HEIGHT: CGFloat = 110
+    static let MIN_SPACING: CGFloat = 10
     
     @IBOutlet private weak var collectionView: UICollectionView!
     
@@ -63,11 +64,11 @@ class ExercisesCell: UITableViewCell, UICollectionViewDataSource, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 10
+        return ExercisesCell.MIN_SPACING
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 10
+        return ExercisesCell.MIN_SPACING
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -124,7 +125,7 @@ class ExercisesCell: UITableViewCell, UICollectionViewDataSource, UICollectionVi
     }
     
     static func getHeightForExercises(exercises: [Exercise]) -> CGFloat {
-        return CGFloat(((exercises.count + 1) / 3) + 1) * ExercisesCell.CELL_HEIGHT
+        return CGFloat(exercises.count / 3) * (ExercisesCell.CELL_HEIGHT + ExercisesCell.MIN_SPACING) + ExercisesCell.CELL_HEIGHT
     }
     
 }
