@@ -17,6 +17,7 @@ class Exercise: Object {
     @objc dynamic var name = ""
     @objc dynamic var position = 0
     @objc dynamic var durationInSeconds = 0
+    @objc dynamic var audio: AudioType = AudioType.one
     
     override static func primaryKey() -> String? {
         return "id"

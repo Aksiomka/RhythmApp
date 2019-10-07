@@ -24,6 +24,7 @@ protocol EditExercisePresenterProtocol: class {
     func onDurationSecondsChanged(seconds: Int)
     func onCancelButtonClick()
     func onSaveButtonClick()
+    func onChooseSoundButtonClick()
 }
 
 protocol EditExerciseInteractorProtocol: class {

@@ -19,6 +19,10 @@ class EditExerciseViewController: UIViewController, EditExerciseViewProtocol, UI
     @IBOutlet private weak var cancelButton: UIButton!
     @IBOutlet private weak var saveButton: UIButton!
     @IBOutlet private weak var bgView: UIView!
+    @IBOutlet weak var soundPickerContainer: UIView!
+    @IBOutlet weak var soundNameLabel: UILabel!
+    @IBOutlet weak var chooseSoundButton: UIButton!
+    
     
     private var minutesItems: [Int] = []
     private var secondsItems: [Int] = []
@@ -32,6 +36,10 @@ class EditExerciseViewController: UIViewController, EditExerciseViewProtocol, UI
         nameTextField.layer.cornerRadius = 10
         nameTextField.attributedPlaceholder = NSAttributedString(string: "Exercise name", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
         nameTextField.delegate = self
+        
+        soundPickerContainer.layer.borderColor = UIColor.white.cgColor
+        soundPickerContainer.layer.borderWidth = 1.0
+        soundPickerContainer.layer.cornerRadius = 10
         
         durationPicker.dataSource = self
         durationPicker.delegate = self
@@ -71,6 +79,10 @@ class EditExerciseViewController: UIViewController, EditExerciseViewProtocol, UI
     
     @IBAction func onSaveButtonClick(_ sender: UIButton) {
         presenter.onSaveButtonClick()
+    }
+    
+    @IBAction func onChooseSoundButtonClick(_ sender: UIButton) {
+        presenter.onChooseSoundButtonClick()
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {

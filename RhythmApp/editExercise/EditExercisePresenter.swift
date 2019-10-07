@@ -67,6 +67,10 @@ class EditExercisePresenter: EditExercisePresenterProtocol, EditExerciseInteract
         }
     }
     
+    func onChooseSoundButtonClick() {
+        
+    }
+    
     func processExercise(exercise: Exercise?, workout: Workout?) {
         if let exercise = exercise {
             name = exercise.name

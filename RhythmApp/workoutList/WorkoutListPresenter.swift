@@ -22,6 +22,7 @@ class WorkoutListPresenter: WorkoutListPresenterProtocol, WorkoutListInteractorO
     private let disposeBag = DisposeBag()
     
     private var openedWorkoutId: Int? = nil
+    private var playingExerciseId: Int? = nil
     
     func onViewDidLoad() {
         view?.setWorkoutsDriver(workoutsDriver: workoutsSubject.asDriver(onErrorJustReturn: []))
@@ -55,6 +56,24 @@ class WorkoutListPresenter: WorkoutListPresenterProtocol, WorkoutListInteractorO
     
     func onExerciseMoved(workoutId: Int, oldPosition: Int, newPosition: Int) {
         interactor.moveExercise(workoutId: workoutId, oldPosition: oldPosition, newPosition: newPosition)
+    }
+    
+    func onPlayButtonClick(exerciseId: Int, audioType: AudioType) {
+        if let oldPlayingExerciseId = playingExerciseId {
+            if exerciseId == oldPlayingExerciseId {
+                //if isPlaying {
+                    view?.pauseAudio()
+                //} else {
+                //    view?.resumeAudio()
+                //}
+            } else {
+                playingExerciseId = exerciseId
+                view?.playAudio(audioType: audioType)
+            }
+        } else {
+            playingExerciseId = exerciseId
+            view?.playAudio(audioType: audioType)
+        }
     }
     
     func processWorkouts(workouts: [Workout], exercises: [Exercise]) {

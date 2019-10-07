@@ -10,6 +10,7 @@ import UIKit
 import RxCocoa
 import RxSwift
 import RxDataSources
+import AVFoundation
 
 
 class WorkoutListViewController: UIViewController, WorkoutListViewProtocol, UITableViewDelegate {
@@ -20,6 +21,7 @@ class WorkoutListViewController: UIViewController, WorkoutListViewProtocol, UITa
     
     private let disposeBag = DisposeBag()
     private var dataSource: RxTableViewSectionedReloadDataSource<MultipleSectionModel>!
+    private var player: AVAudioPlayer? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +54,9 @@ class WorkoutListViewController: UIViewController, WorkoutListViewProtocol, UITa
                 }
                 cell.exerciseMovedCallback = { [unowned self] oldPosition, newPosition in
                     self.presenter.onExerciseMoved(workoutId: workout.id, oldPosition: oldPosition, newPosition: newPosition)
+                }
+                cell.playButtonClickCallback = { [unowned self] exerciseId, audioType in
+                    self.presenter.onPlayButtonClick(exerciseId: exerciseId, audioType: audioType)
                 }
                 return cell
             case .AddWorkoutItem:
@@ -137,6 +142,31 @@ class WorkoutListViewController: UIViewController, WorkoutListViewProtocol, UITa
         case .AddWorkoutItem:
             return UITableView.automaticDimension
         }
+    }
+    
+    func playAudio(audioType: AudioType) {
+        let fileName = AudioTypeUtil.getFileNameForAudioType(audioType)
+        guard let url = Bundle.main.url(forResource: fileName, withExtension: "mp3") else { return }
+
+        do {
+            player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
+            player?.play()
+        } catch let error {
+            NSLog(error.localizedDescription)
+        }
+    }
+    
+    func pauseAudio() {
+        player?.pause()
+    }
+    
+    func resumeAudio() {
+        player?.play()
+    }
+    
+    func stopAudio() {
+        player?.stop()
+        player = nil
     }
     
 }

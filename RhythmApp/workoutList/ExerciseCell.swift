@@ -15,6 +15,7 @@ class ExerciseCell: UICollectionViewCell {
     @IBOutlet private weak var button: UIButton!
     @IBOutlet private weak var nameLabel: UILabel!
     
+    var playButtonClickCallback: () -> Void = {}
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -34,6 +35,10 @@ class ExerciseCell: UICollectionViewCell {
         } else {
             contentView.backgroundColor = UIColor.gray
         }
+    }
+    
+    @IBAction func onButtonClick(_ sender: UIButton) {
+        playButtonClickCallback()
     }
     
     private func formatSeconds(seconds: Int) -> String {

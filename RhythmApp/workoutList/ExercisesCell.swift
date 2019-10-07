@@ -19,6 +19,7 @@ class ExercisesCell: UITableViewCell, UICollectionViewDataSource, UICollectionVi
     
     var addExerciseCellClickCallback: () -> Void = {}
     var exerciseMovedCallback: (_ oldPosition: Int, _ newPosition: Int) -> Void = { _, _ in }
+    var playButtonClickCallback: (_ exerciseId: Int, _ audioType: AudioType) -> Void = { _, _ in }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -53,8 +54,12 @@ class ExercisesCell: UITableViewCell, UICollectionViewDataSource, UICollectionVi
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AddExerciseCell", for: indexPath) as! AddExerciseCell
             return cell
         } else {
+            let exercise = exercises[indexPath.row]
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ExerciseCell", for: indexPath) as! ExerciseCell
-            cell.setData(exercise: exercises[indexPath.row])
+            cell.setData(exercise: exercise)
+            cell.playButtonClickCallback = { [unowned self] in
+                self.playButtonClickCallback(exercise.id, exercise.audio)
+            }
             return cell
         }
     }
