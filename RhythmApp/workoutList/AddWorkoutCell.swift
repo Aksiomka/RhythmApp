@@ -17,8 +17,6 @@ class AddWorkoutCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         bgView.backgroundColor = UIColor.init(named: "Gray")!
-        bgView.layer.cornerRadius = 10
-        bgView.layer.masksToBounds = true
         
         selectionStyle = .none
     }

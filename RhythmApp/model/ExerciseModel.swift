@@ -48,26 +48,7 @@ class ExerciseModel {
     
     static func moveExercise(workoutId: Int, oldPosition: Int, newPosition: Int) -> Completable {
         if oldPosition != newPosition {
-            let exercises = DB.sharedInstance.exerciseDao.getExercisesByWorkoutId(workoutId)
-            
-            if oldPosition < newPosition {
-                let changedExercises = exercises.filter { $0.position > oldPosition && $0.position <= newPosition}
-                for exercise in changedExercises {
-                    exercise.position = exercise.position - 1
-                    DB.sharedInstance.exerciseDao.updateExercise(exercise: exercise)
-                }
-            } else {
-                let changedExercises = exercises.filter { $0.position >= newPosition && $0.position < newPosition}
-                for exercise in changedExercises {
-                    exercise.position = exercise.position + 1
-                    DB.sharedInstance.exerciseDao.updateExercise(exercise: exercise)
-                }
-            }
-            
-            if let movedExercise = exercises.first(where: { $0.position == oldPosition }) {
-                movedExercise.position = newPosition
-                DB.sharedInstance.exerciseDao.updateExercise(exercise: movedExercise)
-            }
+            DB.sharedInstance.exerciseDao.moveExercise(workoutId: workoutId, oldPosition: oldPosition, newPosition: newPosition)
         }
         return Completable.empty()
     }

@@ -32,39 +32,43 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adding exercise" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kFQ-1F-5ve">
-                    <rect key="frame" x="16" y="60" width="382" height="21"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="40"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.14999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="N9C-rp-CzK"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ruI-5w-Bi5">
-                    <rect key="frame" x="16" y="113" width="382" height="34"/>
+                    <rect key="frame" x="16" y="116" width="382" height="34"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exercide duration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lon-4z-XoK">
-                    <rect key="frame" x="16" y="167" width="382" height="16"/>
+                    <rect key="frame" x="16" y="170" width="382" height="16"/>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ERN-2T-kFc" userLabel="Picker View Duration">
-                    <rect key="frame" x="16" y="199" width="120" height="84"/>
+                    <rect key="frame" x="16" y="202" width="120" height="84"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="120" id="6k1-me-ARC"/>
                         <constraint firstAttribute="height" constant="84" id="BAO-zo-J7f"/>
                     </constraints>
                 </pickerView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sound accompaniment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rJc-eE-Xh1">
-                    <rect key="frame" x="16" y="307" width="382" height="19.5"/>
+                    <rect key="frame" x="16" y="310" width="382" height="19.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sD9-5f-JXe">
-                    <rect key="frame" x="16" y="342.5" width="382" height="36"/>
+                    <rect key="frame" x="16" y="345.5" width="382" height="36"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="example.mp3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wqL-IV-TJZ">
                             <rect key="frame" x="8" y="9" width="344" height="18"/>
@@ -144,7 +148,7 @@
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="RaK-dK-SJN" secondAttribute="bottom" id="Rxi-GI-prm"/>
                 <constraint firstItem="LBb-hr-sXD" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="VoG-gI-Zwm"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="RaK-dK-SJN" secondAttribute="trailing" id="XtF-WD-2R7"/>
-                <constraint firstItem="kFQ-1F-5ve" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="16" id="YS0-Yl-OfB"/>
+                <constraint firstItem="kFQ-1F-5ve" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="YS0-Yl-OfB"/>
                 <constraint firstItem="sD9-5f-JXe" firstAttribute="top" secondItem="rJc-eE-Xh1" secondAttribute="bottom" constant="16" id="ZhZ-T4-pX7"/>
                 <constraint firstItem="ruI-5w-Bi5" firstAttribute="top" secondItem="kFQ-1F-5ve" secondAttribute="bottom" constant="32" id="aQe-gO-Vp1"/>
                 <constraint firstItem="ERN-2T-kFc" firstAttribute="top" secondItem="Lon-4z-XoK" secondAttribute="bottom" constant="16" id="arA-K1-6Ck"/>
@@ -155,9 +159,9 @@
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="rJc-eE-Xh1" secondAttribute="trailing" constant="16" id="gG5-v0-mRa"/>
                 <constraint firstItem="rJc-eE-Xh1" firstAttribute="top" secondItem="ERN-2T-kFc" secondAttribute="bottom" constant="24" id="lFL-PR-xKu"/>
                 <constraint firstItem="ERN-2T-kFc" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="ru7-Qb-uHg"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="kFQ-1F-5ve" secondAttribute="trailing" constant="16" id="sx8-6X-grW"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="kFQ-1F-5ve" secondAttribute="trailing" id="sx8-6X-grW"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ruI-5w-Bi5" secondAttribute="trailing" constant="16" id="thI-x0-P6T"/>
-                <constraint firstItem="kFQ-1F-5ve" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="vDy-Zm-Jxq"/>
+                <constraint firstItem="kFQ-1F-5ve" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="vDy-Zm-Jxq"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="139" y="101"/>

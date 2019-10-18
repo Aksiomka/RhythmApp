@@ -23,6 +23,8 @@ class WorkoutListViewController: UIViewController, WorkoutListViewProtocol, UITa
     private var dataSource: RxTableViewSectionedReloadDataSource<MultipleSectionModel>!
     private var player: AVAudioPlayer? = nil
     
+    private var workoutIdWithOpenedExercises: Int? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.onViewDidLoad()
@@ -84,10 +86,8 @@ class WorkoutListViewController: UIViewController, WorkoutListViewProtocol, UITa
                 var items: [SectionItem] = []
                 for workoutWithExercises in workoutsWithExercises {
                     items.append(SectionItem.WorkoutItem(workout: workoutWithExercises.workout))
-                    if workoutWithExercises.opened {
-                        items.append(SectionItem.ExercisesItem(workout: workoutWithExercises.workout,
+                    items.append(SectionItem.ExercisesItem(workout: workoutWithExercises.workout,
                                                            exercises: workoutWithExercises.exercises))
-                    }
                 }
                 items.append(SectionItem.AddWorkoutItem)
                 return [MultipleSectionModel(items: items)]
@@ -133,12 +133,24 @@ class WorkoutListViewController: UIViewController, WorkoutListViewProtocol, UITa
             .disposed(by: disposeBag)
     }
     
+    func setExercisesCellVisible(visible: Bool, for workoutId: Int) {
+        if visible && workoutIdWithOpenedExercises != workoutId {
+            workoutIdWithOpenedExercises = workoutId
+            tableView.beginUpdates()
+            tableView.endUpdates()
+        } else if !visible && workoutIdWithOpenedExercises != nil {
+            workoutIdWithOpenedExercises = nil
+            tableView.beginUpdates()
+            tableView.endUpdates()
+        }
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch dataSource[indexPath] {
         case .WorkoutItem(_):
             return UITableView.automaticDimension
-        case let .ExercisesItem(_, exercises):
-            return ExercisesCell.getHeightForExercises(exercises: exercises)
+        case let .ExercisesItem(workout, exercises):
+            return workoutIdWithOpenedExercises == workout.id ? ExercisesCell.getHeightForExercises(exercises: exercises) : 0
         case .AddWorkoutItem:
             return UITableView.automaticDimension
         }

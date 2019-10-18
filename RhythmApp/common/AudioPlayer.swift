@@ -10,7 +10,7 @@ import Foundation
 import AVFoundation
 
 
-class AudioPlayer {
+class AudioPlayer: NSObject, AVAudioPlayerDelegate {
     
     private var playingExerciseId: Int?
     private var playingAudioType: AudioType?
@@ -50,6 +50,10 @@ class AudioPlayer {
     func stopAudio() {
         player?.stop()
         player = nil
+    }
+    
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        
     }
     
 }

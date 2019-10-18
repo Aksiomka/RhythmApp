@@ -13,6 +13,7 @@ import RxSwift
 
 protocol WorkoutListViewProtocol: class {
     func setWorkoutsDriver(workoutsDriver: Driver<[WorkoutWithExercises]>)
+    func setExercisesCellVisible(visible: Bool, for workoutId: Int)
 }
 
 protocol WorkoutListPresenterProtocol: class {

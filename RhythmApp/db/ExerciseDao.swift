@@ -33,7 +33,7 @@ class ExerciseDao {
         try! realm.write {
             let maxId = realm.objects(Exercise.self).max(ofProperty: "id") as Int? ?? 0
             exercise.id = maxId + 1
-            let maxPosition = realm.objects(Exercise.self).filter("workoutId == %d", exercise.workoutId).max(ofProperty: "position") as Int? ?? 0
+            let maxPosition = realm.objects(Exercise.self).filter("workoutId == %d", exercise.workoutId).max(ofProperty: "position") as Int? ?? -1
             exercise.position = maxPosition + 1
             realm.add(exercise, update: .error)
         }
@@ -44,6 +44,40 @@ class ExerciseDao {
         try! realm.write {
             realm.add(exercise, update: .modified)
         }
+    }
+    
+    func moveExercise(workoutId: Int, oldPosition: Int, newPosition: Int) {
+        let realm = getRealm()
+        let exercises = realm.objects(Exercise.self).filter("workoutId == %d", workoutId).toArray()
+        
+        realm.beginWrite()
+        
+        var exercisesToUpdate: [Exercise] = []
+        
+        if oldPosition < newPosition {
+            let changedExercises = exercises.filter { $0.position > oldPosition && $0.position <= newPosition}
+            for exercise in changedExercises {
+                exercise.position = exercise.position - 1
+                exercisesToUpdate.append(exercise)
+            }
+        } else {
+            let changedExercises = exercises.filter { $0.position >= newPosition && $0.position < oldPosition}
+            for exercise in changedExercises {
+                exercise.position = exercise.position + 1
+                exercisesToUpdate.append(exercise)
+            }
+        }
+        
+        if let movedExercise = exercises.first(where: { $0.position == oldPosition }) {
+            movedExercise.position = newPosition
+            exercisesToUpdate.append(movedExercise)
+        }
+        
+        for exercise in exercises {
+            realm.add(exercise, update: .modified)
+        }
+        
+        try! realm.commitWrite()
     }
     
     func deleteExercise(id: Int) {

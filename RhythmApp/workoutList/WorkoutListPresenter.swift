@@ -38,12 +38,13 @@ class WorkoutListPresenter: WorkoutListPresenterProtocol, WorkoutListInteractorO
     }
     
     func onWorkoutSelected(workoutId: Int) {
-        if openedWorkoutId == workoutId {
+        let visible = openedWorkoutId != workoutId
+        if !visible {
             openedWorkoutId = nil
         } else {
             openedWorkoutId = workoutId
         }
-        updateData()
+        view?.setExercisesCellVisible(visible: visible, for: workoutId)
     }
     
     func onWorkoutDeleteButtonClick(workoutId: Int) {
@@ -69,7 +70,7 @@ class WorkoutListPresenter: WorkoutListPresenterProtocol, WorkoutListInteractorO
     func processWorkouts(workouts: [Workout], exercises: [Exercise]) {
         let workoutsWithExercises: [WorkoutWithExercises] = workouts.map { workout in
             let workoutExercises = exercises.filter { $0.workoutId == workout.id }
-            return WorkoutWithExercises(workout: workout, exercises: workoutExercises, opened: workout.id == openedWorkoutId)
+            return WorkoutWithExercises(workout: workout, exercises: workoutExercises)
         }
         workoutsSubject.onNext(workoutsWithExercises)
     }
