@@ -16,5 +16,5 @@ import Foundation
     case four
     case five
     
-    static let allValues: [AudioType] = [.one, .two, .three, .four, .four]
+    static let allValues: [AudioType] = [.one, .two, .three, .four, .five]
 }

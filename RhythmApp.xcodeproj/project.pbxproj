@@ -52,6 +52,15 @@
 		DA490374230871D6008E50AB /* UpgradeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA490373230871D6008E50AB /* UpgradeModel.swift */; };
 		DA4903782309E909008E50AB /* WorkoutColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4903772309E909008E50AB /* WorkoutColor.swift */; };
 		DA49037A2309EC3D008E50AB /* ColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4903792309EC3D008E50AB /* ColorPicker.swift */; };
+		DA51361E2359E0AE00BC8FD0 /* ChooseAudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA51361D2359E0AE00BC8FD0 /* ChooseAudioViewController.swift */; };
+		DA5136202359E0CE00BC8FD0 /* ChooseAudioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA51361F2359E0CE00BC8FD0 /* ChooseAudioViewController.xib */; };
+		DA5136222359E78700BC8FD0 /* ChooseAudioPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5136212359E78700BC8FD0 /* ChooseAudioPresenter.swift */; };
+		DA5136242359E7BA00BC8FD0 /* ChooseAudioRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5136232359E7BA00BC8FD0 /* ChooseAudioRouter.swift */; };
+		DA5136262359E81500BC8FD0 /* ChooseAudioProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5136252359E81500BC8FD0 /* ChooseAudioProtocols.swift */; };
+		DA5136292359EA9300BC8FD0 /* AudioCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5136272359EA9300BC8FD0 /* AudioCell.swift */; };
+		DA51362A2359EA9300BC8FD0 /* AudioCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA5136282359EA9300BC8FD0 /* AudioCell.xib */; };
+		DA51362C2359EE2D00BC8FD0 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA51362B2359EE2D00BC8FD0 /* AudioPlayer.swift */; };
+		DA51362E235A36DF00BC8FD0 /* AudioItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA51362D235A36DF00BC8FD0 /* AudioItem.swift */; };
 		DA6704AD2338DFC300F1CB0B /* EditExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6704AC2338DFC300F1CB0B /* EditExerciseViewController.swift */; };
 		DA6704AF2338E4C900F1CB0B /* EditExercisePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6704AE2338E4C900F1CB0B /* EditExercisePresenter.swift */; };
 		DA6704B12338E4DD00F1CB0B /* EditExerciseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6704B02338E4DD00F1CB0B /* EditExerciseInteractor.swift */; };
@@ -134,6 +143,15 @@
 		DA490373230871D6008E50AB /* UpgradeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpgradeModel.swift; sourceTree = "<group>"; };
 		DA4903772309E909008E50AB /* WorkoutColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutColor.swift; sourceTree = "<group>"; };
 		DA4903792309EC3D008E50AB /* ColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPicker.swift; sourceTree = "<group>"; };
+		DA51361D2359E0AE00BC8FD0 /* ChooseAudioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseAudioViewController.swift; sourceTree = "<group>"; };
+		DA51361F2359E0CE00BC8FD0 /* ChooseAudioViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseAudioViewController.xib; sourceTree = "<group>"; };
+		DA5136212359E78700BC8FD0 /* ChooseAudioPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseAudioPresenter.swift; sourceTree = "<group>"; };
+		DA5136232359E7BA00BC8FD0 /* ChooseAudioRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseAudioRouter.swift; sourceTree = "<group>"; };
+		DA5136252359E81500BC8FD0 /* ChooseAudioProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseAudioProtocols.swift; sourceTree = "<group>"; };
+		DA5136272359EA9300BC8FD0 /* AudioCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioCell.swift; sourceTree = "<group>"; };
+		DA5136282359EA9300BC8FD0 /* AudioCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AudioCell.xib; sourceTree = "<group>"; };
+		DA51362B2359EE2D00BC8FD0 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
+		DA51362D235A36DF00BC8FD0 /* AudioItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioItem.swift; sourceTree = "<group>"; };
 		DA6704AC2338DFC300F1CB0B /* EditExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditExerciseViewController.swift; sourceTree = "<group>"; };
 		DA6704AE2338E4C900F1CB0B /* EditExercisePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditExercisePresenter.swift; sourceTree = "<group>"; };
 		DA6704B02338E4DD00F1CB0B /* EditExerciseInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditExerciseInteractor.swift; sourceTree = "<group>"; };
@@ -272,6 +290,7 @@
 				DA8D399D234B92B400A2A53B /* AudioTypeUtil.swift */,
 				DA024A69231C39FE004CDA04 /* TextViewWithPlaceholder.swift */,
 				DA024A6D231C56F1004CDA04 /* InfiniteHorizontalCollectionView.swift */,
+				DA51362B2359EE2D00BC8FD0 /* AudioPlayer.swift */,
 			);
 			path = common;
 			sourceTree = "<group>";
@@ -348,6 +367,7 @@
 				DA024A2423146A4D004CDA04 /* editWorkout */,
 				DA024A2723146ABC004CDA04 /* workoutList */,
 				DA268E5A2338DB2600811567 /* editExercise */,
+				DA51361B2359E06800BC8FD0 /* chooseAudio */,
 				DA4903302307FEAA008E50AB /* AppDelegate.swift */,
 				DA4903372307FEAB008E50AB /* Assets.xcassets */,
 				DA024A1923145CF7004CDA04 /* Colors.xcassets */,
@@ -387,6 +407,29 @@
 				DA490373230871D6008E50AB /* UpgradeModel.swift */,
 			);
 			path = model;
+			sourceTree = "<group>";
+		};
+		DA51361B2359E06800BC8FD0 /* chooseAudio */ = {
+			isa = PBXGroup;
+			children = (
+				DA51361C2359E08D00BC8FD0 /* xib */,
+				DA51361D2359E0AE00BC8FD0 /* ChooseAudioViewController.swift */,
+				DA5136212359E78700BC8FD0 /* ChooseAudioPresenter.swift */,
+				DA5136232359E7BA00BC8FD0 /* ChooseAudioRouter.swift */,
+				DA5136252359E81500BC8FD0 /* ChooseAudioProtocols.swift */,
+				DA5136272359EA9300BC8FD0 /* AudioCell.swift */,
+				DA51362D235A36DF00BC8FD0 /* AudioItem.swift */,
+			);
+			path = chooseAudio;
+			sourceTree = "<group>";
+		};
+		DA51361C2359E08D00BC8FD0 /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				DA51361F2359E0CE00BC8FD0 /* ChooseAudioViewController.xib */,
+				DA5136282359EA9300BC8FD0 /* AudioCell.xib */,
+			);
+			path = xib;
 			sourceTree = "<group>";
 		};
 		DA6704B62339174E00F1CB0B /* durationPicker */ = {
@@ -495,6 +538,7 @@
 				DA024A2B23146BA3004CDA04 /* EditWorkoutViewController.xib in Resources */,
 				DA7DB606233FA9610082D499 /* ExerciseCell.xib in Resources */,
 				DA8D3992234B8EEB00A2A53B /* 1.mp3 in Resources */,
+				DA5136202359E0CE00BC8FD0 /* ChooseAudioViewController.xib in Resources */,
 				DA49035C230800A7008E50AB /* WorkoutListViewController.xib in Resources */,
 				DA268E5D2338DB6700811567 /* EditExerciseViewController.xib in Resources */,
 				DA7DB60C2340D1BF0082D499 /* AddExerciseCell.xib in Resources */,
@@ -503,6 +547,7 @@
 				DA49033B2307FEAB008E50AB /* LaunchScreen.storyboard in Resources */,
 				DA4903382307FEAB008E50AB /* Assets.xcassets in Resources */,
 				DA024A1A23145CF7004CDA04 /* Colors.xcassets in Resources */,
+				DA51362A2359EA9300BC8FD0 /* AudioCell.xib in Resources */,
 				DA49036C23081D29008E50AB /* WorkoutCell.xib in Resources */,
 				DA8D3999234B8EFA00A2A53B /* 3.mp3 in Resources */,
 				DA024A62231B129C004CDA04 /* IconPickerCell.xib in Resources */,
@@ -637,22 +682,29 @@
 				DA49037223087034008E50AB /* Settings.swift in Sources */,
 				DA4903642308103E008E50AB /* DB.swift in Sources */,
 				DA024A61231B129C004CDA04 /* IconPickerCell.swift in Sources */,
+				DA51362C2359EE2D00BC8FD0 /* AudioPlayer.swift in Sources */,
 				DA024A2023145F88004CDA04 /* EditWorkoutRouter.swift in Sources */,
 				DA49035F23080DBB008E50AB /* Workout.swift in Sources */,
+				DA5136262359E81500BC8FD0 /* ChooseAudioProtocols.swift in Sources */,
 				DA49035A2307FFC2008E50AB /* WorkoutListRouter.swift in Sources */,
 				DA024A6A231C39FE004CDA04 /* TextViewWithPlaceholder.swift in Sources */,
 				DA6704B52338E4FF00F1CB0B /* EditExerciseProtocols.swift in Sources */,
+				DA5136242359E7BA00BC8FD0 /* ChooseAudioRouter.swift in Sources */,
+				DA51361E2359E0AE00BC8FD0 /* ChooseAudioViewController.swift in Sources */,
 				DA268E592338D6F200811567 /* ExerciseModel.swift in Sources */,
 				DA7DB605233FA9610082D499 /* ExerciseCell.swift in Sources */,
 				DA490367230815A0008E50AB /* WorkoutModel.swift in Sources */,
+				DA51362E235A36DF00BC8FD0 /* AudioItem.swift in Sources */,
 				DA49036F230839A4008E50AB /* AddWorkoutCell.swift in Sources */,
 				DA49036223080EE4008E50AB /* WorkoutDao.swift in Sources */,
 				DA024A64231B1A02004CDA04 /* WorkoutIcon.swift in Sources */,
 				DA4903312307FEAA008E50AB /* AppDelegate.swift in Sources */,
 				DA4903582307FFAB008E50AB /* WorkoutListInteractor.swift in Sources */,
 				DA024A1823145907004CDA04 /* EditWorkoutViewController.swift in Sources */,
+				DA5136292359EA9300BC8FD0 /* AudioCell.swift in Sources */,
 				DA6704B32338E4EB00F1CB0B /* EditExerciseRouter.swift in Sources */,
 				DA4903522307FF76008E50AB /* WorkoutListViewController.swift in Sources */,
+				DA5136222359E78700BC8FD0 /* ChooseAudioPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

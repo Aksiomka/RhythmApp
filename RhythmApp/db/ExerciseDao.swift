@@ -35,14 +35,14 @@ class ExerciseDao {
             exercise.id = maxId + 1
             let maxPosition = realm.objects(Exercise.self).filter("workoutId == %d", exercise.workoutId).max(ofProperty: "position") as Int? ?? 0
             exercise.position = maxPosition + 1
-            realm.add(exercise, update: false)
+            realm.add(exercise, update: .error)
         }
     }
     
     func updateExercise(exercise: Exercise) {
         let realm = getRealm()
         try! realm.write {
-            realm.add(exercise, update: true)
+            realm.add(exercise, update: .modified)
         }
     }
     

@@ -59,10 +59,11 @@ class EditExerciseViewController: UIViewController, EditExerciseViewProtocol, UI
         durationPicker.reloadAllComponents()
     }
     
-    func setData(name: String) {
+    func setData(name: String, audioType: AudioType) {
         if !nameTextField.isFirstResponder {
             nameTextField.text = name
         }
+        soundNameLabel.text = AudioTypeUtil.getFileNameForAudioType(audioType)
     }
     
     func setWorkoutColor(_ workoutColor: WorkoutColor) {

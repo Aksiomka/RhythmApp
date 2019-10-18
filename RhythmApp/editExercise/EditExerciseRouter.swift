@@ -32,6 +32,11 @@ class EditExerciseRouter: EditExerciseRouterProtocol {
         return viewController
     }
     
+    func openChooseAudio(selectedAudioType: AudioType, audioChosenCallback: @escaping (AudioType) -> Void) {
+        let chooseAudioViewController = ChooseAudioRouter.assembleModule(selectedAudioType: selectedAudioType, audioChosenCallback: audioChosenCallback)
+        viewController?.navigationController?.pushViewController(chooseAudioViewController, animated: true)
+    }
+    
     func hide() {
         viewController?.navigationController?.popViewController(animated: true)
     }

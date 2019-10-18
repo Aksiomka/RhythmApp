@@ -21,6 +21,7 @@ class EditExercisePresenter: EditExercisePresenterProtocol, EditExerciseInteract
     private var name: String = ""
     private var durationMinutes: Int = 0
     private var durationSeconds: Int = 0
+    private var audioType: AudioType = .one
     
     init(exerciseId: Int?, workoutId: Int) {
         self.exerciseId = exerciseId
@@ -57,18 +58,23 @@ class EditExercisePresenter: EditExercisePresenterProtocol, EditExerciseInteract
             exercise.name = name
             exercise.durationInSeconds = durationMinutes * 60 + durationSeconds
             exercise.workoutId = workoutId
+            exercise.audio = audioType
             interactor.updateExercise(exercise)
         } else {
             let exercise = Exercise()
             exercise.name = name
             exercise.durationInSeconds = durationMinutes * 60 + durationSeconds
             exercise.workoutId = workoutId
+            exercise.audio = audioType
             interactor.createExercise(exercise)
         }
     }
     
     func onChooseSoundButtonClick() {
-        
+        router.openChooseAudio(selectedAudioType: audioType, audioChosenCallback: { [weak self] chosenAudioType in
+            self?.audioType = chosenAudioType
+            self?.updateData()
+        })
     }
     
     func processExercise(exercise: Exercise?, workout: Workout?) {
@@ -94,7 +100,7 @@ class EditExercisePresenter: EditExercisePresenterProtocol, EditExerciseInteract
     }
     
     private func updateData() {
-        view?.setData(name: name)
+        view?.setData(name: name, audioType: audioType)
         updateSaveButtonEnabledState()
     }
     

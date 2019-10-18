@@ -144,31 +144,6 @@ class WorkoutListViewController: UIViewController, WorkoutListViewProtocol, UITa
         }
     }
     
-    func playAudio(audioType: AudioType) {
-        let fileName = AudioTypeUtil.getFileNameForAudioType(audioType)
-        guard let url = Bundle.main.url(forResource: fileName, withExtension: "mp3") else { return }
-
-        do {
-            player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
-            player?.play()
-        } catch let error {
-            NSLog(error.localizedDescription)
-        }
-    }
-    
-    func pauseAudio() {
-        player?.pause()
-    }
-    
-    func resumeAudio() {
-        player?.play()
-    }
-    
-    func stopAudio() {
-        player?.stop()
-        player = nil
-    }
-    
 }
 
 enum SectionItem {

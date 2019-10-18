@@ -12,7 +12,7 @@ import Foundation
 protocol EditExerciseViewProtocol: class {
     func setTitle(title: String)
     func setPickersData(minutesData: [Int], secondsData: [Int])
-    func setData(name: String)
+    func setData(name: String, audioType: AudioType)
     func setWorkoutColor(_ workoutColor: WorkoutColor)
     func setSaveButtonEnabled(_ enabled: Bool)
 }
@@ -41,5 +41,6 @@ protocol EditExerciseInteractorOutputProtocol: class {
 
 protocol EditExerciseRouterProtocol: class {
     func hide()
+    func openChooseAudio(selectedAudioType: AudioType, audioChosenCallback: @escaping (AudioType) -> Void)
 }
 

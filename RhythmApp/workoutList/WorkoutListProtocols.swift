@@ -13,9 +13,6 @@ import RxSwift
 
 protocol WorkoutListViewProtocol: class {
     func setWorkoutsDriver(workoutsDriver: Driver<[WorkoutWithExercises]>)
-    func playAudio(audioType: AudioType)
-    func pauseAudio()
-    func resumeAudio()
 }
 
 protocol WorkoutListPresenterProtocol: class {

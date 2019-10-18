@@ -59,21 +59,11 @@ class WorkoutListPresenter: WorkoutListPresenterProtocol, WorkoutListInteractorO
     }
     
     func onPlayButtonClick(exerciseId: Int, audioType: AudioType) {
-        if let oldPlayingExerciseId = playingExerciseId {
-            if exerciseId == oldPlayingExerciseId {
-                //if isPlaying {
-                    view?.pauseAudio()
-                //} else {
-                //    view?.resumeAudio()
-                //}
-            } else {
-                playingExerciseId = exerciseId
-                view?.playAudio(audioType: audioType)
-            }
-        } else {
-            playingExerciseId = exerciseId
-            view?.playAudio(audioType: audioType)
-        }
+        AudioPlayer.sharedInstance.playAudioFromExercise(exerciseId: exerciseId, audioType: audioType)
+    }
+    
+    func onPauseButtonClick() {
+        AudioPlayer.sharedInstance.pauseAudio()
     }
     
     func processWorkouts(workouts: [Workout], exercises: [Exercise]) {
