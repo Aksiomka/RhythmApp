@@ -21,7 +21,6 @@ class WorkoutListViewController: UIViewController, WorkoutListViewProtocol, UITa
     
     private let disposeBag = DisposeBag()
     private var dataSource: RxTableViewSectionedReloadDataSource<MultipleSectionModel>!
-    private var player: AVAudioPlayer? = nil
     
     private var workoutIdWithOpenedExercises: Int? = nil
     
@@ -36,6 +35,11 @@ class WorkoutListViewController: UIViewController, WorkoutListViewProtocol, UITa
         tableView.register(UINib(nibName: "AddWorkoutCell", bundle: nil), forCellReuseIdentifier: "addWorkout")
         
         tableView.rx.setDelegate(self)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        presenter.onViewWillAppear()
     }
     
     func setWorkoutsDriver(workoutsDriver: Driver<[WorkoutWithExercises]>) {
@@ -56,9 +60,6 @@ class WorkoutListViewController: UIViewController, WorkoutListViewProtocol, UITa
                 }
                 cell.exerciseMovedCallback = { [unowned self] oldPosition, newPosition in
                     self.presenter.onExerciseMoved(workoutId: workout.id, oldPosition: oldPosition, newPosition: newPosition)
-                }
-                cell.playButtonClickCallback = { [unowned self] exerciseId, audioType in
-                    self.presenter.onPlayButtonClick(exerciseId: exerciseId, audioType: audioType)
                 }
                 return cell
             case .AddWorkoutItem:

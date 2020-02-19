@@ -38,6 +38,9 @@
                         </constraints>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <state key="normal" image="play.fill" catalog="system"/>
+                        <connections>
+                            <action selector="onPlayButtonClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="LZz-tx-6C8"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>

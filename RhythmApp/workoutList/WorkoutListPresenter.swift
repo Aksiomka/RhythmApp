@@ -26,6 +26,9 @@ class WorkoutListPresenter: WorkoutListPresenterProtocol, WorkoutListInteractorO
     
     func onViewDidLoad() {
         view?.setWorkoutsDriver(workoutsDriver: workoutsSubject.asDriver(onErrorJustReturn: []))
+    }
+    
+    func onViewWillAppear() {
         updateData()
     }
     
@@ -59,17 +62,9 @@ class WorkoutListPresenter: WorkoutListPresenterProtocol, WorkoutListInteractorO
         interactor.moveExercise(workoutId: workoutId, oldPosition: oldPosition, newPosition: newPosition)
     }
     
-    func onPlayButtonClick(exerciseId: Int, audioType: AudioType) {
-        AudioPlayer.sharedInstance.playAudioFromExercise(exerciseId: exerciseId, audioType: audioType)
-    }
-    
-    func onPauseButtonClick() {
-        AudioPlayer.sharedInstance.pauseAudio()
-    }
-    
     func processWorkouts(workouts: [Workout], exercises: [Exercise]) {
         let workoutsWithExercises: [WorkoutWithExercises] = workouts.map { workout in
-            let workoutExercises = exercises.filter { $0.workoutId == workout.id }
+            let workoutExercises = exercises.filter { $0.workoutId == workout.id }.sorted(by: { $0.position < $1.position })
             return WorkoutWithExercises(workout: workout, exercises: workoutExercises)
         }
         workoutsSubject.onNext(workoutsWithExercises)

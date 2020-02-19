@@ -15,41 +15,71 @@ import RxRealm
 
 class ExerciseModel {
     
-    static func getExercises() -> Observable<[Exercise]> {
-        let res = DB.sharedInstance.exerciseDao.getExercises()
-        return Observable.array(from: res)
+    private let db: DB
+    
+    init(db: DB) {
+        self.db = db
     }
     
-    static func getExercisesByWorkoutId(_ workoutId: Int) -> Observable<[Exercise]> {
-        let res = DB.sharedInstance.exerciseDao.getExercisesByWorkoutId(workoutId)
-        return Observable.array(from: res)
-    }
-    
-    static func getExercise(exerciseId: Int) -> Observable<Exercise?> {
-        let res = DB.sharedInstance.exerciseDao.getExerciseById(id: exerciseId)
-        return Observable.just(res)
-    }
-    
-    static func createExercise(_ exercise: Exercise) -> Completable {
-        DB.sharedInstance.exerciseDao.addExercise(exercise: exercise)
-        return Completable.empty()
-    }
-    
-    static func updateExercise(_ exercise: Exercise) -> Completable {
-        DB.sharedInstance.exerciseDao.updateExercise(exercise: exercise)
-        return Completable.empty()
-    }
-    
-    static func deleteExercide(exerciseId: Int) -> Completable {
-        // todo change positions
-        DB.sharedInstance.exerciseDao.deleteExercise(id: exerciseId)
-        return Completable.empty()
-    }
-    
-    static func moveExercise(workoutId: Int, oldPosition: Int, newPosition: Int) -> Completable {
-        if oldPosition != newPosition {
-            DB.sharedInstance.exerciseDao.moveExercise(workoutId: workoutId, oldPosition: oldPosition, newPosition: newPosition)
+    func getExercises() -> Observable<[Exercise]> {
+        return Observable.create { [unowned self] observer in
+            let result = self.db.exerciseDao.getExercises()
+            observer.onNext(result.toArray())
+            observer.onCompleted()
+            return Disposables.create()
         }
-        return Completable.empty()
+    }
+    
+    func getExercisesByWorkoutId(_ workoutId: Int) -> Observable<[Exercise]> {
+        return Observable.create { [unowned self] observer in
+            let result = self.db.exerciseDao.getExercisesByWorkoutId(workoutId)
+            observer.onNext(result.toArray())
+            observer.onCompleted()
+            return Disposables.create()
+        }
+    }
+    
+    func getExercise(exerciseId: Int) -> Observable<Exercise?> {
+        return Observable.create { [unowned self] observer in
+            let result = self.db.exerciseDao.getExerciseById(id: exerciseId)
+            observer.onNext(result)
+            observer.onCompleted()
+            return Disposables.create()
+        }
+    }
+    
+    func createExercise(_ exercise: Exercise) -> Completable {
+        return Completable.create { [unowned self] completable in
+            self.db.exerciseDao.addExercise(exercise: exercise)
+            completable(.completed)
+            return Disposables.create()
+        }
+    }
+    
+    func updateExercise(_ exercise: Exercise) -> Completable {
+        return Completable.create { [unowned self] completable in
+            self.db.exerciseDao.updateExercise(exercise: exercise)
+            completable(.completed)
+            return Disposables.create()
+        }
+    }
+    
+    func deleteExercide(exerciseId: Int) -> Completable {
+        return Completable.create { [unowned self] completable in
+            // TODO: change positions
+            self.db.exerciseDao.deleteExercise(id: exerciseId)
+            completable(.completed)
+            return Disposables.create()
+        }
+    }
+    
+    func moveExercise(workoutId: Int, oldPosition: Int, newPosition: Int) -> Completable {
+        return Completable.create { [unowned self] completable in
+            if oldPosition != newPosition {
+                self.db.exerciseDao.moveExercise(workoutId: workoutId, oldPosition: oldPosition, newPosition: newPosition)
+            }
+            completable(.completed)
+            return Disposables.create()
+        }
     }
 }

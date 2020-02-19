@@ -16,11 +16,13 @@ class WorkoutListInteractor: WorkoutListInteractorProtocol {
     weak var output: WorkoutListInteractorOutputProtocol?
     
     private let disposeBag = DisposeBag()
+    private let workoutModel = WorkoutModel(db: DB.sharedInstance)
+    private let exerciseModel = ExerciseModel(db: DB.sharedInstance)
     
     func loadWorkouts() {
         Observable.combineLatest(
-            WorkoutModel.getWorkouts(),
-            ExerciseModel.getExercises())
+            workoutModel.getWorkouts(),
+            exerciseModel.getExercises())
             .subscribe(onNext: { [weak self] (workouts, exercises) in
                 self?.output?.processWorkouts(workouts: workouts, exercises: exercises)
             })
@@ -28,7 +30,7 @@ class WorkoutListInteractor: WorkoutListInteractorProtocol {
     }
     
     func deleteWorkout(workoutId: Int) {
-        WorkoutModel.deleteWorkout(workoutId: workoutId)
+        workoutModel.deleteWorkout(workoutId: workoutId)
             .subscribe(onCompleted: { [weak self] in
                 self?.output?.workoutDeleted()
                 }, onError: { _ in })
@@ -36,7 +38,7 @@ class WorkoutListInteractor: WorkoutListInteractorProtocol {
     }
     
     func moveExercise(workoutId: Int, oldPosition: Int, newPosition: Int) {
-        ExerciseModel.moveExercise(workoutId: workoutId, oldPosition: oldPosition, newPosition: newPosition)
+        exerciseModel.moveExercise(workoutId: workoutId, oldPosition: oldPosition, newPosition: newPosition)
             .subscribe(onCompleted: { [weak self] in
                 self?.output?.exerciseMoved()
                 }, onError: { _ in })

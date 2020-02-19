@@ -16,13 +16,15 @@ class EditExerciseInteractor: EditExerciseInteractorProtocol {
     weak var output: EditExerciseInteractorOutputProtocol?
     
     private let disposeBag = DisposeBag()
+    private let exerciseModel = ExerciseModel(db: DB.sharedInstance)
+    private let workoutModel = WorkoutModel(db: DB.sharedInstance)
     
     func loadExercise(exerciseId: Int?, workoutId: Int) {
         let exerciseObservable = exerciseId != nil ?
-            ExerciseModel.getExercise(exerciseId: exerciseId!) : Observable<Exercise?>.just(Exercise())
+            exerciseModel.getExercise(exerciseId: exerciseId!) : Observable<Exercise?>.just(Exercise())
         Observable.combineLatest(
             exerciseObservable,
-            WorkoutModel.getWorkout(workoutId: workoutId))
+            workoutModel.getWorkout(workoutId: workoutId))
             .subscribe (onNext: { [weak self] (exercise, workout) in
                 self?.output?.processExercise(exercise: exercise, workout: workout)
             })
@@ -30,7 +32,7 @@ class EditExerciseInteractor: EditExerciseInteractorProtocol {
     }
     
     func createExercise(_ exercise: Exercise) {
-        ExerciseModel.createExercise(exercise)
+        exerciseModel.createExercise(exercise)
             .subscribe(onCompleted: { [weak self] in
                 self?.output?.exerciseCreated()
                 }, onError: { _ in })
@@ -38,7 +40,7 @@ class EditExerciseInteractor: EditExerciseInteractorProtocol {
     }
     
     func updateExercise(_ exercise: Exercise) {
-        ExerciseModel.updateExercise(exercise)
+        exerciseModel.updateExercise(exercise)
             .subscribe(onCompleted: { [weak self] in
                 self?.output?.exerciseUpdated()
                 }, onError: { _ in })

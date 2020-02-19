@@ -18,13 +18,13 @@ protocol WorkoutListViewProtocol: class {
 
 protocol WorkoutListPresenterProtocol: class {
     func onViewDidLoad()
+    func onViewWillAppear()
     func onNewWorkoutButtonClick()
     func onEditWorkoutButtonClick(workoutId: Int)
     func onWorkoutSelected(workoutId: Int)
     func onWorkoutDeleteButtonClick(workoutId: Int)
     func onAddExerciseCellClick(workoutId: Int)
     func onExerciseMoved(workoutId: Int, oldPosition: Int, newPosition: Int)
-    func onPlayButtonClick(exerciseId: Int, audioType: AudioType)
 }
 
 protocol WorkoutListInteractorProtocol: class {

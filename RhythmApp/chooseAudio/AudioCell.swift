@@ -14,11 +14,17 @@ class AudioCell: UITableViewCell {
     @IBOutlet private weak var playButton: UIButton!
     @IBOutlet private weak var checkImageView: UIImageView!
     
+    var playButtonClickCallback: () -> Void = {}
+    
     
     func setData(name: String, isPlaying: Bool, selected: Bool) {
         nameLabel.text = name
         playButton.setImage(UIImage(named: isPlaying ? "pause" : "play"), for: .normal)
         checkImageView.isHidden = !selected
+    }
+    
+    @IBAction func onPlayButtonClick(_ sender: UIButton) {
+        playButtonClickCallback()
     }
     
 }

@@ -32,8 +32,6 @@ import UIKit
     }
     
     private func initialize() {
-        translatesAutoresizingMaskIntoConstraints = false
-        
         let colors = WorkoutColor.allValues
         let rect = CGRect(x: 0, y: 0, width: self.frame.size.width, height: self.frame.size.height)
         collectionView = InfiniteHorizontalCollectionView(frame: rect, items: colors, cellNibName: "ColorPickerCell",

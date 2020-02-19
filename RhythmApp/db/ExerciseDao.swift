@@ -48,11 +48,14 @@ class ExerciseDao {
     
     func moveExercise(workoutId: Int, oldPosition: Int, newPosition: Int) {
         let realm = getRealm()
-        let exercises = realm.objects(Exercise.self).filter("workoutId == %d", workoutId).toArray()
+        let exercisesResults = realm.objects(Exercise.self).filter("workoutId == %d", workoutId)
+        let exercises = exercisesResults.toArray()
         
         realm.beginWrite()
         
         var exercisesToUpdate: [Exercise] = []
+
+        let movedExercise = exercises.first(where: { $0.position == oldPosition })
         
         if oldPosition < newPosition {
             let changedExercises = exercises.filter { $0.position > oldPosition && $0.position <= newPosition}
@@ -68,12 +71,12 @@ class ExerciseDao {
             }
         }
         
-        if let movedExercise = exercises.first(where: { $0.position == oldPosition }) {
+        if let movedExercise = movedExercise {
             movedExercise.position = newPosition
             exercisesToUpdate.append(movedExercise)
         }
         
-        for exercise in exercises {
+        for exercise in exercisesToUpdate {
             realm.add(exercise, update: .modified)
         }
         

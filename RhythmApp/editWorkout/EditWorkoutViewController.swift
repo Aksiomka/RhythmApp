@@ -36,9 +36,6 @@ class EditWorkoutViewController: UIViewController, EditWorkoutViewProtocol, UITe
         super.viewDidLoad()
         presenter.onViewDidLoad()
         
-        bgView.layer.cornerRadius = 10
-        titleBgView.layer.cornerRadius = 10
-        
         nameTextField.layer.borderColor = UIColor.white.cgColor
         nameTextField.layer.borderWidth = 1.0
         nameTextField.layer.cornerRadius = 10

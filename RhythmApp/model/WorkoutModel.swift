@@ -15,28 +15,51 @@ import RxRealm
 
 class WorkoutModel {
     
-    static func getWorkouts() -> Observable<[Workout]> {
-        let res = DB.sharedInstance.workoutDao.getWorkouts()
-        return Observable.array(from: res)
+    private let db: DB
+    
+    init(db: DB) {
+        self.db = db
     }
     
-    static func getWorkout(workoutId: Int) -> Observable<Workout?> {
-        let res = DB.sharedInstance.workoutDao.getWorkoutById(id: workoutId)
-        return Observable.just(res)
+    func getWorkouts() -> Observable<[Workout]> {
+        return Observable.create { [unowned self] observer in
+            let result = self.db.workoutDao.getWorkouts()
+            observer.onNext(result.toArray())
+            observer.onCompleted()
+            return Disposables.create()
+        }
     }
     
-    static func createWorkout(_ workout: Workout) -> Completable {
-        DB.sharedInstance.workoutDao.addWorkout(workout: workout)
-        return Completable.empty()
+    func getWorkout(workoutId: Int) -> Observable<Workout?> {
+        return Observable.create { [unowned self] observer in
+            let result = self.db.workoutDao.getWorkoutById(id: workoutId)
+            observer.onNext(result)
+            observer.onCompleted()
+            return Disposables.create()
+        }
     }
     
-    static func updateWorkout(_ workout: Workout) -> Completable {
-        DB.sharedInstance.workoutDao.updateWorkout(workout: workout)
-        return Completable.empty()
+    func createWorkout(_ workout: Workout) -> Completable {
+        return Completable.create { [unowned self] completable in
+            self.db.workoutDao.addWorkout(workout: workout)
+            completable(.completed)
+            return Disposables.create()
+        }
     }
     
-    static func deleteWorkout(workoutId: Int) -> Completable {
-        DB.sharedInstance.workoutDao.deleteWorkout(id: workoutId)
-        return Completable.empty()
+    func updateWorkout(_ workout: Workout) -> Completable {
+        return Completable.create { [unowned self] completable in
+            self.db.workoutDao.updateWorkout(workout: workout)
+            completable(.completed)
+            return Disposables.create()
+        }
+    }
+    
+    func deleteWorkout(workoutId: Int) -> Completable {
+        return Completable.create { [unowned self] completable in
+            self.db.workoutDao.deleteWorkout(id: workoutId)
+            completable(.completed)
+            return Disposables.create()
+        }
     }
 }

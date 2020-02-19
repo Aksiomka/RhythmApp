@@ -59,7 +59,6 @@
 		DA5136262359E81500BC8FD0 /* ChooseAudioProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5136252359E81500BC8FD0 /* ChooseAudioProtocols.swift */; };
 		DA5136292359EA9300BC8FD0 /* AudioCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5136272359EA9300BC8FD0 /* AudioCell.swift */; };
 		DA51362A2359EA9300BC8FD0 /* AudioCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA5136282359EA9300BC8FD0 /* AudioCell.xib */; };
-		DA51362C2359EE2D00BC8FD0 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA51362B2359EE2D00BC8FD0 /* AudioPlayer.swift */; };
 		DA51362E235A36DF00BC8FD0 /* AudioItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA51362D235A36DF00BC8FD0 /* AudioItem.swift */; };
 		DA6704AD2338DFC300F1CB0B /* EditExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6704AC2338DFC300F1CB0B /* EditExerciseViewController.swift */; };
 		DA6704AF2338E4C900F1CB0B /* EditExercisePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6704AE2338E4C900F1CB0B /* EditExercisePresenter.swift */; };
@@ -150,7 +149,6 @@
 		DA5136252359E81500BC8FD0 /* ChooseAudioProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseAudioProtocols.swift; sourceTree = "<group>"; };
 		DA5136272359EA9300BC8FD0 /* AudioCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioCell.swift; sourceTree = "<group>"; };
 		DA5136282359EA9300BC8FD0 /* AudioCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AudioCell.xib; sourceTree = "<group>"; };
-		DA51362B2359EE2D00BC8FD0 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		DA51362D235A36DF00BC8FD0 /* AudioItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioItem.swift; sourceTree = "<group>"; };
 		DA6704AC2338DFC300F1CB0B /* EditExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditExerciseViewController.swift; sourceTree = "<group>"; };
 		DA6704AE2338E4C900F1CB0B /* EditExercisePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditExercisePresenter.swift; sourceTree = "<group>"; };
@@ -290,7 +288,6 @@
 				DA8D399D234B92B400A2A53B /* AudioTypeUtil.swift */,
 				DA024A69231C39FE004CDA04 /* TextViewWithPlaceholder.swift */,
 				DA024A6D231C56F1004CDA04 /* InfiniteHorizontalCollectionView.swift */,
-				DA51362B2359EE2D00BC8FD0 /* AudioPlayer.swift */,
 			);
 			path = common;
 			sourceTree = "<group>";
@@ -682,7 +679,6 @@
 				DA49037223087034008E50AB /* Settings.swift in Sources */,
 				DA4903642308103E008E50AB /* DB.swift in Sources */,
 				DA024A61231B129C004CDA04 /* IconPickerCell.swift in Sources */,
-				DA51362C2359EE2D00BC8FD0 /* AudioPlayer.swift in Sources */,
 				DA024A2023145F88004CDA04 /* EditWorkoutRouter.swift in Sources */,
 				DA49035F23080DBB008E50AB /* Workout.swift in Sources */,
 				DA5136262359E81500BC8FD0 /* ChooseAudioProtocols.swift in Sources */,
