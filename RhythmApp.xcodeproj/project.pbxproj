@@ -79,6 +79,7 @@
 		DA8D399A234B8EFA00A2A53B /* 2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DA8D3996234B8EFA00A2A53B /* 2.mp3 */; };
 		DA8D399C234B925F00A2A53B /* AudioType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8D399B234B925F00A2A53B /* AudioType.swift */; };
 		DA8D399E234B92B400A2A53B /* AudioTypeUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8D399D234B92B400A2A53B /* AudioTypeUtil.swift */; };
+		DAC7577023FE952E00E122DE /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC7576F23FE952E00E122DE /* BaseModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -169,6 +170,7 @@
 		DA8D3996234B8EFA00A2A53B /* 2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 2.mp3; sourceTree = "<group>"; };
 		DA8D399B234B925F00A2A53B /* AudioType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioType.swift; sourceTree = "<group>"; };
 		DA8D399D234B92B400A2A53B /* AudioTypeUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioTypeUtil.swift; sourceTree = "<group>"; };
+		DAC7576F23FE952E00E122DE /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		F203870D818BCDCBB97F7E20 /* Pods-RhythmAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RhythmAppTests.release.xcconfig"; path = "Target Support Files/Pods-RhythmAppTests/Pods-RhythmAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		F3DE5353F627F68A6CE01860 /* Pods_RhythmApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RhythmApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDEF7A2C466C5928F7EA2E29 /* Pods-RhythmAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RhythmAppTests.debug.xcconfig"; path = "Target Support Files/Pods-RhythmAppTests/Pods-RhythmAppTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -400,6 +402,7 @@
 			children = (
 				DA490366230815A0008E50AB /* WorkoutModel.swift */,
 				DA268E582338D6F200811567 /* ExerciseModel.swift */,
+				DAC7576F23FE952E00E122DE /* BaseModel.swift */,
 				DA49037123087034008E50AB /* Settings.swift */,
 				DA490373230871D6008E50AB /* UpgradeModel.swift */,
 			);
@@ -686,6 +689,7 @@
 				DA024A6A231C39FE004CDA04 /* TextViewWithPlaceholder.swift in Sources */,
 				DA6704B52338E4FF00F1CB0B /* EditExerciseProtocols.swift in Sources */,
 				DA5136242359E7BA00BC8FD0 /* ChooseAudioRouter.swift in Sources */,
+				DAC7577023FE952E00E122DE /* BaseModel.swift in Sources */,
 				DA51361E2359E0AE00BC8FD0 /* ChooseAudioViewController.swift in Sources */,
 				DA268E592338D6F200811567 /* ExerciseModel.swift in Sources */,
 				DA7DB605233FA9610082D499 /* ExerciseCell.swift in Sources */,

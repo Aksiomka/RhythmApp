@@ -18,7 +18,6 @@ protocol WorkoutListViewProtocol: class {
 
 protocol WorkoutListPresenterProtocol: class {
     func onViewDidLoad()
-    func onViewWillAppear()
     func onNewWorkoutButtonClick()
     func onEditWorkoutButtonClick(workoutId: Int)
     func onWorkoutSelected(workoutId: Int)
@@ -35,8 +34,6 @@ protocol WorkoutListInteractorProtocol: class {
 
 protocol WorkoutListInteractorOutputProtocol: class {
     func processWorkouts(workouts: [Workout], exercises: [Exercise])
-    func workoutDeleted()
-    func exerciseMoved()
 }
 
 protocol WorkoutListRouterProtocol: class {

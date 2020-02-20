@@ -26,9 +26,6 @@ class WorkoutListPresenter: WorkoutListPresenterProtocol, WorkoutListInteractorO
     
     func onViewDidLoad() {
         view?.setWorkoutsDriver(workoutsDriver: workoutsSubject.asDriver(onErrorJustReturn: []))
-    }
-    
-    func onViewWillAppear() {
         updateData()
     }
     
@@ -68,14 +65,6 @@ class WorkoutListPresenter: WorkoutListPresenterProtocol, WorkoutListInteractorO
             return WorkoutWithExercises(workout: workout, exercises: workoutExercises)
         }
         workoutsSubject.onNext(workoutsWithExercises)
-    }
-    
-    func workoutDeleted() {
-        updateData()
-    }
-    
-    func exerciseMoved() {
-        updateData()
     }
     
     private func updateData() {

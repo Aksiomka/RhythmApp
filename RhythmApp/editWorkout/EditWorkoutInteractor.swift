@@ -19,11 +19,14 @@ class EditWorkoutInteractor: EditWorkoutInteractorProtocol {
     private let workoutModel = WorkoutModel(db: DB.sharedInstance)
     
     func loadWorkout(workoutId: Int) {
-        workoutModel.getWorkout(workoutId: workoutId)
-            .subscribe (onNext: { [weak self] workout in
+        if let workoutObservable = workoutModel.getWorkout(workoutId: workoutId) {
+            workoutObservable.subscribe (onNext: { [weak self] workout in
                 self?.output?.processWorkout(workout: workout)
             })
             .disposed(by: disposeBag)
+        } else {
+            output?.processWorkout(workout: nil)
+        }
     }
     
     func createWorkout(_ workout: Workout) {

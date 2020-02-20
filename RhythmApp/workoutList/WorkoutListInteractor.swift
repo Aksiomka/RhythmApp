@@ -31,17 +31,13 @@ class WorkoutListInteractor: WorkoutListInteractorProtocol {
     
     func deleteWorkout(workoutId: Int) {
         workoutModel.deleteWorkout(workoutId: workoutId)
-            .subscribe(onCompleted: { [weak self] in
-                self?.output?.workoutDeleted()
-                }, onError: { _ in })
+            .subscribe()
             .disposed(by: disposeBag)
     }
     
     func moveExercise(workoutId: Int, oldPosition: Int, newPosition: Int) {
         exerciseModel.moveExercise(workoutId: workoutId, oldPosition: oldPosition, newPosition: newPosition)
-            .subscribe(onCompleted: { [weak self] in
-                self?.output?.exerciseMoved()
-                }, onError: { _ in })
+            .subscribe()
             .disposed(by: disposeBag)
     }
 }

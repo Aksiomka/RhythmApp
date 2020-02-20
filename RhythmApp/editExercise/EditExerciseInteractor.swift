@@ -20,15 +20,19 @@ class EditExerciseInteractor: EditExerciseInteractorProtocol {
     private let workoutModel = WorkoutModel(db: DB.sharedInstance)
     
     func loadExercise(exerciseId: Int?, workoutId: Int) {
-        let exerciseObservable = exerciseId != nil ?
-            exerciseModel.getExercise(exerciseId: exerciseId!) : Observable<Exercise?>.just(Exercise())
+        if let exerciseObservable = exerciseId != nil ?
+            exerciseModel.getExercise(exerciseId: exerciseId!) : Observable<Exercise>.just(Exercise()),
+            let workoutObservable = workoutModel.getWorkout(workoutId: workoutId) {
         Observable.combineLatest(
             exerciseObservable,
-            workoutModel.getWorkout(workoutId: workoutId))
+            workoutObservable)
             .subscribe (onNext: { [weak self] (exercise, workout) in
                 self?.output?.processExercise(exercise: exercise, workout: workout)
             })
             .disposed(by: disposeBag)
+        } else {
+            output?.processExercise(exercise: nil, workout: nil)
+        }
     }
     
     func createExercise(_ exercise: Exercise) {

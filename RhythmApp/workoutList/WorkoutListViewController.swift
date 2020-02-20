@@ -10,7 +10,6 @@ import UIKit
 import RxCocoa
 import RxSwift
 import RxDataSources
-import AVFoundation
 
 
 class WorkoutListViewController: UIViewController, WorkoutListViewProtocol, UITableViewDelegate {
@@ -35,11 +34,6 @@ class WorkoutListViewController: UIViewController, WorkoutListViewProtocol, UITa
         tableView.register(UINib(nibName: "AddWorkoutCell", bundle: nil), forCellReuseIdentifier: "addWorkout")
         
         tableView.rx.setDelegate(self)
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        presenter.onViewWillAppear()
     }
     
     func setWorkoutsDriver(workoutsDriver: Driver<[WorkoutWithExercises]>) {
