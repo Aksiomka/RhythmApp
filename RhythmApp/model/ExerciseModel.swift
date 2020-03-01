@@ -15,18 +15,20 @@ import RxRealm
 
 class ExerciseModel: BaseModel {
     
+    private let exerciseDao = ExerciseDao()
+    
     func getExercises() -> Observable<[Exercise]> {
-        let result = db.exerciseDao.getExercises()
+        let result = exerciseDao.getExercises()
         return Observable.array(from: result)
     }
     
     func getExercisesByWorkoutId(_ workoutId: Int) -> Observable<[Exercise]> {
-        let result = db.exerciseDao.getExercisesByWorkoutId(workoutId)
+        let result = exerciseDao.getExercisesByWorkoutId(workoutId)
         return Observable.array(from: result)
     }
     
     func getExercise(exerciseId: Int) -> Observable<Exercise>? {
-        if let exercise = db.exerciseDao.getExerciseById(id: exerciseId) {
+        if let exercise = exerciseDao.getExerciseById(id: exerciseId) {
             return Observable.from(object: exercise)
         }
         return nil
@@ -34,27 +36,27 @@ class ExerciseModel: BaseModel {
     
     func createExercise(_ exercise: Exercise) -> Completable {
         return createCompletable { [unowned self] in
-            self.db.exerciseDao.addExercise(exercise: exercise)
+            self.exerciseDao.addExercise(exercise: exercise)
         }
     }
     
     func updateExercise(_ exercise: Exercise) -> Completable {
         return createCompletable { [unowned self] in
-            self.db.exerciseDao.updateExercise(exercise: exercise)
+            self.exerciseDao.updateExercise(exercise: exercise)
         }
     }
     
     func deleteExercide(exerciseId: Int) -> Completable {
         return createCompletable { [unowned self] in
             // TODO: change positions
-            self.db.exerciseDao.deleteExercise(id: exerciseId)
+            self.exerciseDao.deleteExercise(id: exerciseId)
         }
     }
     
     func moveExercise(workoutId: Int, oldPosition: Int, newPosition: Int) -> Completable {
         return createCompletable { [unowned self] in
             if oldPosition != newPosition {
-                self.db.exerciseDao.moveExercise(workoutId: workoutId, oldPosition: oldPosition, newPosition: newPosition)
+                self.exerciseDao.moveExercise(workoutId: workoutId, oldPosition: oldPosition, newPosition: newPosition)
             }
         }
     }

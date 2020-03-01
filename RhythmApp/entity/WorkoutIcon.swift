@@ -9,7 +9,7 @@
 import Foundation
 
 
-@objc enum WorkoutIcon: NSInteger {
+@objc enum WorkoutIcon: NSInteger, CaseIterable {
     case standing
     case going
     case running
@@ -18,6 +18,4 @@ import Foundation
     case moving
     case sitting
     case cycling
-    
-    static let allValues: [WorkoutIcon] = [.standing, .going, .running, .waving, .playingBall, .moving, .sitting, .cycling]
 }

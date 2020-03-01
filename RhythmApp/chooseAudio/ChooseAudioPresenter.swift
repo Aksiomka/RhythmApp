@@ -46,7 +46,7 @@ class ChooseAudioPresenter: ChooseAudioPresenterProtocol {
     }
     
     private func updateData() {
-        let audioItems = AudioType.allValues.map { [unowned self] audioType in
+        let audioItems = AudioType.allCases.map { [unowned self] audioType in
             return self.convertToAudioItem(audioType: audioType)
         }
         audioItemsSubject.onNext(audioItems)

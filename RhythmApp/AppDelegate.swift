@@ -23,10 +23,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window!.rootViewController = navigationController
         window!.makeKeyAndVisible()
         
-        if !Settings.appAlreadyLaunched {
-            UpgradeModel.processFirstLaunch()
-            Settings.appAlreadyLaunched = true
-        }
         return true
     }
 

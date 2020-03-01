@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15508"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,9 +13,8 @@
             <connections>
                 <outlet property="bgView" destination="JpJ-wb-vSg" id="Vup-Ik-Vzi"/>
                 <outlet property="cancelButton" destination="Ulv-hu-ZZs" id="COb-CF-G5I"/>
-                <outlet property="colorPicker" destination="mqz-YS-uws" id="gpm-g9-3H7"/>
                 <outlet property="descriptionTextView" destination="RXy-e4-wGS" id="l9B-nM-blr"/>
-                <outlet property="iconPicker" destination="WGQ-5U-i7m" id="Vea-Kb-8xP"/>
+                <outlet property="iconButton" destination="3ow-Hv-NoY" id="Pgy-D9-qoZ"/>
                 <outlet property="nameTextField" destination="PwG-Eg-oKF" id="dVu-OG-cbT"/>
                 <outlet property="saveButton" destination="I6B-X4-BR5" id="NkE-e7-Dte"/>
                 <outlet property="titleBgView" destination="fL6-jp-bdL" id="uTo-p8-Yiv"/>
@@ -31,7 +29,7 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JpJ-wb-vSg">
                     <rect key="frame" x="9" y="52" width="397" height="802"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" name="Gray"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fL6-jp-bdL">
                     <rect key="frame" x="8" y="52" width="398" height="50"/>
@@ -46,15 +44,19 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WGQ-5U-i7m" customClass="IconPicker" customModule="RhythmApp" customModuleProvider="target">
-                    <rect key="frame" x="16" y="118" width="382" height="40"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ow-Hv-NoY">
+                    <rect key="frame" x="16" y="142" width="30" height="30"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="40" id="9RX-D5-O4m"/>
+                        <constraint firstAttribute="width" constant="30" id="Ere-bt-zTb"/>
+                        <constraint firstAttribute="height" constant="30" id="TOu-Qr-EVw"/>
                     </constraints>
-                </view>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <connections>
+                        <action selector="onIconButtonClick:" destination="-1" eventType="touchUpInside" id="xIb-Mk-GOy"/>
+                    </connections>
+                </button>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PwG-Eg-oKF">
-                    <rect key="frame" x="16" y="166" width="382" height="30"/>
+                    <rect key="frame" x="16" y="188" width="382" height="30"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="N4y-Zi-Rak"/>
@@ -64,7 +66,7 @@
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="RXy-e4-wGS" customClass="TextViewWithPlaceholder" customModule="RhythmApp" customModuleProvider="target">
-                    <rect key="frame" x="16" y="204" width="382" height="50"/>
+                    <rect key="frame" x="16" y="234" width="382" height="50"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="DrY-Qg-AvZ"/>
@@ -73,13 +75,6 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mqz-YS-uws" customClass="ColorPicker" customModule="RhythmApp" customModuleProvider="target">
-                    <rect key="frame" x="8" y="262" width="390" height="30"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="50" id="mR9-Uk-Xyj"/>
-                    </constraints>
-                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zws-kb-VHp" userLabel="Buttons Container">
                     <rect key="frame" x="0.0" y="812" width="414" height="50"/>
                     <subviews>
@@ -127,30 +122,32 @@
                 <constraint firstItem="fL6-jp-bdL" firstAttribute="height" secondItem="foW-FV-UIV" secondAttribute="height" id="7nd-X6-DBM"/>
                 <constraint firstItem="fL6-jp-bdL" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="8" id="86B-yx-bUE"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="JpJ-wb-vSg" secondAttribute="trailing" constant="8" id="89i-BO-Sop"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="mqz-YS-uws" secondAttribute="trailing" constant="16" id="9qp-ni-DEH"/>
-                <constraint firstItem="WGQ-5U-i7m" firstAttribute="top" secondItem="foW-FV-UIV" secondAttribute="bottom" constant="24" id="A0M-Vd-c0m"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="foW-FV-UIV" secondAttribute="trailing" constant="16" id="CyC-vr-vc8"/>
-                <constraint firstItem="PwG-Eg-oKF" firstAttribute="top" secondItem="WGQ-5U-i7m" secondAttribute="bottom" constant="16" id="DdH-UF-gNa"/>
-                <constraint firstItem="WGQ-5U-i7m" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="HTQ-Po-mBc"/>
                 <constraint firstItem="foW-FV-UIV" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="8" id="Hd7-HV-SpP"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="PwG-Eg-oKF" secondAttribute="trailing" constant="16" id="LgR-QY-K9j"/>
                 <constraint firstItem="PwG-Eg-oKF" firstAttribute="bottom" secondItem="RXy-e4-wGS" secondAttribute="top" constant="-16" id="Lgx-3E-30B"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="zws-kb-VHp" secondAttribute="trailing" id="NdX-i3-htj"/>
-                <constraint firstItem="mqz-YS-uws" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="8" id="NgO-hL-2bn"/>
                 <constraint firstItem="fL6-jp-bdL" firstAttribute="top" secondItem="foW-FV-UIV" secondAttribute="top" id="NqQ-4g-BuO"/>
+                <constraint firstItem="3ow-Hv-NoY" firstAttribute="top" secondItem="foW-FV-UIV" secondAttribute="bottom" constant="40" id="TaH-TT-ZgF"/>
+                <constraint firstItem="3ow-Hv-NoY" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="UAJ-Wx-doK"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="fL6-jp-bdL" secondAttribute="trailing" constant="8" id="VwW-n9-CUh"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="WGQ-5U-i7m" secondAttribute="trailing" constant="16" id="XcZ-Vi-Imq"/>
                 <constraint firstItem="PwG-Eg-oKF" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="b4k-0C-sHB"/>
-                <constraint firstItem="RXy-e4-wGS" firstAttribute="bottom" secondItem="mqz-YS-uws" secondAttribute="top" constant="-16" id="dcb-Y8-hHu"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="RXy-e4-wGS" secondAttribute="trailing" constant="16" id="f03-AW-7Rr"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="zws-kb-VHp" secondAttribute="bottom" id="fG4-8X-0ji"/>
                 <constraint firstItem="JpJ-wb-vSg" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="9" id="fSL-wT-Lpe"/>
                 <constraint firstItem="RXy-e4-wGS" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="hrM-d5-6pP"/>
                 <constraint firstItem="JpJ-wb-vSg" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="8" id="liy-Zd-QVw"/>
                 <constraint firstItem="foW-FV-UIV" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="r24-Sb-kAG"/>
+                <constraint firstItem="PwG-Eg-oKF" firstAttribute="top" secondItem="3ow-Hv-NoY" secondAttribute="bottom" constant="16" id="v4D-If-GGg"/>
                 <constraint firstItem="zws-kb-VHp" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="vbZ-az-igZ"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="139" y="101"/>
         </view>
     </objects>
+    <resources>
+        <namedColor name="Gray">
+            <color red="0.43999999761581421" green="0.43999999761581421" blue="0.43999999761581421" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

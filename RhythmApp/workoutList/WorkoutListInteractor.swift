@@ -16,8 +16,8 @@ class WorkoutListInteractor: WorkoutListInteractorProtocol {
     weak var output: WorkoutListInteractorOutputProtocol?
     
     private let disposeBag = DisposeBag()
-    private let workoutModel = WorkoutModel(db: DB.sharedInstance)
-    private let exerciseModel = ExerciseModel(db: DB.sharedInstance)
+    private let workoutModel = WorkoutModel()
+    private let exerciseModel = ExerciseModel()
     
     func loadWorkouts() {
         Observable.combineLatest(
@@ -31,12 +31,16 @@ class WorkoutListInteractor: WorkoutListInteractorProtocol {
     
     func deleteWorkout(workoutId: Int) {
         workoutModel.deleteWorkout(workoutId: workoutId)
+            .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
+            .observeOn(MainScheduler.asyncInstance)
             .subscribe()
             .disposed(by: disposeBag)
     }
     
     func moveExercise(workoutId: Int, oldPosition: Int, newPosition: Int) {
         exerciseModel.moveExercise(workoutId: workoutId, oldPosition: oldPosition, newPosition: newPosition)
+            .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
+            .observeOn(MainScheduler.asyncInstance)
             .subscribe()
             .disposed(by: disposeBag)
     }

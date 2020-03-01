@@ -25,7 +25,7 @@ class ExerciseCell: UICollectionViewCell {
     }
     
     func setData(exercise: Exercise) {
-        nameLabel.text = exercise.name + " " + exercise.position.description
+        nameLabel.text = exercise.name
         durationLabel.text = formatSeconds(seconds: exercise.durationInSeconds)
     }
     

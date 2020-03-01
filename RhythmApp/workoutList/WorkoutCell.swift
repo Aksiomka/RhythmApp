@@ -32,7 +32,6 @@ class WorkoutCell: UITableViewCell {
         nameLabel.text = workout.name
         descriptionLabel.text = workout.descr
         iconView.image = WorkoutIconUtil.getUIImageForWorkoutIcon(workout.icon)
-        bgView.backgroundColor = WorkoutColorUtil.getUIColorForWorkoutColor(workout.color)
     }
     
     @IBAction func onEditWorkoutButtonClick(_ sender: UIButton) {

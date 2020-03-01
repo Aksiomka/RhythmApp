@@ -15,13 +15,15 @@ import RxRealm
 
 class WorkoutModel: BaseModel {
     
+    private let workoutDao = WorkoutDao()
+    
     func getWorkouts() -> Observable<[Workout]> {
-        let result = db.workoutDao.getWorkouts()
+        let result = workoutDao.getWorkouts()
         return Observable.array(from: result)
     }
     
     func getWorkout(workoutId: Int) -> Observable<Workout>? {
-        if let workout = db.workoutDao.getWorkoutById(id: workoutId) {
+        if let workout = workoutDao.getWorkoutById(id: workoutId) {
             return Observable.from(object: workout)
         }
         return nil
@@ -29,19 +31,19 @@ class WorkoutModel: BaseModel {
     
     func createWorkout(_ workout: Workout) -> Completable {
         return createCompletable { [unowned self] in
-            self.db.workoutDao.addWorkout(workout: workout)
+            self.workoutDao.addWorkout(workout: workout)
         }
     }
     
     func updateWorkout(_ workout: Workout) -> Completable {
         return createCompletable { [unowned self] in
-            self.db.workoutDao.updateWorkout(workout: workout)
+            self.workoutDao.updateWorkout(workout: workout)
         }
     }
     
     func deleteWorkout(workoutId: Int) -> Completable {
         return createCompletable { [unowned self] in
-            self.db.workoutDao.deleteWorkout(id: workoutId)
+            self.workoutDao.deleteWorkout(id: workoutId)
         }
     }
 }

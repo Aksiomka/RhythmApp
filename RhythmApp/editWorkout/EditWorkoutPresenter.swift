@@ -19,9 +19,8 @@ class EditWorkoutPresenter: EditWorkoutPresenterProtocol, EditWorkoutInteractorO
     
     private var name: String = ""
     private var description: String = ""
-    private var color: WorkoutColor = WorkoutColor.blue
     private var icon: WorkoutIcon = WorkoutIcon.standing
-    
+
     init(workoutId: Int?) {
         self.workoutId = workoutId
     }
@@ -32,6 +31,12 @@ class EditWorkoutPresenter: EditWorkoutPresenterProtocol, EditWorkoutInteractorO
         updateData()
     }
     
+    func onIconButtonClick() {
+        router.openChooseIcon(selectedWorkoutIcon: icon, iconChosenCallback: {[unowned self] workoutIcon in
+            self.onIconChanged(icon: workoutIcon)
+        })
+    }
+    
     func onNameChanged(name: String) {
         self.name = name
         updateSaveButtonEnabledState()
@@ -39,11 +44,6 @@ class EditWorkoutPresenter: EditWorkoutPresenterProtocol, EditWorkoutInteractorO
     
     func onDescriptionChanged(description: String) {
         self.description = description
-    }
-    
-    func onColorChanged(color: WorkoutColor) {
-        self.color = color
-        updateData()
     }
     
     func onIconChanged(icon: WorkoutIcon) {
@@ -61,14 +61,12 @@ class EditWorkoutPresenter: EditWorkoutPresenterProtocol, EditWorkoutInteractorO
             workout.id = id
             workout.name = name
             workout.descr = description
-            workout.color = color
             workout.icon = icon
             interactor.updateWorkout(workout)
         } else {
             let workout = Workout()
             workout.name = name
             workout.descr = description
-            workout.color = color
             workout.icon = icon
             interactor.createWorkout(workout)
         }
@@ -78,8 +76,6 @@ class EditWorkoutPresenter: EditWorkoutPresenterProtocol, EditWorkoutInteractorO
         if let workout = workout {
             name = workout.name
             description = workout.descr
-            color = workout.color
-            icon = workout.icon
             updateData()
         }
     }
@@ -99,7 +95,7 @@ class EditWorkoutPresenter: EditWorkoutPresenterProtocol, EditWorkoutInteractorO
     }
     
     private func updateData() {
-        view?.setData(name: name, description: description, color: color, icon: icon)
+        view?.setData(name: name, description: description, icon: icon)
         updateSaveButtonEnabledState()
     }
     

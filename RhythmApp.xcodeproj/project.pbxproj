@@ -16,20 +16,19 @@
 		DA024A2023145F88004CDA04 /* EditWorkoutRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA024A1F23145F88004CDA04 /* EditWorkoutRouter.swift */; };
 		DA024A2223145F98004CDA04 /* EditWorkoutProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA024A2123145F98004CDA04 /* EditWorkoutProtocols.swift */; };
 		DA024A2B23146BA3004CDA04 /* EditWorkoutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA024A2A23146BA3004CDA04 /* EditWorkoutViewController.xib */; };
-		DA024A59231B046B004CDA04 /* IconPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA024A58231B046B004CDA04 /* IconPicker.swift */; };
-		DA024A61231B129C004CDA04 /* IconPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA024A5F231B129C004CDA04 /* IconPickerCell.swift */; };
-		DA024A62231B129C004CDA04 /* IconPickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA024A60231B129C004CDA04 /* IconPickerCell.xib */; };
-		DA024A64231B1A02004CDA04 /* WorkoutIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA024A63231B1A02004CDA04 /* WorkoutIcon.swift */; };
-		DA024A66231B1BD6004CDA04 /* WorkoutIconUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA024A65231B1BD6004CDA04 /* WorkoutIconUtil.swift */; };
 		DA024A6A231C39FE004CDA04 /* TextViewWithPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA024A69231C39FE004CDA04 /* TextViewWithPlaceholder.swift */; };
-		DA024A6E231C56F1004CDA04 /* InfiniteHorizontalCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA024A6D231C56F1004CDA04 /* InfiniteHorizontalCollectionView.swift */; };
-		DA024A72231C6398004CDA04 /* ColorPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA024A70231C6398004CDA04 /* ColorPickerCell.swift */; };
-		DA024A73231C6398004CDA04 /* ColorPickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA024A71231C6398004CDA04 /* ColorPickerCell.xib */; };
+		DA1D8221240BED2F007772B4 /* AudioTypeUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1D8220240BED2F007772B4 /* AudioTypeUtil.swift */; };
+		DA1D8224240BF3DA007772B4 /* ChooseIconViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1D8223240BF3DA007772B4 /* ChooseIconViewController.swift */; };
+		DA1D8226240BF465007772B4 /* WorkoutIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1D8225240BF465007772B4 /* WorkoutIcon.swift */; };
+		DA1D8228240BF471007772B4 /* WorkoutIconUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1D8227240BF471007772B4 /* WorkoutIconUtil.swift */; };
+		DA1D822B240C251C007772B4 /* ChooseIconViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA1D822A240C251C007772B4 /* ChooseIconViewController.xib */; };
+		DA1D822D240C2579007772B4 /* ChooseIconProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1D822C240C2579007772B4 /* ChooseIconProtocols.swift */; };
+		DA1D8230240C2638007772B4 /* WorkoutIconCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1D822E240C2638007772B4 /* WorkoutIconCell.swift */; };
+		DA1D8231240C2638007772B4 /* WorkoutIconCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA1D822F240C2638007772B4 /* WorkoutIconCell.xib */; };
 		DA268E552338D3AF00811567 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA268E542338D3AF00811567 /* Exercise.swift */; };
 		DA268E572338D40200811567 /* ExerciseDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA268E562338D40200811567 /* ExerciseDao.swift */; };
 		DA268E592338D6F200811567 /* ExerciseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA268E582338D6F200811567 /* ExerciseModel.swift */; };
 		DA268E5D2338DB6700811567 /* EditExerciseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA268E5C2338DB6700811567 /* EditExerciseViewController.xib */; };
-		DA2F0256230C899C00A9CFA3 /* WorkoutColorUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2F0255230C899C00A9CFA3 /* WorkoutColorUtil.swift */; };
 		DA4903312307FEAA008E50AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4903302307FEAA008E50AB /* AppDelegate.swift */; };
 		DA4903382307FEAB008E50AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA4903372307FEAB008E50AB /* Assets.xcassets */; };
 		DA49033B2307FEAB008E50AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA4903392307FEAB008E50AB /* LaunchScreen.storyboard */; };
@@ -42,16 +41,11 @@
 		DA49035C230800A7008E50AB /* WorkoutListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA49035B230800A7008E50AB /* WorkoutListViewController.xib */; };
 		DA49035F23080DBB008E50AB /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA49035E23080DBB008E50AB /* Workout.swift */; };
 		DA49036223080EE4008E50AB /* WorkoutDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA49036123080EE4008E50AB /* WorkoutDao.swift */; };
-		DA4903642308103E008E50AB /* DB.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4903632308103E008E50AB /* DB.swift */; };
 		DA490367230815A0008E50AB /* WorkoutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA490366230815A0008E50AB /* WorkoutModel.swift */; };
 		DA49036B23081D29008E50AB /* WorkoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA49036923081D29008E50AB /* WorkoutCell.swift */; };
 		DA49036C23081D29008E50AB /* WorkoutCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA49036A23081D29008E50AB /* WorkoutCell.xib */; };
 		DA49036F230839A4008E50AB /* AddWorkoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA49036D230839A4008E50AB /* AddWorkoutCell.swift */; };
 		DA490370230839A4008E50AB /* AddWorkoutCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA49036E230839A4008E50AB /* AddWorkoutCell.xib */; };
-		DA49037223087034008E50AB /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA49037123087034008E50AB /* Settings.swift */; };
-		DA490374230871D6008E50AB /* UpgradeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA490373230871D6008E50AB /* UpgradeModel.swift */; };
-		DA4903782309E909008E50AB /* WorkoutColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4903772309E909008E50AB /* WorkoutColor.swift */; };
-		DA49037A2309EC3D008E50AB /* ColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4903792309EC3D008E50AB /* ColorPicker.swift */; };
 		DA51361E2359E0AE00BC8FD0 /* ChooseAudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA51361D2359E0AE00BC8FD0 /* ChooseAudioViewController.swift */; };
 		DA5136202359E0CE00BC8FD0 /* ChooseAudioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA51361F2359E0CE00BC8FD0 /* ChooseAudioViewController.xib */; };
 		DA5136222359E78700BC8FD0 /* ChooseAudioPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5136212359E78700BC8FD0 /* ChooseAudioPresenter.swift */; };
@@ -72,13 +66,10 @@
 		DA7DB608233FB27C0082D499 /* WorkoutWithExercises.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7DB607233FB27C0082D499 /* WorkoutWithExercises.swift */; };
 		DA7DB60B2340D1BF0082D499 /* AddExerciseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7DB6092340D1BF0082D499 /* AddExerciseCell.swift */; };
 		DA7DB60C2340D1BF0082D499 /* AddExerciseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA7DB60A2340D1BF0082D499 /* AddExerciseCell.xib */; };
-		DA8D3992234B8EEB00A2A53B /* 1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DA8D3991234B8EEB00A2A53B /* 1.mp3 */; };
-		DA8D3997234B8EFA00A2A53B /* 5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DA8D3993234B8EF900A2A53B /* 5.mp3 */; };
-		DA8D3998234B8EFA00A2A53B /* 4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DA8D3994234B8EFA00A2A53B /* 4.mp3 */; };
-		DA8D3999234B8EFA00A2A53B /* 3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DA8D3995234B8EFA00A2A53B /* 3.mp3 */; };
-		DA8D399A234B8EFA00A2A53B /* 2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DA8D3996234B8EFA00A2A53B /* 2.mp3 */; };
 		DA8D399C234B925F00A2A53B /* AudioType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8D399B234B925F00A2A53B /* AudioType.swift */; };
-		DA8D399E234B92B400A2A53B /* AudioTypeUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8D399D234B92B400A2A53B /* AudioTypeUtil.swift */; };
+		DA9861EA240C2BA700DA669F /* WorkoutIconItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9861E9240C2BA700DA669F /* WorkoutIconItem.swift */; };
+		DA9861EC240C2CEB00DA669F /* ChooseIconPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9861EB240C2CEB00DA669F /* ChooseIconPresenter.swift */; };
+		DA9861EE240C2E3500DA669F /* ChooseIconRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9861ED240C2E3500DA669F /* ChooseIconRouter.swift */; };
 		DAC7577023FE952E00E122DE /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC7576F23FE952E00E122DE /* BaseModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -103,20 +94,19 @@
 		DA024A1F23145F88004CDA04 /* EditWorkoutRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditWorkoutRouter.swift; sourceTree = "<group>"; };
 		DA024A2123145F98004CDA04 /* EditWorkoutProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditWorkoutProtocols.swift; sourceTree = "<group>"; };
 		DA024A2A23146BA3004CDA04 /* EditWorkoutViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditWorkoutViewController.xib; sourceTree = "<group>"; };
-		DA024A58231B046B004CDA04 /* IconPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconPicker.swift; sourceTree = "<group>"; };
-		DA024A5F231B129C004CDA04 /* IconPickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconPickerCell.swift; sourceTree = "<group>"; };
-		DA024A60231B129C004CDA04 /* IconPickerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IconPickerCell.xib; sourceTree = "<group>"; };
-		DA024A63231B1A02004CDA04 /* WorkoutIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutIcon.swift; sourceTree = "<group>"; };
-		DA024A65231B1BD6004CDA04 /* WorkoutIconUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutIconUtil.swift; sourceTree = "<group>"; };
 		DA024A69231C39FE004CDA04 /* TextViewWithPlaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewWithPlaceholder.swift; sourceTree = "<group>"; };
-		DA024A6D231C56F1004CDA04 /* InfiniteHorizontalCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfiniteHorizontalCollectionView.swift; sourceTree = "<group>"; };
-		DA024A70231C6398004CDA04 /* ColorPickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerCell.swift; sourceTree = "<group>"; };
-		DA024A71231C6398004CDA04 /* ColorPickerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorPickerCell.xib; sourceTree = "<group>"; };
+		DA1D8220240BED2F007772B4 /* AudioTypeUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioTypeUtil.swift; sourceTree = "<group>"; };
+		DA1D8223240BF3DA007772B4 /* ChooseIconViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseIconViewController.swift; sourceTree = "<group>"; };
+		DA1D8225240BF465007772B4 /* WorkoutIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutIcon.swift; sourceTree = "<group>"; };
+		DA1D8227240BF471007772B4 /* WorkoutIconUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutIconUtil.swift; sourceTree = "<group>"; };
+		DA1D822A240C251C007772B4 /* ChooseIconViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseIconViewController.xib; sourceTree = "<group>"; };
+		DA1D822C240C2579007772B4 /* ChooseIconProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseIconProtocols.swift; sourceTree = "<group>"; };
+		DA1D822E240C2638007772B4 /* WorkoutIconCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutIconCell.swift; sourceTree = "<group>"; };
+		DA1D822F240C2638007772B4 /* WorkoutIconCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorkoutIconCell.xib; sourceTree = "<group>"; };
 		DA268E542338D3AF00811567 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		DA268E562338D40200811567 /* ExerciseDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDao.swift; sourceTree = "<group>"; };
 		DA268E582338D6F200811567 /* ExerciseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseModel.swift; sourceTree = "<group>"; };
 		DA268E5C2338DB6700811567 /* EditExerciseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditExerciseViewController.xib; sourceTree = "<group>"; };
-		DA2F0255230C899C00A9CFA3 /* WorkoutColorUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutColorUtil.swift; sourceTree = "<group>"; };
 		DA49032D2307FEAA008E50AB /* RhythmApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RhythmApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA4903302307FEAA008E50AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA4903372307FEAB008E50AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -133,16 +123,11 @@
 		DA49035B230800A7008E50AB /* WorkoutListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorkoutListViewController.xib; sourceTree = "<group>"; };
 		DA49035E23080DBB008E50AB /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
 		DA49036123080EE4008E50AB /* WorkoutDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutDao.swift; sourceTree = "<group>"; };
-		DA4903632308103E008E50AB /* DB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DB.swift; sourceTree = "<group>"; };
 		DA490366230815A0008E50AB /* WorkoutModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutModel.swift; sourceTree = "<group>"; };
 		DA49036923081D29008E50AB /* WorkoutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCell.swift; sourceTree = "<group>"; };
 		DA49036A23081D29008E50AB /* WorkoutCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorkoutCell.xib; sourceTree = "<group>"; };
 		DA49036D230839A4008E50AB /* AddWorkoutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWorkoutCell.swift; sourceTree = "<group>"; };
 		DA49036E230839A4008E50AB /* AddWorkoutCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddWorkoutCell.xib; sourceTree = "<group>"; };
-		DA49037123087034008E50AB /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
-		DA490373230871D6008E50AB /* UpgradeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpgradeModel.swift; sourceTree = "<group>"; };
-		DA4903772309E909008E50AB /* WorkoutColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutColor.swift; sourceTree = "<group>"; };
-		DA4903792309EC3D008E50AB /* ColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPicker.swift; sourceTree = "<group>"; };
 		DA51361D2359E0AE00BC8FD0 /* ChooseAudioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseAudioViewController.swift; sourceTree = "<group>"; };
 		DA51361F2359E0CE00BC8FD0 /* ChooseAudioViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseAudioViewController.xib; sourceTree = "<group>"; };
 		DA5136212359E78700BC8FD0 /* ChooseAudioPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseAudioPresenter.swift; sourceTree = "<group>"; };
@@ -163,13 +148,10 @@
 		DA7DB607233FB27C0082D499 /* WorkoutWithExercises.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutWithExercises.swift; sourceTree = "<group>"; };
 		DA7DB6092340D1BF0082D499 /* AddExerciseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExerciseCell.swift; sourceTree = "<group>"; };
 		DA7DB60A2340D1BF0082D499 /* AddExerciseCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddExerciseCell.xib; sourceTree = "<group>"; };
-		DA8D3991234B8EEB00A2A53B /* 1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 1.mp3; sourceTree = "<group>"; };
-		DA8D3993234B8EF900A2A53B /* 5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 5.mp3; sourceTree = "<group>"; };
-		DA8D3994234B8EFA00A2A53B /* 4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 4.mp3; sourceTree = "<group>"; };
-		DA8D3995234B8EFA00A2A53B /* 3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 3.mp3; sourceTree = "<group>"; };
-		DA8D3996234B8EFA00A2A53B /* 2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 2.mp3; sourceTree = "<group>"; };
 		DA8D399B234B925F00A2A53B /* AudioType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioType.swift; sourceTree = "<group>"; };
-		DA8D399D234B92B400A2A53B /* AudioTypeUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioTypeUtil.swift; sourceTree = "<group>"; };
+		DA9861E9240C2BA700DA669F /* WorkoutIconItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutIconItem.swift; sourceTree = "<group>"; };
+		DA9861EB240C2CEB00DA669F /* ChooseIconPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseIconPresenter.swift; sourceTree = "<group>"; };
+		DA9861ED240C2E3500DA669F /* ChooseIconRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseIconRouter.swift; sourceTree = "<group>"; };
 		DAC7576F23FE952E00E122DE /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		F203870D818BCDCBB97F7E20 /* Pods-RhythmAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RhythmAppTests.release.xcconfig"; path = "Target Support Files/Pods-RhythmAppTests/Pods-RhythmAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		F3DE5353F627F68A6CE01860 /* Pods_RhythmApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RhythmApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -242,7 +224,6 @@
 			children = (
 				DA49036123080EE4008E50AB /* WorkoutDao.swift */,
 				DA268E562338D40200811567 /* ExerciseDao.swift */,
-				DA4903632308103E008E50AB /* DB.swift */,
 			);
 			path = db;
 			sourceTree = "<group>";
@@ -282,36 +263,34 @@
 		DA024A2923146B01004CDA04 /* common */ = {
 			isa = PBXGroup;
 			children = (
-				DA6704B62339174E00F1CB0B /* durationPicker */,
-				DA024A6F231C637A004CDA04 /* colorPicker */,
-				DA024A5A231B10D0004CDA04 /* iconPicker */,
-				DA2F0255230C899C00A9CFA3 /* WorkoutColorUtil.swift */,
-				DA024A65231B1BD6004CDA04 /* WorkoutIconUtil.swift */,
-				DA8D399D234B92B400A2A53B /* AudioTypeUtil.swift */,
 				DA024A69231C39FE004CDA04 /* TextViewWithPlaceholder.swift */,
-				DA024A6D231C56F1004CDA04 /* InfiniteHorizontalCollectionView.swift */,
+				DA1D8220240BED2F007772B4 /* AudioTypeUtil.swift */,
+				DA1D8227240BF471007772B4 /* WorkoutIconUtil.swift */,
 			);
 			path = common;
 			sourceTree = "<group>";
 		};
-		DA024A5A231B10D0004CDA04 /* iconPicker */ = {
+		DA1D8222240BF3B7007772B4 /* chooseIcon */ = {
 			isa = PBXGroup;
 			children = (
-				DA024A60231B129C004CDA04 /* IconPickerCell.xib */,
-				DA024A5F231B129C004CDA04 /* IconPickerCell.swift */,
-				DA024A58231B046B004CDA04 /* IconPicker.swift */,
+				DA1D8229240C24FD007772B4 /* xib */,
+				DA1D8223240BF3DA007772B4 /* ChooseIconViewController.swift */,
+				DA9861EB240C2CEB00DA669F /* ChooseIconPresenter.swift */,
+				DA9861ED240C2E3500DA669F /* ChooseIconRouter.swift */,
+				DA1D822C240C2579007772B4 /* ChooseIconProtocols.swift */,
+				DA1D822E240C2638007772B4 /* WorkoutIconCell.swift */,
+				DA9861E9240C2BA700DA669F /* WorkoutIconItem.swift */,
 			);
-			name = iconPicker;
+			path = chooseIcon;
 			sourceTree = "<group>";
 		};
-		DA024A6F231C637A004CDA04 /* colorPicker */ = {
+		DA1D8229240C24FD007772B4 /* xib */ = {
 			isa = PBXGroup;
 			children = (
-				DA024A71231C6398004CDA04 /* ColorPickerCell.xib */,
-				DA024A70231C6398004CDA04 /* ColorPickerCell.swift */,
-				DA4903792309EC3D008E50AB /* ColorPicker.swift */,
+				DA1D822A240C251C007772B4 /* ChooseIconViewController.xib */,
+				DA1D822F240C2638007772B4 /* WorkoutIconCell.xib */,
 			);
-			path = colorPicker;
+			path = xib;
 			sourceTree = "<group>";
 		};
 		DA268E5A2338DB2600811567 /* editExercise */ = {
@@ -358,7 +337,6 @@
 		DA49032F2307FEAA008E50AB /* RhythmApp */ = {
 			isa = PBXGroup;
 			children = (
-				DA8D3990234B8EC500A2A53B /* sounds */,
 				DA024A2623146A84004CDA04 /* db */,
 				DA49035D23080D9E008E50AB /* entity */,
 				DA4903652308158C008E50AB /* model */,
@@ -366,6 +344,7 @@
 				DA024A2423146A4D004CDA04 /* editWorkout */,
 				DA024A2723146ABC004CDA04 /* workoutList */,
 				DA268E5A2338DB2600811567 /* editExercise */,
+				DA1D8222240BF3B7007772B4 /* chooseIcon */,
 				DA51361B2359E06800BC8FD0 /* chooseAudio */,
 				DA4903302307FEAA008E50AB /* AppDelegate.swift */,
 				DA4903372307FEAB008E50AB /* Assets.xcassets */,
@@ -389,10 +368,9 @@
 			isa = PBXGroup;
 			children = (
 				DA49035E23080DBB008E50AB /* Workout.swift */,
-				DA4903772309E909008E50AB /* WorkoutColor.swift */,
-				DA024A63231B1A02004CDA04 /* WorkoutIcon.swift */,
 				DA268E542338D3AF00811567 /* Exercise.swift */,
 				DA8D399B234B925F00A2A53B /* AudioType.swift */,
+				DA1D8225240BF465007772B4 /* WorkoutIcon.swift */,
 			);
 			path = entity;
 			sourceTree = "<group>";
@@ -403,8 +381,6 @@
 				DA490366230815A0008E50AB /* WorkoutModel.swift */,
 				DA268E582338D6F200811567 /* ExerciseModel.swift */,
 				DAC7576F23FE952E00E122DE /* BaseModel.swift */,
-				DA49037123087034008E50AB /* Settings.swift */,
-				DA490373230871D6008E50AB /* UpgradeModel.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -430,25 +406,6 @@
 				DA5136282359EA9300BC8FD0 /* AudioCell.xib */,
 			);
 			path = xib;
-			sourceTree = "<group>";
-		};
-		DA6704B62339174E00F1CB0B /* durationPicker */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = durationPicker;
-			sourceTree = "<group>";
-		};
-		DA8D3990234B8EC500A2A53B /* sounds */ = {
-			isa = PBXGroup;
-			children = (
-				DA8D3991234B8EEB00A2A53B /* 1.mp3 */,
-				DA8D3996234B8EFA00A2A53B /* 2.mp3 */,
-				DA8D3995234B8EFA00A2A53B /* 3.mp3 */,
-				DA8D3994234B8EFA00A2A53B /* 4.mp3 */,
-				DA8D3993234B8EF900A2A53B /* 5.mp3 */,
-			);
-			path = sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -537,23 +494,18 @@
 			files = (
 				DA024A2B23146BA3004CDA04 /* EditWorkoutViewController.xib in Resources */,
 				DA7DB606233FA9610082D499 /* ExerciseCell.xib in Resources */,
-				DA8D3992234B8EEB00A2A53B /* 1.mp3 in Resources */,
 				DA5136202359E0CE00BC8FD0 /* ChooseAudioViewController.xib in Resources */,
 				DA49035C230800A7008E50AB /* WorkoutListViewController.xib in Resources */,
 				DA268E5D2338DB6700811567 /* EditExerciseViewController.xib in Resources */,
 				DA7DB60C2340D1BF0082D499 /* AddExerciseCell.xib in Resources */,
-				DA8D3997234B8EFA00A2A53B /* 5.mp3 in Resources */,
-				DA8D3998234B8EFA00A2A53B /* 4.mp3 in Resources */,
 				DA49033B2307FEAB008E50AB /* LaunchScreen.storyboard in Resources */,
 				DA4903382307FEAB008E50AB /* Assets.xcassets in Resources */,
+				DA1D822B240C251C007772B4 /* ChooseIconViewController.xib in Resources */,
 				DA024A1A23145CF7004CDA04 /* Colors.xcassets in Resources */,
+				DA1D8231240C2638007772B4 /* WorkoutIconCell.xib in Resources */,
 				DA51362A2359EA9300BC8FD0 /* AudioCell.xib in Resources */,
 				DA49036C23081D29008E50AB /* WorkoutCell.xib in Resources */,
-				DA8D3999234B8EFA00A2A53B /* 3.mp3 in Resources */,
-				DA024A62231B129C004CDA04 /* IconPickerCell.xib in Resources */,
 				DA490370230839A4008E50AB /* AddWorkoutCell.xib in Resources */,
-				DA8D399A234B8EFA00A2A53B /* 2.mp3 in Resources */,
-				DA024A73231C6398004CDA04 /* ColorPickerCell.xib in Resources */,
 				DA7DB602233F73BD0082D499 /* ExercisesCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -655,39 +607,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA1D8226240BF465007772B4 /* WorkoutIcon.swift in Sources */,
 				DA7DB60B2340D1BF0082D499 /* AddExerciseCell.swift in Sources */,
-				DA024A66231B1BD6004CDA04 /* WorkoutIconUtil.swift in Sources */,
-				DA2F0256230C899C00A9CFA3 /* WorkoutColorUtil.swift in Sources */,
 				DA024A1C23145F6A004CDA04 /* EditWorkoutPresenter.swift in Sources */,
-				DA024A59231B046B004CDA04 /* IconPicker.swift in Sources */,
-				DA024A72231C6398004CDA04 /* ColorPickerCell.swift in Sources */,
 				DA268E552338D3AF00811567 /* Exercise.swift in Sources */,
+				DA1D8230240C2638007772B4 /* WorkoutIconCell.swift in Sources */,
 				DA024A2223145F98004CDA04 /* EditWorkoutProtocols.swift in Sources */,
 				DA7DB608233FB27C0082D499 /* WorkoutWithExercises.swift in Sources */,
-				DA4903782309E909008E50AB /* WorkoutColor.swift in Sources */,
 				DA8D399C234B925F00A2A53B /* AudioType.swift in Sources */,
 				DA4903542307FF86008E50AB /* WorkoutListProtocols.swift in Sources */,
-				DA8D399E234B92B400A2A53B /* AudioTypeUtil.swift in Sources */,
-				DA024A6E231C56F1004CDA04 /* InfiniteHorizontalCollectionView.swift in Sources */,
+				DA9861EE240C2E3500DA669F /* ChooseIconRouter.swift in Sources */,
 				DA6704B12338E4DD00F1CB0B /* EditExerciseInteractor.swift in Sources */,
 				DA4903562307FF9A008E50AB /* WorkoutListPresenter.swift in Sources */,
-				DA49037A2309EC3D008E50AB /* ColorPicker.swift in Sources */,
 				DA268E572338D40200811567 /* ExerciseDao.swift in Sources */,
+				DA9861EC240C2CEB00DA669F /* ChooseIconPresenter.swift in Sources */,
+				DA1D8224240BF3DA007772B4 /* ChooseIconViewController.swift in Sources */,
 				DA024A1E23145F7C004CDA04 /* EditWorkoutInteractor.swift in Sources */,
+				DA1D822D240C2579007772B4 /* ChooseIconProtocols.swift in Sources */,
 				DA6704AF2338E4C900F1CB0B /* EditExercisePresenter.swift in Sources */,
 				DA6704AD2338DFC300F1CB0B /* EditExerciseViewController.swift in Sources */,
 				DA49036B23081D29008E50AB /* WorkoutCell.swift in Sources */,
-				DA490374230871D6008E50AB /* UpgradeModel.swift in Sources */,
+				DA9861EA240C2BA700DA669F /* WorkoutIconItem.swift in Sources */,
 				DA7DB601233F73BD0082D499 /* ExercisesCell.swift in Sources */,
-				DA49037223087034008E50AB /* Settings.swift in Sources */,
-				DA4903642308103E008E50AB /* DB.swift in Sources */,
-				DA024A61231B129C004CDA04 /* IconPickerCell.swift in Sources */,
+				DA1D8228240BF471007772B4 /* WorkoutIconUtil.swift in Sources */,
 				DA024A2023145F88004CDA04 /* EditWorkoutRouter.swift in Sources */,
 				DA49035F23080DBB008E50AB /* Workout.swift in Sources */,
 				DA5136262359E81500BC8FD0 /* ChooseAudioProtocols.swift in Sources */,
 				DA49035A2307FFC2008E50AB /* WorkoutListRouter.swift in Sources */,
 				DA024A6A231C39FE004CDA04 /* TextViewWithPlaceholder.swift in Sources */,
 				DA6704B52338E4FF00F1CB0B /* EditExerciseProtocols.swift in Sources */,
+				DA1D8221240BED2F007772B4 /* AudioTypeUtil.swift in Sources */,
 				DA5136242359E7BA00BC8FD0 /* ChooseAudioRouter.swift in Sources */,
 				DAC7577023FE952E00E122DE /* BaseModel.swift in Sources */,
 				DA51361E2359E0AE00BC8FD0 /* ChooseAudioViewController.swift in Sources */,
@@ -697,7 +646,6 @@
 				DA51362E235A36DF00BC8FD0 /* AudioItem.swift in Sources */,
 				DA49036F230839A4008E50AB /* AddWorkoutCell.swift in Sources */,
 				DA49036223080EE4008E50AB /* WorkoutDao.swift in Sources */,
-				DA024A64231B1A02004CDA04 /* WorkoutIcon.swift in Sources */,
 				DA4903312307FEAA008E50AB /* AppDelegate.swift in Sources */,
 				DA4903582307FFAB008E50AB /* WorkoutListInteractor.swift in Sources */,
 				DA024A1823145907004CDA04 /* EditWorkoutViewController.swift in Sources */,

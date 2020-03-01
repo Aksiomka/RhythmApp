@@ -15,7 +15,6 @@ class Workout: Object {
     @objc dynamic var id = 0
     @objc dynamic var name = ""
     @objc dynamic var descr = ""
-    @objc dynamic var color: WorkoutColor = WorkoutColor.brown
     @objc dynamic var icon: WorkoutIcon = WorkoutIcon.standing
     
     override static func primaryKey() -> String? {

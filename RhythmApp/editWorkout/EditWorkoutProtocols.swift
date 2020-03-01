@@ -11,7 +11,7 @@ import Foundation
 
 protocol EditWorkoutViewProtocol: class {
     func setTitle(title: String)
-    func setData(name: String, description: String, color: WorkoutColor, icon: WorkoutIcon)
+    func setData(name: String, description: String, icon: WorkoutIcon)
     func setSaveButtonEnabled(_ enabled: Bool)
 }
 
@@ -19,8 +19,8 @@ protocol EditWorkoutPresenterProtocol: class {
     func onViewDidLoad()
     func onNameChanged(name: String)
     func onDescriptionChanged(description: String)
-    func onColorChanged(color: WorkoutColor)
     func onIconChanged(icon: WorkoutIcon)
+    func onIconButtonClick()
     func onCancelButtonClick()
     func onSaveButtonClick()
 }
@@ -39,5 +39,6 @@ protocol EditWorkoutInteractorOutputProtocol: class {
 
 protocol EditWorkoutRouterProtocol: class {
     func hide()
+    func openChooseIcon(selectedWorkoutIcon: WorkoutIcon, iconChosenCallback: @escaping (WorkoutIcon) -> Void)
 }
 

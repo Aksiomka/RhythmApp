@@ -16,7 +16,7 @@ class EditWorkoutInteractor: EditWorkoutInteractorProtocol {
     weak var output: EditWorkoutInteractorOutputProtocol?
     
     private let disposeBag = DisposeBag()
-    private let workoutModel = WorkoutModel(db: DB.sharedInstance)
+    private let workoutModel = WorkoutModel()
     
     func loadWorkout(workoutId: Int) {
         if let workoutObservable = workoutModel.getWorkout(workoutId: workoutId) {
@@ -31,6 +31,8 @@ class EditWorkoutInteractor: EditWorkoutInteractorProtocol {
     
     func createWorkout(_ workout: Workout) {
         workoutModel.createWorkout(workout)
+            .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
+            .observeOn(MainScheduler.asyncInstance)
             .subscribe(onCompleted: { [weak self] in
                 self?.output?.workoutCreated()
                 }, onError: { _ in })
@@ -39,6 +41,8 @@ class EditWorkoutInteractor: EditWorkoutInteractorProtocol {
     
     func updateWorkout(_ workout: Workout) {
         workoutModel.updateWorkout(workout)
+            .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
+            .observeOn(MainScheduler.asyncInstance)
             .subscribe(onCompleted: { [weak self] in
                 self?.output?.workoutUpdated()
                 }, onError: { _ in })

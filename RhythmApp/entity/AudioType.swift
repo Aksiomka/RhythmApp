@@ -9,12 +9,10 @@
 import Foundation
 
 
-@objc enum AudioType: NSInteger {
+@objc enum AudioType: NSInteger, CaseIterable {
     case one
     case two
     case three
     case four
     case five
-    
-    static let allValues: [AudioType] = [.one, .two, .three, .four, .five]
 }

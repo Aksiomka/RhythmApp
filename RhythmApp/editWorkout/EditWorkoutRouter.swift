@@ -36,4 +36,9 @@ class EditWorkoutRouter: EditWorkoutRouterProtocol {
         viewController?.navigationController?.popViewController(animated: true)
     }
     
+    func openChooseIcon(selectedWorkoutIcon: WorkoutIcon, iconChosenCallback: @escaping (WorkoutIcon) -> Void) {
+        let chooseIconViewController = ChooseIconRouter.assembleModule(selectedWorkoutIcon: selectedWorkoutIcon, iconChosenCallback: iconChosenCallback)
+        viewController?.navigationController?.pushViewController(chooseIconViewController, animated: true)
+    }
+    
 }

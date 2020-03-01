@@ -16,8 +16,7 @@ class EditWorkoutViewController: UIViewController, EditWorkoutViewProtocol, UITe
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var nameTextField: UITextField!
     @IBOutlet private weak var descriptionTextView: TextViewWithPlaceholder!
-    @IBOutlet private weak var colorPicker: ColorPicker!
-    @IBOutlet private weak var iconPicker: IconPicker!
+    @IBOutlet private weak var iconButton: UIButton!
     @IBOutlet private weak var bgView: UIView!
     @IBOutlet private weak var titleBgView: UIView!
     @IBOutlet private weak var cancelButton: UIButton!
@@ -49,31 +48,20 @@ class EditWorkoutViewController: UIViewController, EditWorkoutViewProtocol, UITe
         
         nameTextField.delegate = self
         descriptionTextView.delegate = self
-        
-        colorPicker.setColorClickCallback(callback: { [unowned self] newColor in
-            self.presenter.onColorChanged(color: newColor)
-        })
-        
-        iconPicker.setIconClickCallback(callback: { [unowned self] newIcon in
-            self.presenter.onIconChanged(icon: newIcon)
-        })
     }
     
     func setTitle(title: String) {
         titleLabel.text = title
     }
     
-    func setData(name: String, description: String, color: WorkoutColor, icon: WorkoutIcon) {
+    func setData(name: String, description: String, icon: WorkoutIcon) {
         if !nameTextField.isFirstResponder {
             nameTextField.text = name
         }
         if !descriptionTextView.isFirstResponder {
             descriptionTextView.text = description
         }
-        
-        colorPicker.setChosenColor(chosenColor: color)
-        iconPicker.setChosenItem(chosenItem: icon)
-        bgView.backgroundColor = WorkoutColorUtil.getUIColorForWorkoutColor(color)
+    iconButton.setImage(WorkoutIconUtil.getUIImageForWorkoutIcon(icon), for: .normal)
     }
 
     func setSaveButtonEnabled(_ enabled: Bool) {
@@ -86,6 +74,10 @@ class EditWorkoutViewController: UIViewController, EditWorkoutViewProtocol, UITe
     
     @IBAction func onSaveButtonClick(_ sender: UIButton) {
         presenter.onSaveButtonClick()
+    }
+    
+    @IBAction func onIconButtonClick(_ sender: UIButton) {
+        presenter.onIconButtonClick()
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {

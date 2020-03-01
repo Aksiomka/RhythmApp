@@ -66,10 +66,6 @@ class EditExerciseViewController: UIViewController, EditExerciseViewProtocol, UI
         soundNameLabel.text = AudioTypeUtil.getFileNameForAudioType(audioType)
     }
     
-    func setWorkoutColor(_ workoutColor: WorkoutColor) {
-        bgView.backgroundColor = WorkoutColorUtil.getUIColorForWorkoutColor(workoutColor)
-    }
-    
     func setSaveButtonEnabled(_ enabled: Bool) {
         saveButton.isEnabled = enabled
     }

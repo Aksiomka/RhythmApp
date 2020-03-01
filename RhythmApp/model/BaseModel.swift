@@ -12,12 +12,6 @@ import RxSwift
 
 class BaseModel {
 
-    internal let db: DB
-
-    init(db: DB) {
-        self.db = db
-    }
-    
     internal func createCompletable(action: @escaping () -> Void) -> Completable {
         return Completable.create { completable in
             action()
