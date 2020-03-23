@@ -20,6 +20,7 @@ protocol ChooseAudioPresenterProtocol: class {
     func onChooseButtonClick()
     func onCancelButtonClick()
     func onAudioItemSelected(audioType: AudioType)
+    func onPlayButtonClick(audioType: AudioType)
 }
 
 protocol ChooseAudioRouterProtocol: class {

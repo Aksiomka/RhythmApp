@@ -28,6 +28,12 @@
                             <constraint firstAttribute="width" constant="34" id="w1E-io-Cwd"/>
                         </constraints>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="10:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2SW-RL-0r1">
+                        <rect key="frame" x="139" y="11" width="32" height="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                     <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rtf-bG-o8n">
                         <rect key="frame" x="58" y="-43" width="246" height="128"/>
                         <subviews>
@@ -75,6 +81,8 @@
                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Rtf-bG-o8n" secondAttribute="bottom" constant="16" id="6Ka-fw-fZ7"/>
                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="zqL-Pu-rhz" secondAttribute="bottom" constant="16" id="8ja-xe-dZF"/>
                     <constraint firstAttribute="trailing" secondItem="Rtf-bG-o8n" secondAttribute="trailing" constant="16" id="9Vd-1p-Epf"/>
+                    <constraint firstItem="2SW-RL-0r1" firstAttribute="centerY" secondItem="zqL-Pu-rhz" secondAttribute="centerY" constant="24" id="DNY-uI-Huo"/>
+                    <constraint firstItem="2SW-RL-0r1" firstAttribute="centerX" secondItem="zqL-Pu-rhz" secondAttribute="centerX" id="Mqh-hj-B4F"/>
                     <constraint firstItem="Rtf-bG-o8n" firstAttribute="top" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="Q5M-9O-Prj"/>
                     <constraint firstItem="gvH-io-YRn" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="RUi-qM-OzK"/>
                     <constraint firstItem="zqL-Pu-rhz" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="TMH-7v-1gQ"/>
@@ -96,6 +104,7 @@
                 <outlet property="editButton" destination="Gff-SS-ChD" id="C9O-ch-Y1H"/>
                 <outlet property="iconView" destination="zqL-Pu-rhz" id="7a8-be-c00"/>
                 <outlet property="nameLabel" destination="ZGl-hX-1CK" id="iLy-HH-hs3"/>
+                <outlet property="totalDurationLabel" destination="2SW-RL-0r1" id="Peu-hY-mLj"/>
             </connections>
             <point key="canvasLocation" x="139" y="101"/>
         </tableViewCell>

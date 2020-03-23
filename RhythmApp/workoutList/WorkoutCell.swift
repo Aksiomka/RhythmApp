@@ -13,6 +13,7 @@ class WorkoutCell: UITableViewCell {
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var descriptionLabel: UILabel!
     @IBOutlet private weak var iconView: UIImageView!
+    @IBOutlet private weak var totalDurationLabel: UILabel!
     @IBOutlet private weak var bgView: UIView!
     @IBOutlet private weak var editButton: UIButton!
     
@@ -28,10 +29,12 @@ class WorkoutCell: UITableViewCell {
         selectionStyle = .none
     }
     
-    func setWorkout(_ workout: Workout) {
+    func setWorkout(_ workout: Workout, totalDurationInSeconds: Int) {
         nameLabel.text = workout.name
         descriptionLabel.text = workout.descr
+        totalDurationLabel.text = TimeUtil.formatSeconds(seconds: totalDurationInSeconds)
         iconView.image = WorkoutIconUtil.getUIImageForWorkoutIcon(workout.icon)
+        bgView.backgroundColor = WorkoutColorUtil.getUIColorForWorkoutColor(workout.color)
     }
     
     @IBAction func onEditWorkoutButtonClick(_ sender: UIButton) {

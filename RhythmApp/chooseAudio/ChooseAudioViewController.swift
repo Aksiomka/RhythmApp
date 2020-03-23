@@ -35,6 +35,9 @@ class ChooseAudioViewController: UIViewController, ChooseAudioViewProtocol, UITa
             let audioItem = dataSource[idxPath]
             let audioCell: AudioCell = table.dequeueReusableCell(withIdentifier: "AudioCell", for: idxPath) as! AudioCell
             audioCell.setData(name: audioItem.name, isPlaying: audioItem.isPlaying, selected: audioItem.selected)
+            audioCell.playButtonClickCallback = { [unowned self] in
+                self.presenter.onPlayButtonClick(audioType: audioItem.audioType)
+            }
             return audioCell
         })
         

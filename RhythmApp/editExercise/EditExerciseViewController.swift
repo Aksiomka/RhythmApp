@@ -19,9 +19,9 @@ class EditExerciseViewController: UIViewController, EditExerciseViewProtocol, UI
     @IBOutlet private weak var cancelButton: UIButton!
     @IBOutlet private weak var saveButton: UIButton!
     @IBOutlet private weak var bgView: UIView!
-    @IBOutlet weak var soundPickerContainer: UIView!
-    @IBOutlet weak var soundNameLabel: UILabel!
-    @IBOutlet weak var chooseSoundButton: UIButton!
+    @IBOutlet private weak var soundPickerContainer: UIView!
+    @IBOutlet private weak var soundNameLabel: UILabel!
+    @IBOutlet private weak var chooseSoundButton: UIButton!
     
     
     private var minutesItems: [Int] = []
@@ -47,6 +47,10 @@ class EditExerciseViewController: UIViewController, EditExerciseViewProtocol, UI
         durationPicker.layer.cornerRadius = 8
         durationPicker.layer.borderWidth = 1.0
         durationPicker.layer.borderColor = UIColor.white.cgColor
+        
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tapRecognizer.cancelsTouchesInView = false
+        view.addGestureRecognizer(tapRecognizer)
     }
     
     func setTitle(title: String) {
@@ -64,6 +68,10 @@ class EditExerciseViewController: UIViewController, EditExerciseViewProtocol, UI
             nameTextField.text = name
         }
         soundNameLabel.text = AudioTypeUtil.getFileNameForAudioType(audioType)
+    }
+    
+    func setWorkoutColor(_ workoutColor: WorkoutColor) {
+        bgView.backgroundColor = WorkoutColorUtil.getUIColorForWorkoutColor(workoutColor)
     }
     
     func setSaveButtonEnabled(_ enabled: Bool) {
@@ -122,6 +130,10 @@ class EditExerciseViewController: UIViewController, EditExerciseViewProtocol, UI
             label.textColor = UIColor.white
             return label
         }
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
     
     private func formatSeconds(_ seconds: Int) -> String {

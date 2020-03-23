@@ -77,10 +77,13 @@ class EditExercisePresenter: EditExercisePresenterProtocol, EditExerciseInteract
         })
     }
     
-    func processExercise(exercise: Exercise?) {
+    func processExercise(exercise: Exercise?, workout: Workout?) {
         if let exercise = exercise {
             name = exercise.name
             updateData()
+        }
+        if let workout = workout {
+            view?.setWorkoutColor(workout.color)
         }
     }
     
@@ -93,7 +96,7 @@ class EditExercisePresenter: EditExercisePresenterProtocol, EditExerciseInteract
     }
     
     private func loadExercise() {
-        interactor.loadExercise(exerciseId: exerciseId)
+        interactor.loadExercise(exerciseId: exerciseId, workoutId: workoutId)
     }
     
     private func updateData() {

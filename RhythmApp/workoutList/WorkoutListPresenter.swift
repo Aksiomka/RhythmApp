@@ -11,18 +11,22 @@ import RxCocoa
 import RxSwift
 
 
-class WorkoutListPresenter: WorkoutListPresenterProtocol, WorkoutListInteractorOutputProtocol {
+class WorkoutListPresenter: WorkoutListPresenterProtocol, WorkoutListInteractorOutputProtocol, WorkoutAudioPlayerDelegate {
     
     weak var view: WorkoutListViewProtocol?
     var interactor: WorkoutListInteractorProtocol!
     var router: WorkoutListRouterProtocol!
     
-    private let workoutsSubject: PublishSubject<[WorkoutWithExercises]> = PublishSubject<[WorkoutWithExercises]>()
+    private let workoutsSubject: BehaviorSubject<[WorkoutWithExercises]> = BehaviorSubject<[WorkoutWithExercises]>(value: [])
     
     private let disposeBag = DisposeBag()
+    private let audioPlayer: WorkoutAudioPlayer = WorkoutAudioPlayer()
     
     private var openedWorkoutId: Int? = nil
-    private var playingExerciseId: Int? = nil
+    
+    init() {
+        audioPlayer.delegate = self
+    }
     
     func onViewDidLoad() {
         view?.setWorkoutsDriver(workoutsDriver: workoutsSubject.asDriver(onErrorJustReturn: []))
@@ -59,12 +63,59 @@ class WorkoutListPresenter: WorkoutListPresenterProtocol, WorkoutListInteractorO
         interactor.moveExercise(workoutId: workoutId, oldPosition: oldPosition, newPosition: newPosition)
     }
     
+    func onPlayButtonClick(exerciseId: Int, audio: AudioType) {
+        if audioPlayer.isPlaying(exerciseId: exerciseId) {
+            audioPlayer.pause()
+        } else if audioPlayer.isPaused(exerciseId: exerciseId) {
+            audioPlayer.resume()
+        } else {
+            let workouts = try! workoutsSubject.value()
+            for workout in workouts {
+                if let index = workout.exercises.firstIndex(where: { $0.id == exerciseId }) {
+                    let exerciseItemsToPlay = workout.exercises.suffix(from: index).map {
+                        ExerciseAudioItem(exerciseId: $0.id, audio: $0.audio, durationInSeconds: $0.durationInSeconds)
+                    }
+                    audioPlayer.playAudios(exerciseAudioItems: exerciseItemsToPlay)
+                    break
+                }
+            }
+        }
+        updateData()
+    }
+    
     func processWorkouts(workouts: [Workout], exercises: [Exercise]) {
         let workoutsWithExercises: [WorkoutWithExercises] = workouts.map { workout in
             let workoutExercises = exercises.filter { $0.workoutId == workout.id }.sorted(by: { $0.position < $1.position })
-            return WorkoutWithExercises(workout: workout, exercises: workoutExercises)
+                .map { exercise in
+                    ExerciseItem(id: exercise.id, workoutId: exercise.workoutId, name: exercise.name,
+                                 position: exercise.position,
+                                 durationInSeconds: exercise.durationInSeconds, audio: exercise.audio,
+                                 isPlaying: audioPlayer.isPlaying(exerciseId: exercise.id),
+                                 isCompleted: false,
+                                 remainingSeconds: audioPlayer.isPlaying(exerciseId: exercise.id) || audioPlayer.isPaused(exerciseId: exercise.id) ? audioPlayer.getRemainingDuration() : exercise.durationInSeconds)
+                }
+            let totalDurationInSeconds = workoutExercises.reduce(0, { $0 + $1.durationInSeconds })
+            return WorkoutWithExercises(workout: workout, exercises: workoutExercises, totalDurationInSeconds: totalDurationInSeconds)
         }
         workoutsSubject.onNext(workoutsWithExercises)
+    }
+    
+    func exerciseStarted(exerciseId: Int, currentTimeInSeconds: TimeInterval, durationInSeconds: TimeInterval) {
+        updateData()
+        view?.exerciseStarted(exerciseId: exerciseId, currentTimeInSeconds: currentTimeInSeconds, durationInSeconds: durationInSeconds)
+    }
+    
+    func exercisePaused(exerciseId: Int, currentTimeInSeconds: TimeInterval, durationInSeconds: TimeInterval) {
+        view?.exercisePaused(exerciseId: exerciseId, currentTimeInSeconds: currentTimeInSeconds, durationInSeconds: durationInSeconds)
+    }
+    
+    func exerciseCompleted(exerciseId: Int) {
+        updateData()
+        view?.exerciseStopped(exerciseId: exerciseId)
+    }
+    
+    func remainingDurationChanged(exerciseId: Int) {
+        updateData()
     }
     
     private func updateData() {

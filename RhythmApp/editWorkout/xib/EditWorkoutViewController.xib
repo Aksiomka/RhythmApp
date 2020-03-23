@@ -13,6 +13,7 @@
             <connections>
                 <outlet property="bgView" destination="JpJ-wb-vSg" id="Vup-Ik-Vzi"/>
                 <outlet property="cancelButton" destination="Ulv-hu-ZZs" id="COb-CF-G5I"/>
+                <outlet property="colorPicker" destination="CKP-tI-a6V" id="kPS-fu-kOf"/>
                 <outlet property="descriptionTextView" destination="RXy-e4-wGS" id="l9B-nM-blr"/>
                 <outlet property="iconButton" destination="3ow-Hv-NoY" id="Pgy-D9-qoZ"/>
                 <outlet property="nameTextField" destination="PwG-Eg-oKF" id="dVu-OG-cbT"/>
@@ -75,6 +76,13 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CKP-tI-a6V" customClass="ColorPicker" customModule="RhythmApp" customModuleProvider="target">
+                    <rect key="frame" x="8" y="304" width="398" height="40"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="Yxe-SC-WIC"/>
+                    </constraints>
+                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zws-kb-VHp" userLabel="Buttons Container">
                     <rect key="frame" x="0.0" y="812" width="414" height="50"/>
                     <subviews>
@@ -136,7 +144,10 @@
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="zws-kb-VHp" secondAttribute="bottom" id="fG4-8X-0ji"/>
                 <constraint firstItem="JpJ-wb-vSg" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="9" id="fSL-wT-Lpe"/>
                 <constraint firstItem="RXy-e4-wGS" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="hrM-d5-6pP"/>
+                <constraint firstItem="CKP-tI-a6V" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="kJm-xe-IGz"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="CKP-tI-a6V" secondAttribute="trailing" constant="16" id="lG1-99-dEx"/>
                 <constraint firstItem="JpJ-wb-vSg" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="8" id="liy-Zd-QVw"/>
+                <constraint firstItem="CKP-tI-a6V" firstAttribute="top" secondItem="RXy-e4-wGS" secondAttribute="bottom" constant="20" id="m4I-Yy-SOU"/>
                 <constraint firstItem="foW-FV-UIV" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="r24-Sb-kAG"/>
                 <constraint firstItem="PwG-Eg-oKF" firstAttribute="top" secondItem="3ow-Hv-NoY" secondAttribute="bottom" constant="16" id="v4D-If-GGg"/>
                 <constraint firstItem="zws-kb-VHp" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="vbZ-az-igZ"/>

@@ -19,6 +19,7 @@ class EditWorkoutPresenter: EditWorkoutPresenterProtocol, EditWorkoutInteractorO
     
     private var name: String = ""
     private var description: String = ""
+    private var color: WorkoutColor = WorkoutColor.blue
     private var icon: WorkoutIcon = WorkoutIcon.standing
 
     init(workoutId: Int?) {
@@ -46,6 +47,11 @@ class EditWorkoutPresenter: EditWorkoutPresenterProtocol, EditWorkoutInteractorO
         self.description = description
     }
     
+    func onColorChanged(color: WorkoutColor) {
+        self.color = color
+        updateData()
+    }
+    
     func onIconChanged(icon: WorkoutIcon) {
         self.icon = icon
         updateData()
@@ -61,12 +67,14 @@ class EditWorkoutPresenter: EditWorkoutPresenterProtocol, EditWorkoutInteractorO
             workout.id = id
             workout.name = name
             workout.descr = description
+            workout.color = color
             workout.icon = icon
             interactor.updateWorkout(workout)
         } else {
             let workout = Workout()
             workout.name = name
             workout.descr = description
+            workout.color = color
             workout.icon = icon
             interactor.createWorkout(workout)
         }
@@ -76,6 +84,8 @@ class EditWorkoutPresenter: EditWorkoutPresenterProtocol, EditWorkoutInteractorO
         if let workout = workout {
             name = workout.name
             description = workout.descr
+            color = workout.color
+            icon = workout.icon
             updateData()
         }
     }
@@ -95,7 +105,7 @@ class EditWorkoutPresenter: EditWorkoutPresenterProtocol, EditWorkoutInteractorO
     }
     
     private func updateData() {
-        view?.setData(name: name, description: description, icon: icon)
+        view?.setData(name: name, description: description, color: color, icon: icon)
         updateSaveButtonEnabledState()
     }
     

@@ -15,7 +15,7 @@ class ExercisesCell: UITableViewCell, UICollectionViewDataSource, UICollectionVi
     
     @IBOutlet private weak var collectionView: UICollectionView!
     
-    private var exercises: [Exercise] = []
+    private var exercises: [ExerciseItem] = []
     
     var addExerciseCellClickCallback: () -> Void = {}
     var exerciseMovedCallback: (_ oldPosition: Int, _ newPosition: Int) -> Void = { _, _ in }
@@ -36,7 +36,7 @@ class ExercisesCell: UITableViewCell, UICollectionViewDataSource, UICollectionVi
         collectionView.dragInteractionEnabled = true
     }
     
-    func setData(exercises: [Exercise]) {
+    func setData(exercises: [ExerciseItem]) {
         self.exercises = exercises
         collectionView.reloadData()
     }
@@ -104,7 +104,7 @@ class ExercisesCell: UITableViewCell, UICollectionViewDataSource, UICollectionVi
         guard let destinationIndexPath = coordinator.destinationIndexPath else { return }
         collectionView.performBatchUpdates({
             for item in coordinator.items {
-                if let localObject = item.dragItem.localObject as? Exercise {
+                if let localObject = item.dragItem.localObject as? ExerciseItem {
                     if let sourceIndexPath = item.sourceIndexPath, sourceIndexPath.row != exercises.count && destinationIndexPath.row != exercises.count {
                         
                         exercises.remove(at: sourceIndexPath.item)
@@ -129,8 +129,26 @@ class ExercisesCell: UITableViewCell, UICollectionViewDataSource, UICollectionVi
         }
     }
     
-    static func getHeightForExercises(exercises: [Exercise]) -> CGFloat {
+    static func getHeightForExercises(exercises: [ExerciseItem]) -> CGFloat {
         return CGFloat(exercises.count / 3) * (ExercisesCell.CELL_HEIGHT + ExercisesCell.MIN_SPACING) + ExercisesCell.CELL_HEIGHT
+    }
+    
+    func exerciseStarted(exerciseId: Int, currentTimeInSeconds: TimeInterval, durationInSeconds: TimeInterval) {
+        for cell in collectionView.visibleCells {
+            (cell as? ExerciseCell)?.exerciseStarted(exerciseId: exerciseId, currentTimeInSeconds: currentTimeInSeconds, durationInSeconds: durationInSeconds)
+        }
+    }
+    
+    func exercisePaused(exerciseId: Int, currentTimeInSeconds: TimeInterval, durationInSeconds: TimeInterval) {
+        for cell in collectionView.visibleCells {
+            (cell as? ExerciseCell)?.exercisePaused(exerciseId: exerciseId, currentTimeInSeconds: currentTimeInSeconds, durationInSeconds: durationInSeconds)
+        }
+    }
+    
+    func exerciseStopped(exerciseId: Int) {
+        for cell in collectionView.visibleCells {
+            (cell as? ExerciseCell)?.exerciseStopped(exerciseId: exerciseId)
+        }
     }
     
 }

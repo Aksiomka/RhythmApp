@@ -13,6 +13,7 @@ protocol EditExerciseViewProtocol: class {
     func setTitle(title: String)
     func setPickersData(minutesData: [Int], secondsData: [Int])
     func setData(name: String, audioType: AudioType)
+    func setWorkoutColor(_ workoutColor: WorkoutColor)
     func setSaveButtonEnabled(_ enabled: Bool)
 }
 
@@ -27,13 +28,13 @@ protocol EditExercisePresenterProtocol: class {
 }
 
 protocol EditExerciseInteractorProtocol: class {
-    func loadExercise(exerciseId: Int?)
+    func loadExercise(exerciseId: Int?, workoutId: Int)
     func createExercise(_ exercise: Exercise)
     func updateExercise(_ exercise: Exercise)
 }
 
 protocol EditExerciseInteractorOutputProtocol: class {
-    func processExercise(exercise: Exercise?)
+    func processExercise(exercise: Exercise?, workout: Workout?)
     func exerciseCreated()
     func exerciseUpdated()
 }

@@ -39,9 +39,9 @@ class WorkoutListViewController: UIViewController, WorkoutListViewProtocol, UITa
     func setWorkoutsDriver(workoutsDriver: Driver<[WorkoutWithExercises]>) {
         let dataSource = RxTableViewSectionedReloadDataSource<MultipleSectionModel>(configureCell: { (dataSource, table, idxPath, _) in
             switch dataSource[idxPath] {
-            case let .WorkoutItem(workout):
+            case let .WorkoutItem(workout, totalDuration):
                 let cell: WorkoutCell = table.dequeueReusableCell(withIdentifier: "workout", for: idxPath) as! WorkoutCell
-                cell.setWorkout(workout)
+                cell.setWorkout(workout, totalDurationInSeconds: totalDuration)
                 cell.editWorkoutButtonClickCallback = { [unowned self] in
                     self.presenter.onEditWorkoutButtonClick(workoutId: workout.id)
                 }
@@ -54,6 +54,9 @@ class WorkoutListViewController: UIViewController, WorkoutListViewProtocol, UITa
                 }
                 cell.exerciseMovedCallback = { [unowned self] oldPosition, newPosition in
                     self.presenter.onExerciseMoved(workoutId: workout.id, oldPosition: oldPosition, newPosition: newPosition)
+                }
+                cell.playButtonClickCallback = { [unowned self] (exerciseId, audioType) in
+                    self.presenter.onPlayButtonClick(exerciseId: exerciseId, audio: audioType)
                 }
                 return cell
             case .AddWorkoutItem:
@@ -80,7 +83,8 @@ class WorkoutListViewController: UIViewController, WorkoutListViewProtocol, UITa
             .map { workoutsWithExercises in
                 var items: [SectionItem] = []
                 for workoutWithExercises in workoutsWithExercises {
-                    items.append(SectionItem.WorkoutItem(workout: workoutWithExercises.workout))
+                    items.append(SectionItem.WorkoutItem(workout: workoutWithExercises.workout,
+                                                         totalDuraion: workoutWithExercises.totalDurationInSeconds))
                     items.append(SectionItem.ExercisesItem(workout: workoutWithExercises.workout,
                                                            exercises: workoutWithExercises.exercises))
                 }
@@ -97,7 +101,7 @@ class WorkoutListViewController: UIViewController, WorkoutListViewProtocol, UITa
             }
             .subscribe(onNext: { [weak self] pair in
                 switch pair.1 {
-                case let .WorkoutItem(workout):
+                case let .WorkoutItem(workout, _):
                     self?.presenter?.onWorkoutSelected(workoutId: workout.id)
                 case .ExercisesItem(_, _):
                     // do nothing
@@ -115,7 +119,7 @@ class WorkoutListViewController: UIViewController, WorkoutListViewProtocol, UITa
             }
             .subscribe(onNext: { [weak self] pair in
                 switch pair.1 {
-                case let .WorkoutItem(workout):
+                case let .WorkoutItem(workout, _):
                     self?.presenter?.onWorkoutDeleteButtonClick(workoutId: workout.id)
                 case .ExercisesItem(_, _):
                     // do nothing
@@ -140,9 +144,27 @@ class WorkoutListViewController: UIViewController, WorkoutListViewProtocol, UITa
         }
     }
     
+    func exerciseStarted(exerciseId: Int, currentTimeInSeconds: TimeInterval, durationInSeconds: TimeInterval) {
+        for cell in tableView.visibleCells {
+            (cell as? ExercisesCell)?.exerciseStarted(exerciseId: exerciseId, currentTimeInSeconds: currentTimeInSeconds, durationInSeconds: durationInSeconds)
+        }
+    }
+    
+    func exercisePaused(exerciseId: Int, currentTimeInSeconds: TimeInterval, durationInSeconds: TimeInterval) {
+        for cell in tableView.visibleCells {
+            (cell as? ExercisesCell)?.exercisePaused(exerciseId: exerciseId, currentTimeInSeconds: currentTimeInSeconds, durationInSeconds: durationInSeconds)
+        }
+    }
+    
+    func exerciseStopped(exerciseId: Int) {
+        for cell in tableView.visibleCells {
+            (cell as? ExercisesCell)?.exerciseStopped(exerciseId: exerciseId)
+        }
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch dataSource[indexPath] {
-        case .WorkoutItem(_):
+        case .WorkoutItem(_, _):
             return UITableView.automaticDimension
         case let .ExercisesItem(workout, exercises):
             return workoutIdWithOpenedExercises == workout.id ? ExercisesCell.getHeightForExercises(exercises: exercises) : 0
@@ -154,8 +176,8 @@ class WorkoutListViewController: UIViewController, WorkoutListViewProtocol, UITa
 }
 
 enum SectionItem {
-    case WorkoutItem(workout: Workout)
-    case ExercisesItem(workout: Workout, exercises: [Exercise])
+    case WorkoutItem(workout: Workout, totalDuraion: Int)
+    case ExercisesItem(workout: Workout, exercises: [ExerciseItem])
     case AddWorkoutItem
 }
 

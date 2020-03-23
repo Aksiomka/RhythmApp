@@ -18,12 +18,16 @@ class ChooseAudioPresenter: ChooseAudioPresenterProtocol {
     
     private var selectedAudioType: AudioType
     private let audioChosenCallback: (AudioType) -> Void
+    private let audioPlayer = AudioPlayer.sharedInstance
     
     private let audioItemsSubject: PublishSubject<[AudioItem]> = PublishSubject<[AudioItem]>()
 
     init(selectedAudioType: AudioType, audioChosenCallback: @escaping (AudioType) -> Void) {
         self.selectedAudioType = selectedAudioType
         self.audioChosenCallback = audioChosenCallback
+        audioPlayer.audioPlayingFinishedCallback = { [unowned self] in
+            self.updateData()
+        }
     }
     
     func onViewDidLoad() {
@@ -45,6 +49,15 @@ class ChooseAudioPresenter: ChooseAudioPresenterProtocol {
         updateData()
     }
     
+    func onPlayButtonClick(audioType: AudioType) {
+        if audioPlayer.isPlaying(audioType: audioType) {
+            audioPlayer.pause()
+        } else {
+            audioPlayer.play(audioType: audioType)
+        }
+        updateData()
+    }
+    
     private func updateData() {
         let audioItems = AudioType.allCases.map { [unowned self] audioType in
             return self.convertToAudioItem(audioType: audioType)
@@ -55,7 +68,7 @@ class ChooseAudioPresenter: ChooseAudioPresenterProtocol {
     private func convertToAudioItem(audioType: AudioType) -> AudioItem {
         return AudioItem(audioType: audioType,
                          name: AudioTypeUtil.getFileNameForAudioType(audioType),
-                         isPlaying: false,
+                         isPlaying: audioPlayer.isPlaying(audioType: audioType),
                          selected: selectedAudioType == audioType)
     }
     

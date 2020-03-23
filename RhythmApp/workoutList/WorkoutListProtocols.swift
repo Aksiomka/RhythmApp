@@ -14,6 +14,9 @@ import RxSwift
 protocol WorkoutListViewProtocol: class {
     func setWorkoutsDriver(workoutsDriver: Driver<[WorkoutWithExercises]>)
     func setExercisesCellVisible(visible: Bool, for workoutId: Int)
+    func exerciseStarted(exerciseId: Int, currentTimeInSeconds: TimeInterval, durationInSeconds: TimeInterval)
+    func exercisePaused(exerciseId: Int, currentTimeInSeconds: TimeInterval, durationInSeconds: TimeInterval)
+    func exerciseStopped(exerciseId: Int)
 }
 
 protocol WorkoutListPresenterProtocol: class {
@@ -24,6 +27,7 @@ protocol WorkoutListPresenterProtocol: class {
     func onWorkoutDeleteButtonClick(workoutId: Int)
     func onAddExerciseCellClick(workoutId: Int)
     func onExerciseMoved(workoutId: Int, oldPosition: Int, newPosition: Int)
+    func onPlayButtonClick(exerciseId: Int, audio: AudioType)
 }
 
 protocol WorkoutListInteractorProtocol: class {

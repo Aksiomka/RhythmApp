@@ -19,7 +19,7 @@ class AudioCell: UITableViewCell {
     
     func setData(name: String, isPlaying: Bool, selected: Bool) {
         nameLabel.text = name
-        playButton.setImage(UIImage(named: isPlaying ? "pause" : "play"), for: .normal)
+        playButton.setImage(UIImage(named: isPlaying ? "pause" : "play-circle"), for: .normal)
         checkImageView.isHidden = !selected
     }
     

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15508"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,6 +20,10 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WQB-bt-he4" userLabel="Container">
                         <rect key="frame" x="-10" y="52" width="70" height="70"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3sm-7t-H0Y" userLabel="Progress View" customClass="ProgressView" customModule="RhythmApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I9t-C1-52j">
                                 <rect key="frame" x="20" y="20" width="30" height="30"/>
                                 <constraints>
@@ -41,12 +45,16 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="3sm-7t-H0Y" firstAttribute="centerX" secondItem="WQB-bt-he4" secondAttribute="centerX" id="6nG-bA-pLA"/>
+                            <constraint firstItem="3sm-7t-H0Y" firstAttribute="height" secondItem="WQB-bt-he4" secondAttribute="height" id="8It-Bs-6Zl"/>
                             <constraint firstAttribute="width" constant="70" id="Ia3-go-RV4"/>
                             <constraint firstAttribute="trailing" secondItem="0aX-c8-m43" secondAttribute="trailing" constant="8" id="Msd-j2-BYC"/>
                             <constraint firstItem="0aX-c8-m43" firstAttribute="top" secondItem="I9t-C1-52j" secondAttribute="bottom" id="SpA-hE-IFP"/>
                             <constraint firstAttribute="height" constant="70" id="Zlf-Sh-84G"/>
                             <constraint firstItem="I9t-C1-52j" firstAttribute="centerY" secondItem="WQB-bt-he4" secondAttribute="centerY" id="dt2-eR-X24"/>
+                            <constraint firstItem="3sm-7t-H0Y" firstAttribute="centerY" secondItem="WQB-bt-he4" secondAttribute="centerY" id="vN9-jn-NWV"/>
                             <constraint firstItem="I9t-C1-52j" firstAttribute="centerX" secondItem="WQB-bt-he4" secondAttribute="centerX" id="yBa-c0-ihE"/>
+                            <constraint firstItem="3sm-7t-H0Y" firstAttribute="width" secondItem="WQB-bt-he4" secondAttribute="height" id="yx3-Tq-gqC"/>
                             <constraint firstItem="0aX-c8-m43" firstAttribute="leading" secondItem="WQB-bt-he4" secondAttribute="leading" constant="8" id="yy0-kV-Kjm"/>
                         </constraints>
                     </view>
@@ -72,6 +80,7 @@
                 <outlet property="button" destination="I9t-C1-52j" id="RwT-v9-rCs"/>
                 <outlet property="durationLabel" destination="0aX-c8-m43" id="o0A-VG-J70"/>
                 <outlet property="nameLabel" destination="dKc-rW-WyO" id="mPz-mQ-uuk"/>
+                <outlet property="progressView" destination="3sm-7t-H0Y" id="5m9-8S-mU6"/>
             </connections>
             <point key="canvasLocation" x="139" y="101"/>
         </collectionViewCell>

@@ -14,19 +14,16 @@ class ExerciseCell: UICollectionViewCell {
     @IBOutlet private weak var durationLabel: UILabel!
     @IBOutlet private weak var button: UIButton!
     @IBOutlet private weak var nameLabel: UILabel!
+    @IBOutlet private weak var progressView: ProgressView!
     
     var playButtonClickCallback: () -> Void = {}
+    private var exerciseId = 0
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        bgView.layer.cornerRadius = bgView.frame.height / 2
-        bgView.layer.borderColor = UIColor.white.cgColor
-        bgView.layer.borderWidth = 3.0
-    }
-    
-    func setData(exercise: Exercise) {
+    func setData(exercise: ExerciseItem) {
+        exerciseId = exercise.id
         nameLabel.text = exercise.name
-        durationLabel.text = formatSeconds(seconds: exercise.durationInSeconds)
+        durationLabel.text = TimeUtil.formatSeconds(seconds: exercise.remainingSeconds)
+        button.setImage(UIImage(named: exercise.isPlaying ? "pause" : "play"), for: .normal)
     }
     
     override func dragStateDidChange(_ dragState: UICollectionViewCell.DragState) {
@@ -41,10 +38,23 @@ class ExerciseCell: UICollectionViewCell {
         playButtonClickCallback()
     }
     
-    private func formatSeconds(seconds: Int) -> String {
-        let min = seconds / 60
-        let sec = seconds % 60
-        let formattedSec = sec < 10 ? "0\(sec)" : "\(sec)"
-        return "\(min):\(formattedSec)"
+    func exerciseStarted(exerciseId: Int, currentTimeInSeconds: TimeInterval, durationInSeconds: TimeInterval) {
+        if self.exerciseId == exerciseId {
+            let percentage = currentTimeInSeconds * 100 / durationInSeconds
+            progressView.startAnimation(percentage: Int(percentage), duration: durationInSeconds - currentTimeInSeconds)
+        }
+    }
+    
+    func exercisePaused(exerciseId: Int, currentTimeInSeconds: TimeInterval, durationInSeconds: TimeInterval) {
+        if self.exerciseId == exerciseId {
+            let percentage = currentTimeInSeconds * 100 / durationInSeconds
+            progressView.stopAnimation(percentage: Int(percentage))
+        }
+    }
+    
+    func exerciseStopped(exerciseId: Int) {
+        if self.exerciseId == exerciseId {
+            progressView.stopAnimation(percentage: 100)
+        }
     }
 }

@@ -16,6 +16,7 @@ class EditWorkoutViewController: UIViewController, EditWorkoutViewProtocol, UITe
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var nameTextField: UITextField!
     @IBOutlet private weak var descriptionTextView: TextViewWithPlaceholder!
+    @IBOutlet private weak var colorPicker: ColorPicker!
     @IBOutlet private weak var iconButton: UIButton!
     @IBOutlet private weak var bgView: UIView!
     @IBOutlet private weak var titleBgView: UIView!
@@ -48,20 +49,30 @@ class EditWorkoutViewController: UIViewController, EditWorkoutViewProtocol, UITe
         
         nameTextField.delegate = self
         descriptionTextView.delegate = self
+        
+        colorPicker.setColorClickCallback(callback: { [unowned self] newColor in
+            self.presenter.onColorChanged(color: newColor)
+        })
+
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tapRecognizer.cancelsTouchesInView = false
+        view.addGestureRecognizer(tapRecognizer)
     }
     
     func setTitle(title: String) {
         titleLabel.text = title
     }
     
-    func setData(name: String, description: String, icon: WorkoutIcon) {
+    func setData(name: String, description: String, color: WorkoutColor, icon: WorkoutIcon) {
         if !nameTextField.isFirstResponder {
             nameTextField.text = name
         }
         if !descriptionTextView.isFirstResponder {
             descriptionTextView.text = description
         }
-    iconButton.setImage(WorkoutIconUtil.getUIImageForWorkoutIcon(icon), for: .normal)
+        colorPicker.setChosenColor(chosenColor: color)
+        iconButton.setImage(WorkoutIconUtil.getUIImageForWorkoutIcon(icon), for: .normal)
+        bgView.backgroundColor = WorkoutColorUtil.getUIColorForWorkoutColor(color)
     }
 
     func setSaveButtonEnabled(_ enabled: Bool) {
@@ -90,5 +101,9 @@ class EditWorkoutViewController: UIViewController, EditWorkoutViewProtocol, UITe
     
     func textViewDidChange(_ textView: UITextView) {
         presenter.onDescriptionChanged(description: textView.text)
+    }
+
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
 }
